@@ -1,17 +1,12 @@
 
-
 .sidebar {
   display: inline-block;
   width: auto;
   background-color: rgb(26, 25, 31);
-  /* height: 100vh; */
   padding: 40px;
 }
 
-.assortmentList img {
-  width: 40px;
-  height: 40px;
-}
+
 .assortmentList {
   display: flex;
   flex-direction: column;
@@ -21,30 +16,37 @@
 .assortmentList li img {
   width: 50px;
   height: 40px;
+  margin-right: 6px;
 }
 
 .assortmentList li a {
   text-decoration: none;
-  margin-left: 10px;
+  margin-left: 4px;
   color: rgb(192, 192, 192);
   font-weight: 500;
 }
 
 .assortmentList li {
   margin-top: 10px;
-  display: flex;
-  align-items: center;
-  padding: 0;
-  padding-left: 6px;
   border-left: 2px solid rgb(26, 25, 31);
   cursor: pointer;
 }
+.assortmentList li a{
+  display: flex;
+  align-items: center;
 
+}
 
-.assortmentList li:hover a{
+.assortmentList li .active{
   color: rgb(159, 29, 35);
 }
 
+
+
+/* single hover effect on each class */
+.assortmentList li:hover a{
+  color: rgb(159, 29, 35);
+}
 
 .laptopHover:hover{
   border-left: 2px solid rgb(20, 98, 82);

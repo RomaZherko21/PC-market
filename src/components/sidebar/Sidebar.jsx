@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, {  } from 'react';
+import { NavLink } from 'react-router-dom';
 
 import s from './Sidebar.module.css';
 
@@ -14,49 +15,23 @@ import accessories from '../../images/sidebar/accessories.svg'
 
 const Sidebar = () => {
 
-
-    console.log(accessories)
-    // const [showInfo, setShowInfo] = useState(true);
-
-    // function showInfoHandler() {
-    //     setShowInfo(!showInfo)
-    // }
-
-    let style = {
-        borderLeft: '2px solid red', color: 'white'
+    function showLi(text, hoverClass, img, toLink) {
+        return (
+            <li className={s[hoverClass]}>
+                <NavLink to={toLink} activeClassName={s.active}><img src={img} alt="" />{text}</NavLink>
+            </li>
+        )
     }
     return (
         <div className={s.sidebar}>
             <ul className={s.assortmentList}>
-                <li className={s.pcHover}>
-                    <img src={pc} alt="" />
-                    <a href="/">Компьютеры</a>
-                </li>
-                <li className={s.laptopHover}>
-                    <img src={laptop} alt="" />
-                    <a href="/">Ноутбуки</a>
-                </li>
-                <li className={s.printerHover}>
-                    <img src={printer} alt="" />
-                    <a href="/"> Принтеры и МФУ</a>
-                </li>
-                <li className={s.monitorsHover}>
-                    <img src={monitors} alt="" />
-                    <a href="/">Мониторы</a>
-                </li>
-                <li className={s.keyboardHover}>
-                    <img src={keyboard} alt="" />
-                    <a href="/">Переферия для ПК</a>
-                </li>
-                <li className={s.modulesHover}>
-                    <img src={modules} alt="" />
-                    <a href="/">Комплектующие</a>
-                </li>
-                <li className={s.accessoriesHover}>
-                    <img src={accessories} alt="" />
-
-                    <a href="/">Аксессуары</a>
-                </li>
+                {showLi('Компьютеры', 'pcHover', pc, '/pc')}
+                {showLi('Ноутбуки', 'laptopHover', laptop, '/laptop')}
+                {showLi('Принтеры и МФУ', 'printerHover', printer, '/printer')}
+                {showLi('Мониторы', 'monitorsHover', monitors, '/monitor')}
+                {showLi('Переферия для ПК', 'keyboardHover', keyboard, '/periphery')}
+                {showLi('Комплектующие', 'modulesHover', modules, '/modules')}
+                {showLi('Аксессуары', 'accessoriesHover', accessories, '/accessories')}
             </ul>
         </div>
     )
