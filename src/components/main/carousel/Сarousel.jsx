@@ -17,11 +17,21 @@ class Carousel extends React.Component {
       counter: 0,
       interval: '',
     }
+
+    this.myRef = React.createRef();
   }
 
   componentDidMount() {
+  
+
+
     this.setState({
       interval: setInterval(() => {
+        
+        const node = this.myRef.current;
+        node.className = s.fade;
+        setTimeout(()=>{node.className = ''},4900)
+     
         if (this.state.counter < this.state.arr.length - 1) {
           this.setState({
             counter: this.state.counter + 1,
@@ -44,7 +54,7 @@ class Carousel extends React.Component {
   render() {
     return (
       <div className={s.carousel}>
-        <img src={this.state.arr[this.state.counter]} alt="" />
+        <img src={this.state.arr[this.state.counter]} ref={this.myRef} alt="" />
       </div>
     )
   }
