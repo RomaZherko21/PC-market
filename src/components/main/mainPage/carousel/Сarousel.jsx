@@ -2,10 +2,10 @@ import React, { } from 'react'
 
 import s from './Сarousel.module.css';
 
-import first from '../../../images/mainCarousel/first.jpg';
-import second from '../../../images/mainCarousel/second.jpg';
-import third from '../../../images/mainCarousel/third.jpg';
-import fourth from '../../../images/mainCarousel/fourth.jpg';
+import first from '../../../../images/mainCarousel/first.jpg';
+import second from '../../../../images/mainCarousel/second.jpg';
+import third from '../../../../images/mainCarousel/third.jpg';
+import fourth from '../../../../images/mainCarousel/fourth.jpg';
 
 
 

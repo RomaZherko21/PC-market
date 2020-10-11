@@ -1,7 +1,7 @@
 
 .sidebar {
   display: inline-block;
-  width: 400px;
+  /* width: 400px; */
   background-color: rgb(26, 25, 31);
   padding: 40px;
   /* position: fixed; */
