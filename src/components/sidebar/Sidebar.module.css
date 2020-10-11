@@ -1,9 +1,12 @@
 
 .sidebar {
   display: inline-block;
-  width: auto;
+  width: 400px;
   background-color: rgb(26, 25, 31);
   padding: 40px;
+  /* position: fixed; */
+  height: 100vh;
+  z-index: 1;
 }
 
 
@@ -27,7 +30,7 @@
 }
 
 .assortmentList li {
-  margin-top: 10px;
+  margin-top: 30px;
   border-left: 2px solid rgb(26, 25, 31);
   cursor: pointer;
 }

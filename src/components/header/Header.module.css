@@ -3,7 +3,7 @@ header{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: black;
+  background-color: rgb(24, 23, 28);
   color: white;
 padding: 15px 20px;
 font-size: 16px;
@@ -28,7 +28,8 @@ header a:hover{
   height: 25px;
 }
 
-.headerInfo{
+.headerInfo{  
+  z-index: 2;
   display: flex;
   align-items: center;
 }
@@ -58,7 +59,7 @@ font-size: 20px;
   .headerInfo{
     position: absolute;
     display: none;
-    background-color: rgb(49, 48, 48);
+    background-color: rgb(26, 25, 25);
     top: 100%;
     width: 100%;
     right: 0;

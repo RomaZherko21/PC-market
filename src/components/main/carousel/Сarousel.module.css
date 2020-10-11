@@ -1,0 +1,26 @@
+.carousel{
+    color: white;
+    display: flex;
+
+}
+
+.carousel img{
+width: 100%;
+height: 70vh;
+}
+
+
+
+  @media (max-width: 1040px) {
+    .carousel img{
+        width: 100%;
+        height: 50vh;
+        }
+  }
+
+  @media (max-width: 930px) {
+    .carousel img{
+        width: 100%;
+        height: 40vh;
+        }
+  }

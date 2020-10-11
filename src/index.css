@@ -5,3 +5,7 @@
     box-sizing: border-box;
     font-family: "Noto Sans JP", sans-serif;
 }
+
+.sidebarAndMain{
+    display: flex;
+}
