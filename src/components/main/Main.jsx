@@ -7,12 +7,13 @@ import MainPage from './mainPage/MainPage'
 import Products from './products/Products'
 
 
-const Main = () => {
+
+const Main = (props) => {
 
     return (
             <section className={s.main}>
                 <NavBar />
-                <Route exact  path='/'><MainPage /></Route>
+                <Route exact  path='/'><MainPage discountGoods={props.state.discountGoods}/></Route>
                 <Route path='/products'><Products /></Route>
             </section>
     )

@@ -9,12 +9,13 @@ import Carousel from './carousel/Сarousel'
 import Discounts from './discounts/Discounts'
 
 
-const MainPage = () => {
+
+const MainPage = (props) => {
 
     return (
             <section className={s.mainPage}>
                 <Carousel/>
-                <Discounts/>
+                <Discounts discountGoods={props.discountGoods}/>
             </section>
     )
 }
