@@ -13,7 +13,7 @@ const Main = (props) => {
     return (
             <section className={s.main}>
                 <NavBar />
-                <Route exact  path='/'><MainPage discountGoods={props.state.discountGoods}/></Route>
+                <Route exact  path='/'><MainPage discountGoods={props.state.mainPage.discountGoods}/></Route>
                 <Route path='/products'><Products /></Route>
             </section>
     )
