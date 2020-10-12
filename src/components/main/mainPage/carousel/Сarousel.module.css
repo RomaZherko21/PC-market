@@ -1,37 +1,22 @@
+.carousel img {
+  
+  height: 70vh;
+
+}
 .carousel{
-    color: white;
-    display: flex;
-
+    width: 100%;
 }
 
-.carousel img{
-width: 100%;
-height: 70vh;
-image-rendering:optimizeQuality;
-
-}
-
-.fade{
-    animation-name: fade;
-    animation-duration: 5s;
-}
-@keyframes fade{
-    from{opacity: .1;}
-    to{opacity: 1;}
-}
-
-
-
-  @media (max-width: 1040px) {
-    .carousel img{
-        width: 100%;
-        height: 50vh;
-        }
+@media (max-width: 1040px) {
+  .carousel img {
+    width: 100%;
+    height: 50vh;
   }
+}
 
-  @media (max-width: 930px) {
-    .carousel img{
-        width: 100%;
-        height: 40vh;
-        }
+@media (max-width: 930px) {
+  .carousel img {
+    width: 100%;
+    height: 40vh;
   }
+}
