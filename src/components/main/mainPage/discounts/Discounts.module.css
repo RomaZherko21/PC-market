@@ -1,17 +1,11 @@
 .container {
   padding: 10px;
-  width: 75vw;
+  width: 90%;
   margin: 0 auto;
   height: auto;
 }
 
-.oneSliderLevel {
-  margin-left: 5px;
-  text-align: center;
-  outline: none;
-}
-
-.oneSliderLevel img {
+.oneProduct img {
   width: 150px;
   height: 150px;
   margin: 0 auto;
@@ -19,14 +13,16 @@
 }
 
 .oneProduct {
+  height: 370px;
+  margin: 10px 0px;
+  padding: 0px 15px;
+  outline: none;
   position: relative;
   text-align: center;
-  margin: 10px;
   background-color: rgb(26, 25, 31);
   display: inline-block;
-  width: 22%;
-  padding: 15px;
   cursor: grab;
+  border-radius: 20px;
 }
 .oneProduct h1 {
   margin-top: 10px;
@@ -54,11 +50,13 @@
   background-color: rgb(210, 30, 36);
   border-radius: 10px;
   z-index: 2;
+  cursor: pointer;
 }
 
 
 
 .oneProduct .store {
+  cursor: pointer;
   position: absolute;
   bottom: 10px;
   right: 10px;
@@ -67,6 +65,12 @@
   background-color: rgb(210, 30, 36);
   border-radius: 10px;
   z-index: 2;
+}
+.oneProduct .store:hover{
+  text-decoration: underline;
+}
+.oneProduct .saleIcon:hover{
+  text-decoration: underline;
 }
 
 .productDesription{
@@ -79,8 +83,9 @@ z-index: 1;
     height: 100%;
     background-color: rgb(12, 12, 12);
     font-size: 12px;
-    padding: 10px;
-    opacity: .9;
+    padding: 0px 10px;
+    border-radius: 30px;
+   
 
 }
 .productDesription img{
@@ -88,11 +93,11 @@ z-index: 1;
     height: 100px;
     margin-top: 20%;
 }
-.productDesription p{
+.productDesription ul{
     margin: 10px;
+    list-style: none;
 }
 
 .oneProduct:hover .productDesription{
    display: block;
-   
   }

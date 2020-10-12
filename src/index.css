@@ -8,6 +8,19 @@
 
 .sidebarAndMain{
     display: grid;
-    grid-template-columns: 300px auto;
+    grid-template-columns: 20% 80%;
 
 }
+
+@media (max-width: 1230px) {
+    .sidebarAndMain{
+        grid-template-columns: auto 70%;
+    
+    }
+  }
+  @media (max-width: 860px) {
+    .sidebarAndMain{
+        grid-template-columns: 100%;
+    
+    }
+  }

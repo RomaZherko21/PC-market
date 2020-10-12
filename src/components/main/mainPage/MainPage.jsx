@@ -1,4 +1,4 @@
-import React, {Fragment } from "react";
+import React, { } from "react";
 import s from './MainPage.module.css';
 // import { Route } from "react-router-dom";
 
