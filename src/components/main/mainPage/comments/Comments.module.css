@@ -1,0 +1,28 @@
+.carousel{
+  padding: 50px;
+}
+
+.oneComment{
+  outline: none;
+  background-color: rgb(26, 25, 31);
+  margin: 30px;
+  padding: 30px 10px;
+}
+
+.oneComment div{
+display: flex;
+align-items:center;
+}
+
+.oneComment img{
+  border-radius: 50%;
+  margin: 10px 0px;
+}
+
+.oneComment h2{
+  margin-left: 10px;
+}
+.oneComment p{
+font-size: 1rem;
+line-height: 1.5rem;
+}

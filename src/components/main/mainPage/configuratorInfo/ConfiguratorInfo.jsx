@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { } from 'react'
 
 
 import s from './ConfiguratorInfo.module.css';
@@ -25,11 +25,11 @@ const ConfiguratorInfo = () => {
       </div>
       <div className={s.buttons}>
         <div>
-          <i class="fas fa-gamepad"></i>
+          <i className="fas fa-gamepad"></i>
           <h2>Игровая сборка</h2>
         </div>
         <div>
-          <i class="fas fa-print"></i>
+          <i className="fas fa-print"></i>
           <h2>Офисная сборка</h2>
         </div>
       </div>
