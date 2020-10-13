@@ -9,6 +9,7 @@ padding: 15px 20px;
 font-size: 16px;
 position: relative;
 box-shadow: 0 0 20px rgba(0,0,0,0.5);
+width: 100vw;
 }
 
 header a{

@@ -1,0 +1,61 @@
+.configBlock {
+  margin-top: 80px;
+  background-color: rgb(26, 25, 31);
+  padding: 60px 20px;
+  display: grid;
+  grid-template-columns: 20% auto auto;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 20px;
+}
+
+.configBlock img {
+  width: 300px;
+  height: 300px;
+}
+
+.configBlock .info h1 {
+  line-height: 1.5;
+  font-size: 1.5rem;
+}
+.configBlock .info p {
+  font-size: 0.8rem;
+  margin-top: 20px;
+}
+.configBlock .info button {
+  cursor: pointer;
+  margin-top: 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  padding: 10px;
+  background-color: rgb(210, 30, 36);
+}
+.configBlock .info button:hover {
+  background-color: rgb(177, 31, 36);
+}
+
+.configBlock .buttons {
+  text-align: center;
+}
+.configBlock .buttons div:hover i{
+  color: rgb(177, 31, 36);
+}
+.configBlock .buttons h2 {
+  font-size: 1.1rem;
+}
+.configBlock .buttons i {
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 3rem;
+  color: rgb(210, 30, 36);
+
+}
+
+@media (max-width: 860px) {
+  .configBlock {
+    padding: 40px 10px;
+    grid-template-columns: auto;
+
+  }
+}

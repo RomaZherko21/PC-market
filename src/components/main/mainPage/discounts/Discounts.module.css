@@ -3,6 +3,8 @@
   width: 90%;
   margin: 0 auto;
   height: auto;
+  margin-bottom: 10rem;
+  margin-top: 30px;
 }
 
 .oneProduct img {
@@ -100,4 +102,11 @@ z-index: 1;
 
 .oneProduct:hover .productDesription{
    display: block;
+  }
+
+
+  @media (max-width: 700px) {
+    .container {
+      margin-bottom: 5rem;
+    }
   }

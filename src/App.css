@@ -4,13 +4,63 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Noto Sans JP", sans-serif;
+    overflow-x: hidden;
 }
 
 .sidebarAndMain{
     display: grid;
     grid-template-columns: 20% 80%;
-    overflow-y: hidden;
+}
+/* H1 styles */
+.mainTitle{
+    display: inline;
+    color: white;
+    font-size: 1.7rem;
+    position: relative;
+    border-bottom: 3px solid rgb(68, 66, 66);
+    margin-left: 10px;
+    padding-bottom: 4px;
+}
+.mainTitle:after{
+    margin-left: 10px;
+    content: '';
+    width: 80px;
+    height: 3px;
+    background: #d21e24;
+    display: block;
+    position: absolute;
+    bottom: -3px;
+}
 
+/* 3  info blocks */
+.infoSection{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 25%);
+    grid-gap: 20px;
+    justify-content: center;
+    text-align: center;
+}
+.infoSection i{
+    font-size: 7rem;
+    background-color: rgb(51, 50, 55);
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    padding-top: 10px;
+
+}
+.infoSection i:hover{
+    transition: all .3s ease;
+color: #d21e24;
+}
+.infoSection h2{
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+.infoSection p{
+    margin-top: 10px;
+    font-size: .8rem;
 }
 
 @media (max-width: 1230px) {
@@ -23,5 +73,9 @@
     .sidebarAndMain{
         grid-template-columns: 100%;
     
+    }
+    .infoSection{
+        margin-top: 30px;
+        grid-template-columns: repeat(1, 50%);
     }
   }
