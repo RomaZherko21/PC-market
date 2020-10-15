@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { } from 'react'
 
 
 import s from './LeaveComment.module.css';
@@ -9,10 +9,14 @@ import s from './LeaveComment.module.css';
 const LeaveComment = (props) => {
 
   let newInputElem = React.createRef();
+  let newTextAreaElem = React.createRef();
 
-  function handleClick(){
-    props.addCommentHandle(newInputElem.current.value, newInputElem.current.value);
+  function handleClick() {
+    props.addCommentHandle(newInputElem.current.value, newTextAreaElem.current.value);
+    newTextAreaElem.current.value = '';
+    newInputElem.current.value = '';
   }
+
 
   return (
     <div>
@@ -21,7 +25,7 @@ const LeaveComment = (props) => {
         <label htmlFor={s.formName}>Введите имя</label>
         <input className={s.formName} type="text" ref={newInputElem} />
         <label htmlFor={s.formComment}>Введите комментарий</label>
-        <textarea className={s.formComment} type="text" />
+        <textarea className={s.formComment} type="text" ref={newTextAreaElem} />
         <button onClick={handleClick}>Отправить</button>
       </div>
     </div>
