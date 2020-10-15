@@ -1,5 +1,7 @@
 import React, { Fragment } from 'react'
 
+import LeaveComment from './leaveComment/LeaveComment'
+
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -40,6 +42,8 @@ const Comments = (props) => {
           })}
         </Slider>
       </div>
+      <LeaveComment/>
+
     </Fragment>
   )
 

@@ -1,0 +1,51 @@
+.commentForm{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  text-align-last: left;
+  margin: 0 auto;
+  margin-top: 30px;
+  background-color: rgb(26, 25, 31);
+  padding: 20px;
+}
+
+.commentForm label{
+  margin-top: 15px;
+  font-size: 1.2rem;
+  color: gray;
+}
+.commentForm input{
+  outline: none;
+  border: none;
+  background-color: rgb(210, 30, 36);
+  font-size: 1.2rem;
+  color: black;
+  padding: 10px 5px;
+}
+.commentForm textarea{
+  outline: none;
+  border: none;
+  background-color: rgb(210, 30, 36);
+  font-size: 1rem;
+  color: black;
+  padding: 10px 5px;
+  height: 80px;
+}
+
+.commentForm button{
+  cursor: pointer;
+  margin-top: 20px;
+  border: none;
+  font-size: 1rem;
+  padding: 10px;
+font-weight: 500;
+  background-color: rgb(210, 30, 36);
+  display: inline-block;
+  width: 100px;
+}
+
+
+.commentForm button:hover {
+  background-color: rgb(177, 31, 36);
+}

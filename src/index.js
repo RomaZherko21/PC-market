@@ -1,12 +1,12 @@
 import React, { } from "react";
 import ReactDOM from "react-dom";
 
-import state from './redux/state'
+import store from './redux/store'
 
 import App from './App'
 
 ReactDOM.render(
-    <App state={state}/>,
+    <App store={store}/>,
     document.getElementById("root")
   );
   

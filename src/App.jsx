@@ -15,7 +15,7 @@ const App = (props) => {
         <Header />
         <div className="sidebarAndMain">
           <Sidebar />
-          <Main state={props.state} />
+          <Main store={props.store} />
         </div>
       </Fragment>
     </Router>
