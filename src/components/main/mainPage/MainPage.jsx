@@ -19,7 +19,7 @@ const MainPage = (props) => {
                 <Discounts discountGoods={props.discountGoods}/>
                 <HowWeWork />
                 <ConfiguratorInfo />
-                <Comments  comments={props.comments}/>
+                <Comments  comments={props.comments} addCommentHandle={props.addCommentHandle}/>
             </section>
     )
 }

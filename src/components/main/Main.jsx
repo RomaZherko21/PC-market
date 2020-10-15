@@ -11,11 +11,11 @@ import Products from './products/Products'
 const Main = (props) => {
 
     return (
-            <section className={s.main}>
-                <NavBar />
-                <Route exact  path='/'><MainPage discountGoods={props.store.state.mainPage.discountGoods} comments={props.store.state.mainPage.comments}/></Route>
-                <Route path='/products'><Products /></Route>
-            </section>
+        <section className={s.main}>
+            <NavBar />
+            <Route exact path='/'><MainPage discountGoods={props.store.getState().mainPage.discountGoods} comments={props.store.getState().mainPage.comments} addCommentHandle={props.store.addCommentHandle.bind(props.store)}/></Route>
+            <Route path='/products'><Products /></Route>
+        </section>
     )
 }
 
