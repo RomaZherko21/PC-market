@@ -42,7 +42,7 @@ const Comments = (props) => {
           })}
         </Slider>
       </div>
-      <LeaveComment addCommentHandle={props.addCommentHandle}/>
+      <LeaveComment dispatch={props.dispatch}/>
 
     </Fragment>
   )

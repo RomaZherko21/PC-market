@@ -376,23 +376,37 @@ let store = {
   },
 
   //Rerender functions
-  reRender(){},
-  subscribe(observer){
-      this.reRender = observer;
+  reRender() {},
+  subscribe(observer) {
+    this.reRender = observer;
   },
 
-  //comments interaction
-  addCommentHandle(name, text) {
-    this._state.mainPage.comments.push({
-      author: name,
-      photo: "https://pcmarket.uz/wp-content/uploads/2020/07/0MWUDu3IHxw.jpg",
-      text: text,
-    });
-    this.reRender()
-  }
+  //dispatch - interact with state in components
 
-
-  
+  dispatch(action) {
+    switch (action.type) {
+      case "ADD-COMMENT-HANDLE":
+        this._state.mainPage.comments.push({
+          author: action.author,
+          photo:
+            "https://pcmarket.uz/wp-content/uploads/2020/07/0MWUDu3IHxw.jpg",
+          text: action.text,
+        });
+        this.reRender();
+        break;
+      default:
+        console.log("Нет таких значений");
+    }
+  },
 };
+
+
+ export function addCommentActionCreator(author,text){
+  return {
+    type: 'ADD-COMMENT-HANDLE',
+     author: author,
+      text: text,
+  }
+}
 
 export default store;

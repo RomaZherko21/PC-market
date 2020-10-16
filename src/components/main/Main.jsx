@@ -13,7 +13,7 @@ const Main = (props) => {
     return (
         <section className={s.main}>
             <NavBar />
-            <Route exact path='/'><MainPage discountGoods={props.store.getState().mainPage.discountGoods} comments={props.store.getState().mainPage.comments} addCommentHandle={props.store.addCommentHandle.bind(props.store)} /></Route>
+            <Route exact path='/'><MainPage discountGoods={props.store.getState().mainPage.discountGoods} comments={props.store.getState().mainPage.comments} dispatch={props.store.dispatch.bind(props.store)} /></Route>
             <Route path='/products'><Products /></Route>
         </section>
     )
