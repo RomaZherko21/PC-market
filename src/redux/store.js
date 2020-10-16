@@ -1,5 +1,7 @@
 import React from "react";
 
+import mainPageReducer from "./mainPage-reducer";
+
 let store = {
   _state: {
     mainPage: {
@@ -384,29 +386,18 @@ let store = {
   //dispatch - interact with state in components
 
   dispatch(action) {
-    switch (action.type) {
-      case "ADD-COMMENT-HANDLE":
-        this._state.mainPage.comments.push({
-          author: action.author,
-          photo:
-            "https://pcmarket.uz/wp-content/uploads/2020/07/0MWUDu3IHxw.jpg",
-          text: action.text,
-        });
-        this.reRender();
-        break;
-      default:
-        console.log("Нет таких значений");
-    }
+    this._state.mainPage = mainPageReducer(this._state.mainPage, action);
+
+    this.reRender();
   },
 };
 
-
- export function addCommentActionCreator(author,text){
+export function addCommentActionCreator(author, text) {
   return {
-    type: 'ADD-COMMENT-HANDLE',
-     author: author,
-      text: text,
-  }
+    type: "ADD-COMMENT-HANDLE",
+    author: author,
+    text: text,
+  };
 }
 
 export default store;
