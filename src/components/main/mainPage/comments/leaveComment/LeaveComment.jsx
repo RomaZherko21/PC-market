@@ -1,6 +1,6 @@
 import React, { } from 'react'
 
-import {addCommentActionCreator} from '../../../../../redux/store'
+import {addCommentActionCreator} from '../../../../../redux/redux-store'
 
 import s from './LeaveComment.module.css';
 

@@ -1,20 +1,17 @@
-import React, { } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 
-import store from './redux/store'
+import store from "./redux/redux-store";
 
-import App from './App'
- 
+import App from "./App";
 
-
-function reRenderEntireTree(){
-  ReactDOM.render(
-    <App store={store}/>,
-    document.getElementById("root")
-  );
+function reRenderEntireTree(store) {
+  ReactDOM.render(<App store={store} />, document.getElementById("root"));
 }
 
-store.subscribe(reRenderEntireTree);
-reRenderEntireTree();
 
-  
+reRenderEntireTree(store);
+
+store.subscribe(() => {
+  reRenderEntireTree(store);
+});
