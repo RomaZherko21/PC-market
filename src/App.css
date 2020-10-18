@@ -4,12 +4,13 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Noto Sans JP", sans-serif;
-    overflow-x: hidden;
 }
 
 .sidebarAndMain{
+    width: 100%;
     display: grid;
     grid-template-columns: 20% 80%;
+    overflow-x: hidden;
 }
 /* H1 styles */
 .mainTitle{

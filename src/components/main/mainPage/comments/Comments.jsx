@@ -14,10 +14,11 @@ import s from './Comments.module.css';
 const Comments = (props) => {
   let settings = {
     dots: false,
-    arrow: false,
+    arrow: true,
     autoplay: true,
     autoplaySpeed: 4000,
     pauseOnHover: true,
+ 
   };
   function makeComment({ photo, author, text }) {
     return (

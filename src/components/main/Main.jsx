@@ -10,7 +10,6 @@ import Products from './products/Products'
 
 const Main = (props) => {
 
-    debugger;
     return (
         <section className={s.main}>
             

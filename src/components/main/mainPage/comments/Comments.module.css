@@ -1,13 +1,20 @@
 .carousel{
-  padding: 50px;
+  overflow-x: hidden;
+  -ms-overflow-style: none; 
+  margin-bottom: 30px;
+  margin-top: 20px;
 }
 
+
+.oneComment::-webkit-scrollbar { width: 0; }
 .oneComment{
+  -ms-overflow-style: none; 
+  overflow-x: hidden;
   outline: none;
   background-color: rgb(26, 25, 31);
-  margin: 30px;
-  padding: 30px 10px;
+  padding: 30px;
   height: 30vh;
+  width: 100%;
 }
 
 .oneComment div{
@@ -17,12 +24,10 @@ align-items:center;
 
 .oneComment img{
   border-radius: 50%;
-  margin: 10px 0px;
+  margin: 10px 10px 10px 0px;
 }
 
-.oneComment h2{
-  margin-left: 10px;
-}
+
 .oneComment p{
 font-size: 1rem;
 line-height: 1.5rem;

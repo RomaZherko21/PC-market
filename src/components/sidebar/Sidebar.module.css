@@ -78,5 +78,11 @@
 @media (max-width: 860px) {
   .sidebar {
     display: none;
+    background-color: rgb(26, 25, 31);
+    padding: 20px;
+    height: 100vh;
+    position: fixed;
+    z-index: 2;
+    top: 0;
   }
 }
