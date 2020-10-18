@@ -1,12 +1,11 @@
 import React, { Fragment } from "react";
 import Slider from "react-slick";
 import s from './Discounts.module.css';
-// import { Route } from "react-router-dom";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-
+import StoreContext from '../../../../storeContext'
 
 const Discounts = (props) => {
 
@@ -25,35 +24,41 @@ const Discounts = (props) => {
 
     function OneProduct(name, price, discountPrice, img, description, key) {
         return (
-          
-                
-                <div className={s.oneProduct} key={key}>
-                    <div className={s.saleIcon}>Распродажа!</div>
-                    <div className={s.productDesription}>
-                        <img src={img} alt="" />
-                        {description}
-                    </div>
+
+
+            <div className={s.oneProduct} key={key}>
+                <div className={s.saleIcon}>Распродажа!</div>
+                <div className={s.productDesription}>
                     <img src={img} alt="" />
-                    <h1>{name}</h1>
-                    <h2>{price}</h2>
-                    <h1 className={s.discountPrice}>{discountPrice}</h1>
-                    <div className={s.store}>В корзину</div>
+                    {description}
                 </div>
-            
+                <img src={img} alt="" />
+                <h1>{name}</h1>
+                <h2>{price}</h2>
+                <h1 className={s.discountPrice}>{discountPrice}</h1>
+                <div className={s.store}>В корзину</div>
+            </div>
+
         )
     }
     return (
-        <Fragment>
-        <h1 className='mainTitle'>Товары по скидке</h1>
-        <div className={s.container}>
-            <Slider {...settings}>
-                {props.discountGoods.map((item, id) => {
 
-                    return OneProduct(item.name, item.prevPrice, item.discountPrice, item.img, item.description(), item.name)
-                })}
-            </Slider>
-        </div>
-        </Fragment>
+        <StoreContext.Consumer>
+            {
+                (store) => (
+                    <Fragment>
+                        <h1 className='mainTitle'>Товары по скидке</h1>
+                        <div className={s.container}>
+                            <Slider {...settings}>
+                                {store.getState().mainPage.discountGoods.map((item, id) => {
+                                    return OneProduct(item.name, item.prevPrice, item.discountPrice, item.img, item.description(), item.name)
+                                })}
+                            </Slider>
+                        </div>
+                    </Fragment>)
+            }
+        </StoreContext.Consumer>
+
     )
 }
 

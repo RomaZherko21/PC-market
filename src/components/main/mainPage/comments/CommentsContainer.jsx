@@ -3,7 +3,7 @@ import React, { Fragment } from 'react'
 import LeaveCommentContainer from './leaveComment/LeaveCommentContainer'
 import Comments from './Comments'
 
-
+import StoreContext from '../../../../storeContext'
 
 
 
@@ -11,10 +11,14 @@ import Comments from './Comments'
 const CommentsContainer = (props) => {
 
   return (
-    <Fragment>
-      <Comments comments={props.store.getState().mainPage.comments}/>
-      <LeaveCommentContainer store={props.store}/>
-    </Fragment>
+    <StoreContext.Consumer>
+      {
+       (store)=> (<Fragment>
+        <Comments comments={store.getState().mainPage.comments} />
+        <LeaveCommentContainer store={store} />
+      </Fragment>)
+      }
+    </StoreContext.Consumer>
   )
 
 

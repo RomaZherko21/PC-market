@@ -16,10 +16,10 @@ const MainPage = (props) => {
     return (
             <section className={s.mainPage}>
                 <Carousel/>
-                <Discounts discountGoods={props.discountGoods}/>
+                <Discounts/>
                 <HowWeWork />
                 <ConfiguratorInfo />
-                <CommentsContainer  store={props.store}/>
+                <CommentsContainer/>
             </section>
     )
 }

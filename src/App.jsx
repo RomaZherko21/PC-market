@@ -12,7 +12,7 @@ const App = (props) => {
     <Router>
       <Fragment>
         <Header />
-        <Main store={props.store} />
+        <Main/>
       </Fragment>
     </Router>
   )
