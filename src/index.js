@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 
 import store from "./redux/redux-store";
 
-import StoreContext from "./storeContext";
+// import StoreContext from "./storeContext";
 import {Provider} from "./storeContext";
 
 import App from "./App";
