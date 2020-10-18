@@ -1,9 +1,21 @@
 .navBar{
-    margin: 20px;
 background-color: rgb(26, 25, 31);
 padding: 20px;
 display: flex;
 justify-content: space-between;
+align-items: center;
+position: sticky;
+top: 0;
+z-index: 1;
+width: 100%;
+}
+.goods i{
+    color: rgb(19, 194, 19);
+    cursor: pointer;
+    font-size: 26px;
+}
+.goods:hover i{
+    color: rgb(159, 29, 35);
 }
 
 .navBar a{

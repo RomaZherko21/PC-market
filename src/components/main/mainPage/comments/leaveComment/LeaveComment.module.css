@@ -43,6 +43,7 @@ font-weight: 500;
   background-color: rgb(210, 30, 36);
   display: inline-block;
   width: 100px;
+  outline: none;
 }
 
 

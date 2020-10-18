@@ -6,12 +6,6 @@
     font-family: "Noto Sans JP", sans-serif;
 }
 
-.sidebarAndMain{
-    width: 100%;
-    display: grid;
-    grid-template-columns: 20% 80%;
-    overflow-x: hidden;
-}
 /* H1 styles */
 .mainTitle{
     display: inline;
@@ -71,10 +65,7 @@ color: #d21e24;
     }
   }
   @media (max-width: 860px) {
-    .sidebarAndMain{
-        grid-template-columns: 100%;
-    
-    }
+
     .infoSection{
         margin-top: 30px;
         grid-template-columns: repeat(1, 50%);

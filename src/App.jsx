@@ -5,7 +5,6 @@ import "./App.css";
 
 
 import Header from "./components/header/Header";
-import Sidebar from "./components/sidebar/Sidebar";
 import Main from "./components/main/Main";
 
 const App = (props) => {
@@ -13,10 +12,7 @@ const App = (props) => {
     <Router>
       <Fragment>
         <Header />
-        <div className="sidebarAndMain">
-          <Sidebar />
-          <Main store={props.store} />
-        </div>
+        <Main store={props.store} />
       </Fragment>
     </Router>
   )

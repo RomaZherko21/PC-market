@@ -3,10 +3,36 @@
   display: inline-block;
   background-color: rgb(26, 25, 31);
   padding: 40px;
-  height: 100%;
+  height: 100vh;
   z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: scroll;
+  -ms-overflow-style: none; 
+  left: -100%;
+  transition: all .5s ease;
+}
+.sidebar::-webkit-scrollbar { width: 0; }
+.sidebarShow{
+  left: 0;
+}
+.sidebarBlock{
+  left: -100%;
 }
 
+.sidebar i{
+  display: flex;
+  justify-content: flex-end;
+  color:rgb(159, 29, 35);
+  cursor: pointer;
+  font-size: 20px;
+
+}
+
+.sidebar i:hover{
+  color:rgb(192, 25, 34);
+}
 
 .assortmentList {
   display: flex;
@@ -77,12 +103,7 @@
 
 @media (max-width: 860px) {
   .sidebar {
-    display: none;
-    background-color: rgb(26, 25, 31);
     padding: 20px;
-    height: 100vh;
-    position: fixed;
-    z-index: 2;
-    top: 0;
+
   }
 }
