@@ -4,14 +4,15 @@ import ReactDOM from "react-dom";
 import store from "./redux/redux-store";
 
 import StoreContext from "./storeContext";
+import {Provider} from "./storeContext";
 
 import App from "./App";
 
 function reRenderEntireTree(store) {
   ReactDOM.render(
-    <StoreContext.Provider value={store}>
+    <Provider store={store}>
       <App/>
-    </StoreContext.Provider>, 
+      </Provider>, 
     document.getElementById("root")
   );
 }
