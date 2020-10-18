@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react'
 
-import LeaveComment from './leaveComment/LeaveComment'
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -31,8 +30,7 @@ const Comments = (props) => {
       </div>
     )
   }
-
-
+  
   return (
     <Fragment>
       <h1 className='mainTitle'>Что говорят о нас</h1>
@@ -43,8 +41,6 @@ const Comments = (props) => {
           })}
         </Slider>
       </div>
-      <LeaveComment dispatch={props.dispatch}/>
-
     </Fragment>
   )
 

@@ -16,7 +16,7 @@ function onShowGoods(){
     <nav className={s.navBar}>
       <Sidebar open={open} onShowGoods={onShowGoods}/>
       <div className={s.navText}>
-        <span className={s.goods} onClick={onShowGoods}><i class="fas fa-store"></i></span>
+        <span className={s.goods} onClick={onShowGoods}><i className="fas fa-store"></i></span>
         <NavLink to='/'>Главная</NavLink>
         <NavLink to='/delivery'>Доставка</NavLink>
         <NavLink to='/blog'>Блог</NavLink>

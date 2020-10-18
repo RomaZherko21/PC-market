@@ -1,6 +1,5 @@
 import React, { } from 'react'
 
-import {addCommentActionCreator} from '../../../../../redux/redux-store'
 
 import s from './LeaveComment.module.css';
 
@@ -12,15 +11,6 @@ const LeaveComment = (props) => {
   let newInputElem = React.createRef();
   let newTextAreaElem = React.createRef();
 
-  function handleClick() {
-    if (newInputElem.current.value !== '' && newTextAreaElem.current.value !== '') {
-      props.dispatch(addCommentActionCreator(newInputElem.current.value, newTextAreaElem.current.value ));
-    }
-    newTextAreaElem.current.value = '';
-    newInputElem.current.value = '';
-  }
-
-
   return (
     <div>
       <h1 className='mainTitle'>Оставьте комментарий</h1>
@@ -29,7 +19,7 @@ const LeaveComment = (props) => {
         <input className={s.formName} type="text" ref={newInputElem} />
         <label htmlFor={s.formComment}>Введите комментарий</label>
         <textarea className={s.formComment} type="text" ref={newTextAreaElem} />
-        <button onClick={handleClick}>Отправить</button>
+        <button onClick={()=>{props.handleClick(newInputElem.current.value, newTextAreaElem.current.value)}}>Отправить</button>
       </div>
     </div>
   )
