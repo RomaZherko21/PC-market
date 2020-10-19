@@ -5,13 +5,13 @@ import LeaveComment from './LeaveComment'
 
 
 
-let mapStateToProps = (state) => {
+const mapStateToProps = (state) => {
   return {
     comments: state.mainPage.comments,
   }
 }
 
-let mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     handleClick: (author, text) => {
       if (author !== '' && text !== '') {
@@ -21,7 +21,7 @@ let mapDispatchToProps = (dispatch) => {
   }
 }
 
-let LeaveCommentContainer = connect(mapStateToProps, mapDispatchToProps)(LeaveComment);
+const LeaveCommentContainer = connect(mapStateToProps, mapDispatchToProps)(LeaveComment);
 
 
 export default LeaveCommentContainer;

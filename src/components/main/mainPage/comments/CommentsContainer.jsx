@@ -6,12 +6,12 @@ import {connect} from 'react-redux'
 
 
 
-let mapStateToProps = (state)=>{
+const mapStateToProps = (state)=>{
   return{
     comments: state.mainPage.comments,
   }
 }
-let mapDispatchToProps = (dispatch)=>{
+const mapDispatchToProps = (dispatch)=>{
   return{
 
   }
