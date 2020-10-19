@@ -2,12 +2,10 @@ import React, { Fragment } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./App.css";
 
-
-
 import Header from "./components/header/Header";
 import Main from "./components/main/Main";
 
-const App = (props) => {
+const App = () => {
   return (
     <Router>
       <Fragment>

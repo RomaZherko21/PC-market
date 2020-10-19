@@ -11,6 +11,7 @@ import s from './Comments.module.css';
 
 
 const Comments = (props) => {
+  
   let settings = {
     dots: false,
     arrow: true,

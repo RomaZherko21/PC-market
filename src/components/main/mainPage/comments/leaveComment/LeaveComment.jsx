@@ -9,7 +9,7 @@ import s from './LeaveComment.module.css';
 const LeaveComment = (props) => {
   let newInputElem = React.createRef();
   let newTextAreaElem = React.createRef();
-
+ 
   return (
     <div>
       <h1 className='mainTitle'>Оставьте комментарий</h1>

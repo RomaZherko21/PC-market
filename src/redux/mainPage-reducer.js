@@ -343,45 +343,46 @@ let initialState = {
   comments: [
     {
       author: "Lena Marsh",
-      photo:
-        "https://pcmarket.uz/wp-content/uploads/2020/07/0MWUDu3IHxw.jpg",
+      photo: "https://pcmarket.uz/wp-content/uploads/2020/07/0MWUDu3IHxw.jpg",
       text: `Здравствуйте. По совету подруги собрала компьютер на сайте PC market.uz и не пожалела- качественная сборка, бережная доставка порадовали. Работает мой ПК отлично, понадобился еще и принтер но я теперь знаю куда обращаться.`,
     },
     {
       author: "Lena Marsh",
-      photo:
-        "https://pcmarket.uz/wp-content/uploads/2020/07/0MWUDu3IHxw.jpg",
+      photo: "https://pcmarket.uz/wp-content/uploads/2020/07/0MWUDu3IHxw.jpg",
       text: `Здравствуйте. По совету подруги собрала компьютер на сайте PC market.uz и не пожалела- качественная сборка, бережная доставка порадовали. Работает мой ПК отлично, понадобился еще и принтер но я теперь знаю куда обращаться.Здравствуйте. По совету подруги собрала компьютер на сайте PC market.uz и не пожалела- качественная сборка, бережная доставка порадовали. Работает мой ПК отлично, понадобился еще и принтер но я теперь знаю куда обращаться.Здравствуйте. По совету подруги собрала компьютер на сайте PC market.uz и не пожалела- качественная сборка, бережная доставка порадовали. Работает мой ПК отлично, понадобился еще и принтер но я теперь знаю куда обращаться.Здравствуйте. По совету подруги собрала компьютер на сайте PC market.uz и не пожалела- качественная сборка, бережная доставка порадовали. Работает мой ПК отлично, понадобился еще и принтер но я теперь знаю куда обращаться.Здравствуйте. По совету подруги собрала компьютер на сайте PC market.uz и не пожалела- качественная сборка, бережная доставка порадовали. Работает мой ПК отлично, понадобился еще и принтер но я теперь знаю куда обращаться.Здравствуйте. По совету подруги собрала компьютер на сайте PC market.uz и не пожалела- качественная сборка, бережная доставка порадовали. Работает мой ПК отлично, понадобился еще и принтер но я теперь знаю куда обращаться.`,
     },
     {
       author: "Lena Marsh",
-      photo:
-        "https://pcmarket.uz/wp-content/uploads/2020/07/0MWUDu3IHxw.jpg",
+      photo: "https://pcmarket.uz/wp-content/uploads/2020/07/0MWUDu3IHxw.jpg",
       text: `Здравствуйте. По совету подруги собрала компьютер на сайте PC market.uz и не пожалела- качественная сборка, бережная доставка порадовали. Работает мой ПК отлично, понадобился еще и принтер но я теперь знаю куда обращаться.`,
     },
     {
       author: "Lena Marsh",
-      photo:
-        "https://pcmarket.uz/wp-content/uploads/2020/07/0MWUDu3IHxw.jpg",
+      photo: "https://pcmarket.uz/wp-content/uploads/2020/07/0MWUDu3IHxw.jpg",
       text: `Здравствуйте. По совету подруги собрала компьютер на сайте PC market.uz и не пожалела- качественная сборка, бережная доставка порадовали. Работает мой ПК отлично, понадобился еще и принтер но я теперь знаю куда обращаться.`,
     },
   ],
-}
+};
 
-const mainPageReducer = (state=initialState, action) => {
+const mainPageReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_COMMENT_HANDLE:
-      state.comments.push({
-        author: action.author,
-        photo: "https://pcmarket.uz/wp-content/uploads/2020/07/0MWUDu3IHxw.jpg",
-        text: action.text,
-      });
-      break;
+    case ADD_COMMENT_HANDLE: {
+      return {
+        ...state,
+        comments: [
+          ...state.comments,
+          {
+            author: action.author,
+            photo:
+              "https://pcmarket.uz/wp-content/uploads/2020/07/0MWUDu3IHxw.jpg",
+            text: action.text,
+          },
+        ],
+      };
+    }
     default:
-      console.log("Нет таких значений");
+      return state;
   }
-
-  return state;
 };
 
 export default mainPageReducer;
