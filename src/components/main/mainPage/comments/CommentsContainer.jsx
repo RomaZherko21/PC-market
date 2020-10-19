@@ -3,25 +3,37 @@ import React, { Fragment } from 'react'
 import LeaveCommentContainer from './leaveComment/LeaveCommentContainer'
 import Comments from './Comments'
 
-import StoreContext from '../../../../storeContext'
+
+import {connect} from 'react-redux'
 
 
+// const CommentsContainer = (props) => {
+
+//   return (
+ 
+//      <Fragment>
+//         <Comments/>
+//         {/* <LeaveCommentContainer store={store} /> */}
+//       </Fragment>
+      
+ 
+//   )
 
 
-const CommentsContainer = (props) => {
+// }
 
-  return (
-    <StoreContext.Consumer>
-      {
-       (store)=> (<Fragment>
-        <Comments comments={store.getState().mainPage.comments} />
-        <LeaveCommentContainer store={store} />
-      </Fragment>)
-      }
-    </StoreContext.Consumer>
-  )
-
-
+let mapStateToProps = (state)=>{
+  return{
+    comments: state.mainPage.comments,
+  }
 }
+let mapDispatchToProps = (dispatch)=>{
+  return{
+
+  }
+}
+
+
+const CommentsContainer = connect(mapStateToProps, mapDispatchToProps)(Comments);
 
 export default CommentsContainer;
