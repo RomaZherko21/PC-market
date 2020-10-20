@@ -5,6 +5,7 @@ import { Route } from "react-router-dom";
 import NavBar from './navBar/NavBar'
 import MainPage from './mainPage/MainPage'
 import Products from './products/Products'
+import RegistrationContainer from './registration/RegistrationContainer'
 
 
 const Main = (props) => {
@@ -14,6 +15,7 @@ const Main = (props) => {
             <NavBar />
             <Route exact path='/'><MainPage/></Route>
             <Route path='/products'><Products /></Route>
+            <Route path='/userCabinet'><RegistrationContainer /></Route>
         </section>
     )
 }

@@ -25,6 +25,7 @@ function onShowGoods(){
       </div>
 
       <div className={s.navIcons}>
+        <NavLink to='/userCabinet' className='user'><i className="far fa-user-circle"></i></NavLink>
         <NavLink to='/shoppingCart'><i className="fas fa-shopping-cart"></i></NavLink>
         <NavLink to='/search'><i className="fas fa-search"></i></NavLink>
       </div>

@@ -1,0 +1,58 @@
+.regComponent {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.regComponent form {
+  width: 60vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+
+  background-color: rgb(26, 25, 31);
+}
+
+.regComponent input {
+  padding: 10px;
+  margin-top: 20px;
+  width: 50%;
+  background-color: rgb(24, 23, 28);
+  border: 2px solid gray;
+  border-radius: 4px;
+  color: white;
+  font-size: 20px;
+  outline: none;
+}
+.regComponent input:hover {
+  transition: all 0.3s ease;
+  border: 2px solid rgb(210, 30, 36);
+}
+.regComponent input:focus {
+  border: 2px solid rgb(210, 30, 36);
+}
+
+.regComponent button {
+  padding: 10px;
+  margin-top: 20px;
+  width: 50%;
+  background-color: rgb(24, 23, 28);
+  border: 2px solid gray;
+  border-radius: 4px;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+.regComponent button:hover {
+  background-color: rgb(163, 22, 27);
+}
+
+.regComponent .checkbox {
+ display: flex;
+ align-items: center;
+ text-align: left;
+}
+
+
