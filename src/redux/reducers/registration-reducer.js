@@ -1,4 +1,8 @@
 const ON_NAME_TYPING = "ON-NAME-TYPING";
+const ON_SURNAME_TYPING = "ON-SURNAME-TYPING";
+const ON_MAIL_TYPING = "ON-MAIL-TYPING";
+const ON_ADRESS_TYPING = "ON-ADRESS-TYPING";
+const ON_PASSWORD_TYPING = "ON-PASSWORD-TYPING";
 
 let initialState ={
     allUsers: [
@@ -42,7 +46,7 @@ let initialState ={
 
 const registrationReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ON_NAME_TYPING: {
+    case ON_NAME_TYPING: 
       return {
         ...state,
         currentRegistrationInfo:{
@@ -50,7 +54,38 @@ const registrationReducer = (state = initialState, action) => {
           name: action.text,
         }
       };
-    }
+    case ON_SURNAME_TYPING:
+      return {
+        ...state,
+        currentRegistrationInfo:{
+          ...state.currentRegistrationInfo,
+          surname: action.text,
+        }
+      };
+      case ON_MAIL_TYPING:
+      return {
+        ...state,
+        currentRegistrationInfo:{
+          ...state.currentRegistrationInfo,
+          mail: action.text,
+        }
+      };
+      case ON_ADRESS_TYPING:
+      return {
+        ...state,
+        currentRegistrationInfo:{
+          ...state.currentRegistrationInfo,
+          adress: action.text,
+        }
+      };
+      case ON_PASSWORD_TYPING:
+      return {
+        ...state,
+        currentRegistrationInfo:{
+          ...state.currentRegistrationInfo,
+          password: action.text,
+        }
+      };
     default:
       return state;
   }
