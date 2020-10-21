@@ -9,14 +9,6 @@ let reducers = combineReducers({
 })
 
 let store = createStore(reducers)
-
-export function addCommentActionCreator(author, text) {
-    return {
-      type: "ADD-COMMENT-HANDLE",
-      author: author,
-      text: text,
-    };  
-  }
   
   
 export default store;

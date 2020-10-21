@@ -1,23 +1,24 @@
 import { connect } from 'react-redux';
 
-import { addCommentActionCreator } from '../../../../../redux/redux-store'
+import addCommentAC from './actionCreators/addCommentAC'
+import onNameTypingAC from './actionCreators/onNameTypingAC'
+import onTextTypingAC from './actionCreators/onTextTypingAC'
+
 import LeaveComment from './LeaveComment'
 
 
 
 const mapStateToProps = (state) => {
   return {
-    comments: state.mainPage.comments,
+    currentComment: state.mainPage.currentComment,
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    handleClick: (author, text) => {
-      if (author !== '' && text !== '') {
-        dispatch(addCommentActionCreator(author, text));
-      }
-    }
+    handleClick: () => dispatch(addCommentAC()),
+    onNameTyping: (text) => dispatch(onNameTypingAC(text)),
+    onTextTyping: (text) => dispatch(onTextTypingAC(text)),
   }
 }
 
