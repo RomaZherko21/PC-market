@@ -5,6 +5,7 @@ const ON_ADRESS_TYPING = "ON-ADRESS-TYPING";
 const ON_PASSWORD_TYPING = "ON-PASSWORD-TYPING";
 const ON_REPEAT_PASSWORD_TYPING = "ON-REPEAT-PASSWORD-TYPING";
 const ON_SUBMIT = "ON-SUBMIT";
+const FORM_VALIDATION = "FORM-VALIDATION";
 
 let initialState = {
   allUsers: [
@@ -43,7 +44,15 @@ let initialState = {
     mail: "",
     adress: "",
     password: "",
-    repeatPassword:"",
+    repeatPassword: "",
+  },
+  errors: {
+    name: "",
+    surname: "",
+    mail: "",
+    adress: "",
+    password: "",
+    repeatPassword: "",
   },
 };
 
@@ -97,24 +106,56 @@ const registrationReducer = (state = initialState, action) => {
           repeatPassword: action.text,
         },
       };
-    case ON_SUBMIT:
+    case ON_SUBMIT: {
+      for(let key in state.errors){
+        if(state.errors[key]!=='') return {...state}
+      }
       return {
-        allUsers: [
-          ...state.allUsers,
-          {...state.currentRegistrationInfo}
-        ],
+        ...state,
+        allUsers: [...state.allUsers, { ...state.currentRegistrationInfo }],
         currentRegistrationInfo: {
           name: "",
           surname: "",
           mail: "",
           adress: "",
           password: "",
-          repeatPassword:"",
+          repeatPassword: "",
         },
       };
+    }
+    case FORM_VALIDATION: {
+      let err = validation(state.currentRegistrationInfo);
+      return {
+        ...state,
+        errors: err,
+      };
+    }
     default:
       return state;
   }
 };
+
+function validation(user) {
+  let err = {};
+  if (!/^[a-z]{2,}$/gi.test(user.name)) {
+    err.name = "Need correct name!";
+  }
+  if (!/^[a-z]{2,}$/gi.test(user.surname)) {
+    err.surname = "Need correct surname!";
+  }
+  if (!/^[A-Z0-9a-z_]{3,}@[a-z]{2,6}\.[a-z]{2,4}$/g.test(user.mail)) {
+    err.mail = "Need correct mail (Admin100@gmail.com)!";
+  }
+  if (!/^[a-z0-9 .,]{4,}$/gi.test(user.adress)) {
+    err.adress = "Need correct adress (Volkov St. 21, Umbridge hall)!";
+  }
+  if (!/^[a-z0-9.!&/#%*?()]{4,}$/gi.test(user.password)) {
+    err.password = "Need correct password!";
+  }
+  if (user.password !== user.repeatPassword) {
+    err.repeatPassword = "Passwords need to be the same!";
+  }
+  return err;
+}
 
 export default registrationReducer;

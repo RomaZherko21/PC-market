@@ -49,10 +49,14 @@
   background-color: rgb(163, 22, 27);
 }
 
-.regComponent .checkbox {
- display: flex;
- align-items: center;
- text-align: left;
+
+.regComponent label{
+  color: rgb(245, 14, 14);
+  display: block;
+  
+  font-family: Inconsolata;
+  font-weight: 200;
+
 }
 
 @media (max-width: 860px) {
@@ -65,5 +69,7 @@
     width: 90%;
   }
 }
+
+
 
 
