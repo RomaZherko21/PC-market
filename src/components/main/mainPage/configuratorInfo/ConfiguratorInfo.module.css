@@ -60,3 +60,29 @@
 
   }
 }
+@media (max-width: 360px) {
+  .configBlock {
+    padding: 20px 5px;
+    grid-template-columns: auto;
+    grid-gap: 10px;
+    margin-bottom: 80px;
+  }
+  .configBlock img {
+    width: 200px;
+    height: 200px;
+  }
+  .configBlock .info h1 {
+    line-height: 1.1;
+    font-size: 1.2rem;
+  }
+  .configBlock .info p {
+    font-size: 0.7rem;
+    margin-top: 10px;
+  }
+  .configBlock .info button {
+    margin-top: 10px;
+    border-radius: 10px;
+    font-size: 1rem;
+    padding: 5px;
+  }
+}

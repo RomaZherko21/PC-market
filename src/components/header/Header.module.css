@@ -69,6 +69,7 @@ font-size: 20px;
   }
   .showInfo{
     display: block;
+    color: orange;
   }
 }
 

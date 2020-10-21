@@ -10,15 +10,14 @@
   left: 0;
   overflow-y: scroll;
   -ms-overflow-style: none; 
-  left: -100%;
-  transition: all .5s ease;
+  transition: all .3s ease;
 }
 .sidebar::-webkit-scrollbar { width: 0; }
 .sidebarShow{
   left: 0;
 }
 .sidebarBlock{
-  left: -100%;
+  left: -140%;
 }
 
 .sidebar i{

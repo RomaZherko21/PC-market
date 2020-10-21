@@ -4,7 +4,7 @@
   align-items: center;
 }
 .regComponent form {
-  width: 60vw;
+  width: 80vw;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -18,7 +18,7 @@
 .regComponent input {
   padding: 10px;
   margin-top: 20px;
-  width: 50%;
+  width: 80%;
   background-color: rgb(24, 23, 28);
   border: 2px solid gray;
   border-radius: 4px;
@@ -53,6 +53,17 @@
  display: flex;
  align-items: center;
  text-align: left;
+}
+
+@media (max-width: 860px) {
+
+  .regComponent form {
+    width: 95vw;
+    padding: 10px;
+  }
+  .regComponent input {
+    width: 90%;
+  }
 }
 
 

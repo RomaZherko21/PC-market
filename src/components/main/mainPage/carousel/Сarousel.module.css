@@ -18,3 +18,8 @@
     height: 40vh;
   }
 }
+@media (max-width: 460px) {
+  .carousel{
+    display: none;
+}
+}

@@ -1,33 +1,83 @@
-.navBar{
-background-color: rgb(26, 25, 31);
-padding: 20px;
-display: flex;
-justify-content: space-between;
-align-items: center;
-position: sticky;
-top: 0;
-z-index: 1;
-width: 100%;
-}
-.goods i{
-    color: rgb(19, 194, 19);
-    cursor: pointer;
-    font-size: 26px;
-}
-.goods:hover i{
-    color: rgb(159, 29, 35);
+.navBar {
+  background-color: rgb(26, 25, 31);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  width: 100%;
 }
 
-.navBar a{
-    color: rgb(255, 255, 255);
-    margin-left: 14px;
-    text-decoration: none;
+.goods i {
+  color: rgb(19, 194, 19);
+  cursor: pointer;
+  font-size: 26px;
+  margin-left: 14px;
 }
-.navBar a:hover{
-    color: rgb(159, 29, 35);
-
+.goods:hover i {
+  color: rgb(159, 29, 35);
 }
 
-.navIcons i{
-    font-size: 20px;
+.navBar a {
+  color: rgb(255, 255, 255);
+  margin-left: 14px;
+  text-decoration: none;
+}
+.navBar a:hover {
+  color: rgb(159, 29, 35);
+}
+
+.navIcons i {
+  font-size: 20px;
+}
+
+.showList {
+  display: none;
+  cursor: pointer;
+  font-size: 30px;
+  color: orange;
+}
+.showList:hover {
+  transition: transform 0.6s ease;
+  transform: translateX(4px);
+  color: rgb(159, 29, 35);
+}
+
+@media (max-width: 580px) {
+  .navBar {
+    background-color: rgb(26, 25, 31);
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 0;
+    padding: 0;
+  }
+  .navBar .navText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 20px;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  .navBar .navText a {
+    margin-top: 10px;
+  }
+  .navBar .navIcons {
+    margin-top: 10px;
+    margin-left: 20px;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  .showList {
+    display: block;
+    margin: 20px 20px 10px;
+  }
 }
