@@ -5,7 +5,6 @@ const ON_ADRESS_TYPING = "ON-ADRESS-TYPING";
 const ON_PASSWORD_TYPING = "ON-PASSWORD-TYPING";
 const ON_REPEAT_PASSWORD_TYPING = "ON-REPEAT-PASSWORD-TYPING";
 const ON_SUBMIT = "ON-SUBMIT";
-const FORM_VALIDATION = "FORM-VALIDATION";
 
 let initialState = {
   allUsers: [
@@ -47,68 +46,111 @@ let initialState = {
     repeatPassword: "",
   },
   errors: {
-    name: "",
-    surname: "",
-    mail: "",
-    adress: "",
-    password: "",
-    repeatPassword: "",
+    name: " ",
+    surname: " ",
+    mail: " ",
+    adress: " ",
+    password: " ",
+    repeatPassword: " ",
   },
 };
 
 const registrationReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ON_NAME_TYPING:
+    case ON_NAME_TYPING: {
+      let errors = { ...state.errors };
+      !/^[a-z]{2,16}$/gi.test(action.text)
+        ? (errors.name = "Need correct name!")
+        : (errors.name = "");
+
       return {
         ...state,
         currentRegistrationInfo: {
           ...state.currentRegistrationInfo,
           name: action.text,
         },
+        errors: errors,
       };
-    case ON_SURNAME_TYPING:
+    }
+    case ON_SURNAME_TYPING: {
+      let errors = { ...state.errors };
+      !/^[a-z]{2,}$/gi.test(action.text)
+        ? (errors.surname = "Need correct surname!")
+        : (errors.surname = "");
+
       return {
         ...state,
         currentRegistrationInfo: {
           ...state.currentRegistrationInfo,
           surname: action.text,
         },
+        errors: errors,
       };
-    case ON_MAIL_TYPING:
+    }
+    case ON_MAIL_TYPING: {
+      let errors = { ...state.errors };
+      !/^[A-Z0-9a-z_]{3,}@[a-z]{2,6}\.[a-z]{2,4}$/g.test(action.text)
+        ? (errors.mail = "Need correct @mail!")
+        : (errors.mail = "");
+
       return {
         ...state,
         currentRegistrationInfo: {
           ...state.currentRegistrationInfo,
           mail: action.text,
         },
+        errors: errors,
       };
-    case ON_ADRESS_TYPING:
+    }
+    case ON_ADRESS_TYPING: {
+      let errors = { ...state.errors };
+      !/^[a-z0-9 .,]{4,}$/gi.test(action.text)
+        ? (errors.adress = "Need correct adress!")
+        : (errors.adress = "");
+
       return {
         ...state,
         currentRegistrationInfo: {
           ...state.currentRegistrationInfo,
           adress: action.text,
         },
+        errors: errors,
       };
-    case ON_PASSWORD_TYPING:
+    }
+    case ON_PASSWORD_TYPING: {
+      let errors = { ...state.errors };
+      !/^[a-z0-9.!&/#%*?()]{4,}$/gi.test(action.text)
+        ? (errors.password = "Need correct password!")
+        : (errors.password = "");
+
       return {
         ...state,
         currentRegistrationInfo: {
           ...state.currentRegistrationInfo,
           password: action.text,
         },
+        errors: errors,
       };
-    case ON_REPEAT_PASSWORD_TYPING:
+    }
+    case ON_REPEAT_PASSWORD_TYPING: {
+      let errors = { ...state.errors };
+      state.currentRegistrationInfo.password !== action.text
+        ? (errors.repeatPassword = "Passwords need to be the same!")
+        : (errors.repeatPassword = "");
+
       return {
         ...state,
         currentRegistrationInfo: {
           ...state.currentRegistrationInfo,
           repeatPassword: action.text,
         },
+        errors: errors,
       };
+    }
     case ON_SUBMIT: {
-      for(let key in state.errors){
-        if(state.errors[key]!=='') return {...state}
+      console.log(state.errors);
+      for (let key in state.errors) {
+        if (state.errors[key] !== "") return { ...state };
       }
       return {
         ...state,
@@ -123,39 +165,9 @@ const registrationReducer = (state = initialState, action) => {
         },
       };
     }
-    case FORM_VALIDATION: {
-      let err = validation(state.currentRegistrationInfo);
-      return {
-        ...state,
-        errors: err,
-      };
-    }
     default:
       return state;
   }
 };
-
-function validation(user) {
-  let err = {};
-  if (!/^[a-z]{2,}$/gi.test(user.name)) {
-    err.name = "Need correct name!";
-  }
-  if (!/^[a-z]{2,}$/gi.test(user.surname)) {
-    err.surname = "Need correct surname!";
-  }
-  if (!/^[A-Z0-9a-z_]{3,}@[a-z]{2,6}\.[a-z]{2,4}$/g.test(user.mail)) {
-    err.mail = "Need correct mail (Admin100@gmail.com)!";
-  }
-  if (!/^[a-z0-9 .,]{4,}$/gi.test(user.adress)) {
-    err.adress = "Need correct adress (Volkov St. 21, Umbridge hall)!";
-  }
-  if (!/^[a-z0-9.!&/#%*?()]{4,}$/gi.test(user.password)) {
-    err.password = "Need correct password!";
-  }
-  if (user.password !== user.repeatPassword) {
-    err.repeatPassword = "Passwords need to be the same!";
-  }
-  return err;
-}
 
 export default registrationReducer;
