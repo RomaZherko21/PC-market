@@ -10,6 +10,11 @@
   width: 100%;
 }
 
+.navBar .user{
+  color: rgb(76, 76, 243);
+
+}
+
 .goods i {
   color: rgb(19, 194, 19);
   cursor: pointer;

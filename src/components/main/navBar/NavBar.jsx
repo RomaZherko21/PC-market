@@ -33,7 +33,8 @@ function onShowNav(){
         </div>
 
         <div className={s.navIcons} style={showNav?{left:'0%'}:{left:'-100%'}}>
-          <NavLink to='/userCabinet' className='user'><i className="far fa-user-circle"></i></NavLink>
+          <NavLink to='/logIn' className={s.user}><i className="fas fa-door-open"></i></NavLink>
+          <NavLink to='/userCabinet' className={s.user}><i className="far fa-user-circle"></i></NavLink>
           <NavLink to='/shoppingCart'><i className="fas fa-shopping-cart"></i></NavLink>
           <NavLink to='/search'><i className="fas fa-search"></i></NavLink>
         </div>

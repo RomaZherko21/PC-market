@@ -11,9 +11,9 @@ let initialState = {
     {
       name: "Admin",
       surname: "Admin",
-      mail: "Admin@inbox.ru",
+      mail: "admin",
       adress: "Old Valey, 32",
-      password: "1234",
+      password: "admin",
     },
     {
       name: "Roma",
@@ -148,7 +148,6 @@ const registrationReducer = (state = initialState, action) => {
       };
     }
     case ON_SUBMIT: {
-      console.log(state.errors);
       for (let key in state.errors) {
         if (state.errors[key] !== "") return { ...state };
       }
