@@ -10,7 +10,7 @@ const LogIn = (props) => {
         <button onClick={(e) => {
           e.preventDefault();
           props.onLogInAC(props.allUsers)
-        }}>Log In</button>
+        }}>Login</button>
         <label>{props.state.wrongData}</label>
       </form>
     </section>
