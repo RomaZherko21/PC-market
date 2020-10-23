@@ -7,6 +7,7 @@ import MainPage from './mainPage/MainPage'
 import Products from './products/Products'
 import RegistrationContainer from './registration/RegistrationContainer'
 import LogInContainer from './logIn/LogInContainer'
+import ShowUsersContainer from './showUsers/ShowUsersContainer'
 
 
 const Main = (props) => {
@@ -18,6 +19,7 @@ const Main = (props) => {
             <Route path='/products'><Products /></Route>
             <Route path='/userCabinet'><RegistrationContainer /></Route>
             <Route path='/logIn'><LogInContainer /></Route>
+            <Route path='/showUsers'><ShowUsersContainer /></Route>
         </section>
     )
 }

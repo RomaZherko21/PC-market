@@ -1,0 +1,40 @@
+.allUsers{
+display: flex;
+flex-direction: column;
+margin: 20px;
+padding: 30px;
+}
+
+.allUsers .oneUser{
+width: 80%;
+padding: 20px;
+display: flex;
+align-items: center;
+
+}
+
+.allUsers .oneUser img{
+ width: 50px;
+  }
+
+  .allUsers .allUsersButtons{
+    display: flex;
+justify-content: center;
+align-items: center;
+margin-top: 40px;
+  }
+  .allUsersButtons button{
+  
+    padding: 10px;
+    width: 20%;
+    background-color: rgb(24, 23, 28);
+    border: 2px solid gray;
+    border-radius: 4px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  .allUsersButtons button:hover{
+    background-color: rgb(163, 22, 27);
+  }

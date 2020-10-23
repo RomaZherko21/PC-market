@@ -11,6 +11,7 @@ import onSubmitAC from './actionCreators/onSubmitAC'
 import onRepeatPasswordTypingAC from './actionCreators/onRepeatPasswordTypingAC'
 
 
+
 const mapStateToProps = (state) => {
   return {
     state: state.registration,

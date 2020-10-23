@@ -27,7 +27,7 @@ function onShowNav(){
           <span className={s.goods} onClick={onShowGoods}><i className="fas fa-store"></i></span>
           <NavLink to='/'>Главная</NavLink>
           <NavLink to='/delivery'>Доставка</NavLink>
-          <NavLink to='/blog'>Блог</NavLink>
+          <NavLink to='/showUsers'>Пользователи</NavLink>
           <NavLink to='/comments'>Отзывы</NavLink>
           <NavLink to='/contacts'>Контакты</NavLink>
         </div>

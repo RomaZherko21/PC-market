@@ -6,7 +6,10 @@ const ON_PASSWORD_TYPING = "ON-PASSWORD-TYPING";
 const ON_REPEAT_PASSWORD_TYPING = "ON-REPEAT-PASSWORD-TYPING";
 const ON_SUBMIT = "ON-SUBMIT";
 
+
+
 let initialState = {
+
   allUsers: [
     {
       name: "Admin",
