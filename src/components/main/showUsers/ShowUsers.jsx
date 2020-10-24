@@ -4,7 +4,6 @@ import user from '../../../images/user.svg'
 
 
 function ShowUsers(props){
-  console.log(props.state)
   return (
     <section className={s.allUsers}>
       {props.state.usersList.map(item => {

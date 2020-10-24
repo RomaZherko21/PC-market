@@ -1,0 +1,22 @@
+.loadingSection{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background-color: rgb(24, 23, 28);
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+.loadingSection img{
+  width: 40vw;
+  height: 40vh;
+  animation: preloader-rotate 6s infinite linear;
+}
+
+@keyframes preloader-rotate {
+  100% {
+    transform: rotate(-360deg);
+  }
+}
