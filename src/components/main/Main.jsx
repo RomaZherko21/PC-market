@@ -8,6 +8,7 @@ import Products from './products/Products'
 import RegistrationContainer from './registration/RegistrationContainer'
 import LogInContainer from './logIn/LogInContainer'
 import ShowUsersContainer from './showUsers/ShowUsersContainer'
+import UserProfileContainer from './userProfile/UserProfileContainer'
 
 
 const Main = (props) => {
@@ -20,6 +21,7 @@ const Main = (props) => {
             <Route path='/userCabinet'><RegistrationContainer /></Route>
             <Route path='/logIn'><LogInContainer /></Route>
             <Route path='/showUsers'><ShowUsersContainer /></Route>
+            <Route path='/userProfile/:userID?'><UserProfileContainer /></Route>
         </section>
     )
 }

@@ -24,11 +24,13 @@ const showUsersReducer = (state = initialState, action) => {
       };
     }
     case LOADING: {
+      console.log('herrer')
       return {
         ...state,
         isFetching: !state.isFetching,
       };
     }
+
     default:
       return state;
   }

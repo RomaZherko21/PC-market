@@ -1,17 +1,21 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom';
+
 import s from './ShowUsers.module.css'
 import user from '../../../images/user.svg'
 
 
-function ShowUsers(props){
+function ShowUsers(props) {
   return (
     <section className={s.allUsers}>
       {props.state.usersList.map(item => {
         return (
-          <div className={s.oneUser}>
-            <img src={item.photos.small != null ? item.photos.small : user} alt="" />
-            {item.name}
-          </div>
+          <NavLink to={`/userProfile/${item.id}`}>
+            <div className={s.oneUser}>
+              <img src={item.photos.small != null ? item.photos.small : user} alt="" />
+              {item.name}
+            </div>
+          </NavLink>
         )
       })}
       <div className={s.allUsersButtons}>
