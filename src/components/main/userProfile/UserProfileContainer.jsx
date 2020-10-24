@@ -9,15 +9,17 @@ import onChangeCurrentUserAC from './actionCreators/onChangeCurrentUserAC'
 
 import Loading from '../../common/Loading'
 
-import * as axios from 'axios'
 import { withRouter } from 'react-router-dom'
+import usersAPI from '../../../api/api'
 
 
 class UserProfileContainer extends React.Component {
 
   componentDidMount() {
     // this.props.isFetching()
-    axios.get(`https://social-network.samuraijs.com/api/1.0/profile/${this.props.match.params.userID}`).then(response => {
+
+    usersAPI.getUserProfile(this.props.match.params.userID)
+    .then(response => {
       this.props.onChangeCurrentUser(response.data)
       // this.props.isFetching()
     })

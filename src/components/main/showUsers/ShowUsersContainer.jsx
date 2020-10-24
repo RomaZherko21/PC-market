@@ -9,7 +9,7 @@ import loadingAC from './actionCreators/loadingAC'
 import Loading from '../../common/Loading'
 
 import React, { Fragment } from 'react'
-import * as axios from 'axios'
+import usersAPI from '../../../api/api'
 
 
 class ShowUsersContainer extends React.Component {
@@ -20,24 +20,26 @@ class ShowUsersContainer extends React.Component {
 
   componentDidMount() {
     this.props.isFetching()
-    axios.get(`https://social-network.samuraijs.com/api/1.0/users?count=${this.props.state.count}&page=${this.props.state.page}`).then(response => {
-      this.props.addUsers(response.data.items)
-      this.props.isFetching()
-    })
+    usersAPI.getUsers(this.props.state.count, this.props.state.page)
+      .then(response => {
+        this.props.addUsers(response.data.items)
+        this.props.isFetching()
+      })
   }
   onPageChange(page, num) {
     this.props.isFetching()
     this.props.onPageChange(num);
-    axios.get(`https://social-network.samuraijs.com/api/1.0/users?count=${this.props.state.count}&page=${page + num}`).then(response => {
-      this.props.addUsers(response.data.items)
-      this.props.isFetching()
-    })
+    usersAPI.getUsers(this.props.state.count, page + num)
+      .then(response => {
+        this.props.addUsers(response.data.items)
+        this.props.isFetching()
+      })
   }
   render() {
     return (
       <Fragment>
         {this.props.state.isFetching ? <Loading /> : <ShowUsers state={this.props.state}
-          onPageChange={this.onPageChange} onCurrentUserInfo={this.props.onCurrentUserInfo}/>}
+          onPageChange={this.onPageChange} onCurrentUserInfo={this.props.onCurrentUserInfo} />}
       </Fragment>
     );
   }
@@ -46,7 +48,7 @@ class ShowUsersContainer extends React.Component {
 const mapStateToProps = (state) => {
   return {
     state: state.showUsers,
-  } 
+  }
 }
 const mapDispatchToProps = (dispatch) => {
   return {
