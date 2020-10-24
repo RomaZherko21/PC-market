@@ -47,7 +47,7 @@ class ShowUsersContainer extends React.Component {
 const mapStateToProps = (state) => {
   return {
     state: state.showUsers,
-  }
+  } 
 }
 const mapDispatchToProps = (dispatch) => {
   return {

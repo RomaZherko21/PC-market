@@ -13,14 +13,12 @@ const mapStateToProps = (state) => {
     state: state.logIn,
   }
 }
-const mapDispatchToProps = (dispatch) => {
-  return {
-    onLogInMailTypingAC: (text) => dispatch(onLogInMailTypingAC(text)),
-    onLogInPasswordTypingAC: (text) => dispatch(onLogInPasswordTypingAC(text)),
-    onLogInAC: (allUsers) => dispatch(onLogInAC(allUsers)),
-  }
-}
 
-const LogInContainer = connect(mapStateToProps, mapDispatchToProps)(LogIn);
+
+const LogInContainer = connect(mapStateToProps, {
+  onLogInMailTyping: onLogInMailTypingAC,
+  onLogInPasswordTyping: onLogInPasswordTypingAC,
+  onLogIn: onLogInAC,
+})(LogIn);
 
 export default LogInContainer;

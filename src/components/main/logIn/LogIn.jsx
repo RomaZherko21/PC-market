@@ -5,11 +5,11 @@ const LogIn = (props) => {
   return (
     <section className={s.regComponent}>
       <form action="">
-        <input type="text" placeholder='@mail' value={props.state.currentLogInInfo.mail} onChange={(e) => props.onLogInMailTypingAC(e.target.value)} />
-        <input type="password" autoComplete="off" placeholder='Password' value={props.state.currentLogInInfo.password} onChange={(e) => props.onLogInPasswordTypingAC(e.target.value)} />
+        <input type="text" placeholder='@mail' value={props.state.currentLogInInfo.mail} onChange={(e) => props.onLogInMailTyping(e.target.value)} />
+        <input type="password" autoComplete="off" placeholder='Password' value={props.state.currentLogInInfo.password} onChange={(e) => props.onLogInPasswordTyping(e.target.value)} />
         <button onClick={(e) => {
           e.preventDefault();
-          props.onLogInAC(props.allUsers)
+          props.onLogIn(props.allUsers)
         }}>Login</button>
         <label>{props.state.wrongData}</label>
       </form>
