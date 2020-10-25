@@ -10,19 +10,13 @@ import onChangeCurrentUserAC from './actionCreators/onChangeCurrentUserAC'
 import Loading from '../../common/Loading'
 
 import { withRouter } from 'react-router-dom'
-import usersAPI from '../../../api/api'
+import {getProfileThunkCreator} from '../../../redux/reducers/currentUser-reducer'
 
 
 class UserProfileContainer extends React.Component {
 
   componentDidMount() {
-    // this.props.isFetching()
-
-    usersAPI.getUserProfile(this.props.match.params.userID)
-    .then(response => {
-      this.props.onChangeCurrentUser(response.data)
-      // this.props.isFetching()
-    })
+    this.props.getProfileThunkCreator(this.props.match.params.userID)
   }
   render() {
     return (
@@ -43,6 +37,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     isFetching: () => dispatch(loadingAC()),
     onChangeCurrentUser: (user) => dispatch(onChangeCurrentUserAC(user)),
+    getProfileThunkCreator: (userID)=>dispatch(getProfileThunkCreator(userID)),
   }
 }
 

@@ -1,3 +1,5 @@
+import usersAPI from "../../api/api";
+
 const ON_CHANGE_CURRENT_USER = "ON-CHANGE-CURRENT-USER";
 
 let initialState = {
@@ -17,6 +19,21 @@ const currentUserReducer = (state = initialState, action) => {
     default:
       return state;
   }
+};
+
+function onChangeCurrentUserAC(user) {
+  return {
+    type: "ON-CHANGE-CURRENT-USER",
+    user: user,
+  };
+}
+
+export const getProfileThunkCreator = (userID) => {
+  return (dispatch) => {
+    usersAPI.getUserProfile(userID).then((response) => {
+      dispatch(onChangeCurrentUserAC(response.data));
+    });
+  };
 };
 
 export default currentUserReducer;

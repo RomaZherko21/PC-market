@@ -9,8 +9,7 @@ import loadingAC from './actionCreators/loadingAC'
 import Loading from '../../common/Loading'
 
 import React, { Fragment } from 'react'
-import usersAPI from '../../../api/api'
-
+import { getUsersThunkCreator, getNewUsersThunkCreator } from '../../../redux/reducers/showUsers-reducer'
 
 class ShowUsersContainer extends React.Component {
   constructor(props) {
@@ -19,21 +18,10 @@ class ShowUsersContainer extends React.Component {
   }
 
   componentDidMount() {
-    this.props.isFetching()
-    usersAPI.getUsers(this.props.state.count, this.props.state.page)
-      .then(response => {
-        this.props.addUsers(response.data.items)
-        this.props.isFetching()
-      })
+    this.props.getUsersThunkCreator(this.props.state.count, this.props.state.page);
   }
   onPageChange(page, num) {
-    this.props.isFetching()
-    this.props.onPageChange(num);
-    usersAPI.getUsers(this.props.state.count, page + num)
-      .then(response => {
-        this.props.addUsers(response.data.items)
-        this.props.isFetching()
-      })
+      this.props.getNewUsersThunkCreator(this.props.state.count, page,num);
   }
   render() {
     return (
@@ -55,6 +43,8 @@ const mapDispatchToProps = (dispatch) => {
     addUsers: (allUsers) => dispatch(addUsersAC(allUsers)),
     onPageChange: (increment) => dispatch(onPageChangeAC(increment)),
     isFetching: () => dispatch(loadingAC()),
+    getUsersThunkCreator: (count, page) => dispatch(getUsersThunkCreator(count, page)),
+    getNewUsersThunkCreator: (count, page,num) => dispatch(getNewUsersThunkCreator(count, page, num)),
   }
 }
 
