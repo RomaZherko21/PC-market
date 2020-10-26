@@ -2,10 +2,11 @@ import React, { Fragment } from 'react'
 
 import UserProfile from './UserProfile'
 import { connect } from 'react-redux'
+import { compose } from 'redux'
+import { withRouter } from 'react-router-dom'
 
 import Loading from '../../common/Loading'
 
-import { withRouter } from 'react-router-dom'
 import { getProfileThunkCreator, loading } from '../../../redux/reducers/currentUser-reducer'
 
 
@@ -30,9 +31,12 @@ const mapStateToProps = (state) => {
   }
 }
 
-let WithURLUserProfileContainer = withRouter(UserProfileContainer)
 
-export default connect(mapStateToProps, {
-  loading,
-  getProfileThunkCreator,
-})(WithURLUserProfileContainer);
+
+export default compose(
+  connect(mapStateToProps, {
+    loading,
+    getProfileThunkCreator,
+  }),
+  withRouter,
+)(UserProfileContainer)
