@@ -61,4 +61,26 @@ if(!user.mail || !user.password) err = 'Wrong data';
   }
 };
 
+
+export function onLogIn(allUsers) {
+  return {
+    type: "ON-LOG-IN",
+    allUsers: allUsers,
+  };  
+}
+
+export function onLogInMailTyping(text) {
+  return {
+    type: "ON-LOG-IN-MAIL-TYPING",
+    text: text,
+  };  
+}
+export function onLogInPasswordTyping(text) {
+  return {
+    type: "ON-LOG-IN-PASSWORD-TYPING",
+    text: text,
+  };  
+}
+
+
 export default registrationReducer;

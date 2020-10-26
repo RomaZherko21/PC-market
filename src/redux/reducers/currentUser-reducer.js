@@ -21,17 +21,25 @@ const currentUserReducer = (state = initialState, action) => {
   }
 };
 
-function onChangeCurrentUserAC(user) {
+export function onChangeCurrentUser(user) {
   return {
     type: "ON-CHANGE-CURRENT-USER",
     user: user,
   };
 }
 
+export function loading() {
+  return {
+    type: "LOADING"
+  };  
+}
+
 export const getProfileThunkCreator = (userID) => {
   return (dispatch) => {
+    dispatch(loading())
     usersAPI.getUserProfile(userID).then((response) => {
-      dispatch(onChangeCurrentUserAC(response.data));
+      dispatch(onChangeCurrentUser(response.data));
+      dispatch(loading())
     });
   };
 };

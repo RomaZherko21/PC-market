@@ -370,6 +370,8 @@ let initialState = {
   },
 };
 
+
+
 const mainPageReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_COMMENT_HANDLE:
@@ -410,5 +412,24 @@ const mainPageReducer = (state = initialState, action) => {
       return state;
   }
 };
+
+
+export function addComment() {
+  return {
+    type: "ADD-COMMENT-HANDLE",
+  };  
+}
+export function onNameTyping(name) {
+  return {
+    type: "ON-NAME-TYPING",
+    name: name,
+  };  
+}
+export function onTextTyping(text) {
+  return {
+    type: "ON-TEXT-TYPING",
+    text: text,
+  };  
+}
 
 export default mainPageReducer;

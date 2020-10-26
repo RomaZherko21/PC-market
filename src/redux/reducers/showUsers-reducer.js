@@ -37,48 +37,43 @@ const showUsersReducer = (state = initialState, action) => {
   }
 };
 
-
-
- function loadingAC() {
+export function loading() {
   return {
-    type: "LOADING"
-  };  
+    type: "LOADING",
+  };
 }
-function addUsersAC(usersList) {
+export function addUsers(usersList) {
   return {
     type: "ADD-USERS",
     usersList: usersList,
-  };  
+  };
 }
 
-function onPageChangeAC(increment) {
+export function onPageChange(increment) {
   return {
     type: "ON-PAGE-CHANGE",
     increment: increment,
-  };  
+  };
 }
-
 
 export const getUsersThunkCreator = (count, page) => {
   return (dispatch) => {
-    dispatch(loadingAC())
-    usersAPI.getUsers(count, page)
-      .then(response => {
-        dispatch(addUsersAC(response.data.items));
-        dispatch(loadingAC())
-      })
+    dispatch(loading());
+    usersAPI.getUsers(count, page).then((response) => {
+      dispatch(addUsers(response.data.items));
+      dispatch(loading());
+    });
   };
 };
 
-export const getNewUsersThunkCreator = (count, page,num) => {
+export const getNewUsersThunkCreator = (count, page, num) => {
   return (dispatch) => {
-    dispatch(loadingAC())
-    dispatch(onPageChangeAC(num))
-    usersAPI.getUsers(count, page+num)
-      .then(response => {
-        dispatch(addUsersAC(response.data.items));
-        dispatch(loadingAC())
-      })
+    dispatch(loading());
+    dispatch(onPageChange(num));
+    usersAPI.getUsers(count, page + num).then((response) => {
+      dispatch(addUsers(response.data.items));
+      dispatch(loading());
+    });
   };
 };
 

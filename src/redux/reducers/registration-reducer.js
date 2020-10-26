@@ -136,6 +136,7 @@ const registrationReducer = (state = initialState, action) => {
       };
     }
     case ON_REPEAT_PASSWORD_TYPING: {
+      console.log('fuck')
       let errors = { ...state.errors };
       state.currentRegistrationInfo.password !== action.text
         ? (errors.repeatPassword = "Passwords need to be the same!")
@@ -171,5 +172,51 @@ const registrationReducer = (state = initialState, action) => {
       return state;
   }
 };
+
+
+
+export function onAdressTyping(text) {
+  return {
+    type: "ON-ADRESS-TYPING",
+    text: text,
+  };  
+}
+
+export function onMailTyping(text) {
+  return {
+    type: "ON-MAIL-TYPING",
+    text: text,
+  };  
+}
+export function onNameTyping(text) {
+  return {
+    type: "ON-NAME-TYPING",
+    text: text,
+  };  
+}
+export function onSubmit(text) {
+  return {
+    type: "ON-SUBMIT",
+    text: text,
+  };  
+}
+export function onSurnameTyping(text) {
+  return {
+    type: "ON-SURNAME-TYPING",
+    text: text,
+  };  
+}
+export function onPasswordTyping(text) {
+  return {
+    type: "ON-PASSWORD-TYPING",
+    text: text,
+  };  
+}
+export function onRepeatPasswordTyping(text) {
+  return {
+    type: "ON-REPEAT-PASSWORD-TYPING",
+    text: text,
+  };  
+}
 
 export default registrationReducer;

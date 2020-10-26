@@ -1,15 +1,11 @@
 import ShowUsers from './ShowUsers'
 import { connect } from 'react-redux'
 
-//Action Creators functions
-import addUsersAC from './actionCreators/addUsersAC'
-import onPageChangeAC from './actionCreators/onPageChangeAC'
-import loadingAC from './actionCreators/loadingAC'
 
 import Loading from '../../common/Loading'
 
 import React, { Fragment } from 'react'
-import { getUsersThunkCreator, getNewUsersThunkCreator } from '../../../redux/reducers/showUsers-reducer'
+import { getUsersThunkCreator, getNewUsersThunkCreator, onPageChange} from '../../../redux/reducers/showUsers-reducer'
 
 class ShowUsersContainer extends React.Component {
   constructor(props) {
@@ -38,16 +34,10 @@ const mapStateToProps = (state) => {
     state: state.showUsers,
   }
 }
-const mapDispatchToProps = (dispatch) => {
-  return {
-    addUsers: (allUsers) => dispatch(addUsersAC(allUsers)),
-    onPageChange: (increment) => dispatch(onPageChangeAC(increment)),
-    isFetching: () => dispatch(loadingAC()),
-    getUsersThunkCreator: (count, page) => dispatch(getUsersThunkCreator(count, page)),
-    getNewUsersThunkCreator: (count, page,num) => dispatch(getNewUsersThunkCreator(count, page, num)),
-  }
-}
 
 
-
-export default connect(mapStateToProps, mapDispatchToProps)(ShowUsersContainer);
+export default connect(mapStateToProps, {
+  onPageChange,
+  getUsersThunkCreator,
+  getNewUsersThunkCreator,
+})(ShowUsersContainer);
