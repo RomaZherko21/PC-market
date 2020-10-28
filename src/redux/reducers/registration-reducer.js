@@ -136,7 +136,6 @@ const registrationReducer = (state = initialState, action) => {
       };
     }
     case ON_REPEAT_PASSWORD_TYPING: {
-      console.log('fuck')
       let errors = { ...state.errors };
       state.currentRegistrationInfo.password !== action.text
         ? (errors.repeatPassword = "Passwords need to be the same!")

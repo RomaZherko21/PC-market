@@ -36,7 +36,7 @@ function onShowNav(){
           <NavLink to='/logIn' className={s.user}><i className="fas fa-door-open"></i></NavLink>
           <NavLink to='/userCabinet' className={s.user}><i className="far fa-user-circle"></i></NavLink>
           <NavLink to='/shoppingCart'><i className="fas fa-shopping-cart"></i></NavLink>
-          <NavLink to='/search'><i className="fas fa-search"></i></NavLink>
+          <NavLink to='/searchGoods'><i className="fas fa-search"></i></NavLink>
         </div>
       </nav>
     </Fragment>

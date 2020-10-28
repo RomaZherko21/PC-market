@@ -9,6 +9,7 @@ import RegistrationContainer from './registration/RegistrationContainer'
 import LogInContainer from './logIn/LogInContainer'
 import ShowUsersContainer from './showUsers/ShowUsersContainer'
 import UserProfileContainer from './userProfile/UserProfileContainer'
+import SearchGoodsContainer from "./searchGoods/SearchGoodsContainer";
 
 
 const Main = (props) => {
@@ -22,6 +23,7 @@ const Main = (props) => {
             <Route path='/logIn'><LogInContainer /></Route>
             <Route path='/showUsers'><ShowUsersContainer /></Route>
             <Route path='/userProfile/:userID?'><UserProfileContainer /></Route>
+            <Route path='/searchGoods'><SearchGoodsContainer /></Route>
         </section>
     )
 }
