@@ -39,7 +39,7 @@
 }
 
 .showList {
-  display: none;
+  display: none!important;
   cursor: pointer;
   font-size: 30px;
   color: orange;
@@ -82,7 +82,7 @@
     transition: all 0.3s ease;
   }
   .showList {
-    display: block;
+    display: block!important;
     margin: 20px 20px 10px;
   }
 }

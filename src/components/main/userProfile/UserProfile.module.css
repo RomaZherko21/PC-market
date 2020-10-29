@@ -1,0 +1,20 @@
+
+.allUsers {
+    height: 100vh;
+  }
+  
+.allUsers ul {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  justify-content: center;
+  /* align-items: center; */
+  list-style: circle;
+  text-align-last: left;
+  padding: 30px;
+}
+.allUsers ul li{
+    font-size: 30px;
+    margin-top: 20px;
+  }
+

@@ -13,7 +13,7 @@ function ShowUsers(props) {
           <NavLink to={`/userProfile/${item.id}`}>
             <div className={s.oneUser}>
               <img src={item.photos.small != null ? item.photos.small : user} alt="" />
-              {item.name}
+              <h3>{item.name}</h3>
             </div>
           </NavLink>
         )

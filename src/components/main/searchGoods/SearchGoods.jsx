@@ -12,7 +12,7 @@ function SearchGoodsForm(props) {
   return (
     <form action="" className={s.search} onSubmit={props.handleSubmit}>
       <Field component={Input} name={'name'} placeholder='Computer' validate={[required,maxLength30]}/>
-      <Field component={'input'} name={'price'} placeholder='Price' />
+      <Field component={Input} name={'price'} placeholder='Price' validate={[required,maxLength30]}/>
       <button>Search</button>
     </form>
   )

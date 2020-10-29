@@ -1,3 +1,22 @@
-.errorInput {
-  border: 2px solid red;
+.errorInput input{
+  border: 2px solid rgb(210, 30, 36);
+}
+.errorInput p{
+  color: rgb(210, 30, 36);
+  margin-top: 5px;
+}
+.input{
+  height: auto;
+  margin-top: 20px;
+  position: relative;
+}
+.input span{
+  display: none;
+}
+.errorInput span{
+  display: block;
+ position: absolute;
+ right: 10px;
+ top: 20%;
+ color: rgb(210, 30, 36);
 }
