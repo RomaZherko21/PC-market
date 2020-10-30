@@ -6,6 +6,7 @@ import logInReducer from './reducers/logIn-reducer';
 import showUsersReducer from './reducers/showUsers-reducer';
 import currentUserReducer from './reducers/currentUser-reducer';
 import searchGoodsReducer from './reducers/searchGoods-reducer';
+import shoppingCartReducer from './reducers/shoppingCart-reducer';
 import thunkMiddleware from 'redux-thunk';
 import {reducer as formReducer} from 'redux-form';
 
@@ -16,6 +17,7 @@ let reducers = combineReducers({
     showUsers: showUsersReducer,
     currentUser: currentUserReducer,
     searchGoods: searchGoodsReducer,
+    shoppingCart: shoppingCartReducer,
     form: formReducer,
 })
 

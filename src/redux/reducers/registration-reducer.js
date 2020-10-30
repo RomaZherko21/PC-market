@@ -6,10 +6,7 @@ const ON_PASSWORD_TYPING = "ON-PASSWORD-TYPING";
 const ON_REPEAT_PASSWORD_TYPING = "ON-REPEAT-PASSWORD-TYPING";
 const ON_SUBMIT = "ON-SUBMIT";
 
-
-
 let initialState = {
-
   allUsers: [
     {
       name: "Admin",
@@ -17,6 +14,7 @@ let initialState = {
       mail: "admin",
       adress: "Old Valey, 32",
       password: "admin",
+      money: 2000,
     },
     {
       name: "Roma",
@@ -24,6 +22,7 @@ let initialState = {
       mail: "RomaZher@inbox.ru",
       adress: "Old Valey, 32",
       password: "1234",
+      money: 2000,
     },
     {
       name: "Max",
@@ -31,6 +30,7 @@ let initialState = {
       mail: "MaxBut@inbox.ru",
       adress: "Old Valey, 32",
       password: "1234",
+      money: 2000,
     },
     {
       name: "Ivan",
@@ -38,6 +38,7 @@ let initialState = {
       mail: "IvanVas@inbox.ru",
       adress: "Old Valey, 32",
       password: "1234",
+      money: 2000,
     },
   ],
   currentRegistrationInfo: {
@@ -156,7 +157,7 @@ const registrationReducer = (state = initialState, action) => {
       }
       return {
         ...state,
-        allUsers: [...state.allUsers, { ...state.currentRegistrationInfo }],
+        allUsers: [...state.allUsers, { ...state.currentRegistrationInfo, money:2000, }],
         currentRegistrationInfo: {
           name: "",
           surname: "",
@@ -172,50 +173,48 @@ const registrationReducer = (state = initialState, action) => {
   }
 };
 
-
-
 export function onAdressTyping(text) {
   return {
     type: "ON-ADRESS-TYPING",
     text: text,
-  };  
+  };
 }
 
 export function onMailTyping(text) {
   return {
     type: "ON-MAIL-TYPING",
     text: text,
-  };  
+  };
 }
 export function onNameTyping(text) {
   return {
     type: "ON-NAME-TYPING",
     text: text,
-  };  
+  };
 }
 export function onSubmit(text) {
   return {
     type: "ON-SUBMIT",
     text: text,
-  };  
+  };
 }
 export function onSurnameTyping(text) {
   return {
     type: "ON-SURNAME-TYPING",
     text: text,
-  };  
+  };
 }
 export function onPasswordTyping(text) {
   return {
     type: "ON-PASSWORD-TYPING",
     text: text,
-  };  
+  };
 }
 export function onRepeatPasswordTyping(text) {
   return {
     type: "ON-REPEAT-PASSWORD-TYPING",
     text: text,
-  };  
+  };
 }
 
 export default registrationReducer;

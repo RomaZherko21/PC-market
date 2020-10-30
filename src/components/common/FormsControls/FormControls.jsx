@@ -8,7 +8,7 @@ export const Input = ({ input, meta, ...props }) => {
   return (
     <div className={`${s.input} ${hadErr ? s.errorInput : ''}`}>
       <input {...input} {...props} /> 
-      <span><i class="fas fa-exclamation"></i></span>
+      <span><i className="fas fa-exclamation"></i></span>
       {hadErr && <p>{meta.error}</p>}
     </div>
   )

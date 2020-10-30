@@ -5,25 +5,25 @@ import s from './NavBar.module.css';
 
 import Sidebar from "./sidebar/Sidebar";
 
-const NavBar = () => {
+const NavBar = (props) => {
 
   let [open, setOpen] = useState(false);
   function onShowGoods() {
     setOpen(!open)
   }
 
-let [showNav, setShowNav] = useState(false);
-function onShowNav(){
-  setShowNav(!showNav);
-}
+  let [showNav, setShowNav] = useState(false);
+  function onShowNav() {
+    setShowNav(!showNav);
+  }
 
   return (
     <Fragment>
-      
+
       <nav className={s.navBar}>
-      <i className={`fas fa-list-ul ${s.showList}`} onClick={onShowNav}></i>
+        <i className={`fas fa-list-ul ${s.showList}`} onClick={onShowNav}></i>
         <Sidebar open={open} onShowGoods={onShowGoods} />
-        <div className={s.navText} style={showNav?{left:'0%'}:{left:'-100%'}}>
+        <div className={s.navText} style={showNav ? { left: '0%' } : { left: '-100%' }}>
           <span className={s.goods} onClick={onShowGoods}><i className="fas fa-store"></i></span>
           <NavLink to='/'>Главная</NavLink>
           <NavLink to='/delivery'>Доставка</NavLink>
@@ -32,10 +32,10 @@ function onShowNav(){
           <NavLink to='/contacts'>Контакты</NavLink>
         </div>
 
-        <div className={s.navIcons} style={showNav?{left:'0%'}:{left:'-100%'}}>
+        <div className={s.navIcons} style={showNav ? { left: '0%' } : { left: '-100%' }}>
           <NavLink to='/logIn' className={s.user}><i className="fas fa-door-open"></i></NavLink>
           <NavLink to='/userCabinet' className={s.user}><i className="far fa-user-circle"></i></NavLink>
-          <NavLink to='/shoppingCart'><i className="fas fa-shopping-cart"></i></NavLink>
+          <NavLink to='/shoppingCart' className={s.danger}><i className="fas fa-shopping-cart"></i>{props.shoppingCartLength}</NavLink>
           <NavLink to='/searchGoods'><i className="fas fa-search"></i></NavLink>
         </div>
       </nav>

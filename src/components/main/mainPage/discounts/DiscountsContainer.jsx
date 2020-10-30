@@ -1,18 +1,18 @@
 import { connect } from "react-redux";
 import Discounts from './Discounts'
 
+import { addShoppingCartGood } from '../../../../redux/reducers/shoppingCart-reducer'
 
-const mapStateToProps = (state)=>{
-    return{
+
+const mapStateToProps = (state) => {
+    return {
         discountGoods: state.mainPage.discountGoods,
+        state: state,
     }
-} 
-const mapDispatchToProps = (dispatch)=>{
-    return{
-    }
-} 
+}
 
-
-const DiscountsContainer = connect(mapStateToProps, mapDispatchToProps)(Discounts);
+const DiscountsContainer = connect(mapStateToProps, {
+    addShoppingCartGood,
+})(Discounts);
 
 export default DiscountsContainer;

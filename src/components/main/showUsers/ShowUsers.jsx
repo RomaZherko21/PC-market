@@ -10,7 +10,7 @@ function ShowUsers(props) {
     <section className={s.allUsers}>
       {props.state.usersList.map(item => {
         return (
-          <NavLink to={`/userProfile/${item.id}`}>
+          <NavLink to={`/userProfile/${item.id}`}  key={item.id}>
             <div className={s.oneUser}>
               <img src={item.photos.small != null ? item.photos.small : user} alt="" />
               <h3>{item.name}</h3>

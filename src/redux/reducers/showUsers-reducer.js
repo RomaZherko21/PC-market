@@ -57,23 +57,21 @@ export function onPageChange(increment) {
 }
 
 export const getUsersThunkCreator = (count, page) => {
-  return (dispatch) => {
+  return async (dispatch) => {
     dispatch(loading());
-    usersAPI.getUsers(count, page).then((response) => {
-      dispatch(addUsers(response.data.items));
-      dispatch(loading());
-    });
+    let response = await usersAPI.getUsers(count, page);
+    dispatch(addUsers(response.data.items));
+    dispatch(loading());
   };
 };
 
 export const getNewUsersThunkCreator = (count, page, num) => {
-  return (dispatch) => {
+  return async (dispatch) => {
     dispatch(loading());
     dispatch(onPageChange(num));
-    usersAPI.getUsers(count, page + num).then((response) => {
-      dispatch(addUsers(response.data.items));
-      dispatch(loading());
-    });
+    let response = await usersAPI.getUsers(count, page + num);
+    dispatch(addUsers(response.data.items));
+    dispatch(loading());
   };
 };
 
