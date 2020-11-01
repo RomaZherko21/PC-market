@@ -2,6 +2,7 @@ import React from "react";
 const allGoods = {
   discountGoods: [
     {
+      id: '0001',
       name: "Процессор AMD Ryzen 3 3200G",
       prevPrice: "2800 руб.",
       discountPrice: "2550 руб.",
@@ -24,6 +25,7 @@ const allGoods = {
       },
     },
     {
+      id: '0002',
       name: "Ноутбук Apple MacBook (2017 год)",
       prevPrice: "4000 руб.",
       discountPrice: "3700 руб.",
@@ -46,6 +48,7 @@ const allGoods = {
       },
     },
     {
+      id: '0003',
       name: 'Ноутбук Apple MacBook Air 13" (2017 год)',
       prevPrice: "2500 руб.",
       discountPrice: "2234 руб.",
@@ -68,6 +71,7 @@ const allGoods = {
       },
     },
     {
+      id: '0004',
       name: "Процессор AMD Ryzen 3 3200G",
       prevPrice: "319 руб.",
       discountPrice: "288 руб.",
@@ -90,6 +94,7 @@ const allGoods = {
       },
     },
     {
+      id: '0005',
       name: "Процессор AMD Ryzen 3 3200G",
       prevPrice: "2800 руб.",
       discountPrice: "2550 руб.",
@@ -111,6 +116,7 @@ const allGoods = {
       },
     },
     {
+      id: '0006',
       name: "Ноутбук Apple MacBook (2017 год)",
       prevPrice: "4000 руб.",
       discountPrice: "3700 руб.",
@@ -133,6 +139,7 @@ const allGoods = {
       },
     },
     {
+      id: '0007',
       name: 'Ноутбук Apple MacBook Air 13" (2017 год)',
       prevPrice: "2500 руб.",
       discountPrice: "2234 руб.",
@@ -155,6 +162,7 @@ const allGoods = {
       },
     },
     {
+      id: '0008',
       name: "Процессор AMD Ryzen 3 3200G",
       prevPrice: "319 руб.",
       discountPrice: "288 руб.",
@@ -177,6 +185,7 @@ const allGoods = {
       },
     },
     {
+      id: '0009',
       name: "Процессор AMD Ryzen 3 3200G",
       prevPrice: "2800 руб.",
       discountPrice: "2550 руб.",
@@ -199,6 +208,7 @@ const allGoods = {
       },
     },
     {
+      id: '0010',
       name: "Ноутбук Apple MacBook (2017 год)",
       prevPrice: "4000 руб.",
       discountPrice: "3700 руб.",
@@ -221,6 +231,7 @@ const allGoods = {
       },
     },
     {
+      id: '0011',
       name: 'Ноутбук Apple MacBook Air 13" (2017 год)',
       prevPrice: "2500 руб.",
       discountPrice: "2234 руб.",
@@ -243,6 +254,7 @@ const allGoods = {
       },
     },
     {
+      id: '0012',
       name: "Процессор AMD Ryzen 3 3200G",
       prevPrice: "319 руб.",
       discountPrice: "288 руб.",
@@ -265,6 +277,7 @@ const allGoods = {
       },
     },
     {
+      id: '0013',
       name: "Процессор AMD Ryzen 3 3200G",
       prevPrice: "2800 руб.",
       discountPrice: "2550 руб.",
@@ -287,6 +300,7 @@ const allGoods = {
       },
     },
     {
+      id: '0014',
       name: "Ноутбук Apple MacBook (2017 год)",
       prevPrice: "4000 руб.",
       discountPrice: "3700 руб.",
@@ -309,6 +323,7 @@ const allGoods = {
       },
     },
     {
+      id: '0015',
       name: 'Ноутбук Apple MacBook Air 13" (2017 год)',
       prevPrice: "2500 руб.",
       discountPrice: "2234 руб.",
@@ -331,6 +346,7 @@ const allGoods = {
       },
     },
     {
+      id: '0016',
       name: "Процессор AMD Ryzen 3 3200G",
       prevPrice: "319 руб.",
       discountPrice: "288 руб.",
@@ -355,6 +371,7 @@ const allGoods = {
   ],
   computers: [
     {
+      id: '0020',
       name: "Gamer Perfect",
       mainDescription:
         "i5-9400F | 6GB GTX1660Ti | ОЗУ 16 GB | HDD 1 TB | SSD 128 M2",
@@ -372,6 +389,7 @@ const allGoods = {
       warranty: "1 год",
     },
     {
+      id: '0021',
       name: "Hyper Elite",
       mainDescription:
         "i5 – 10400F ОЗУ 16 GB 6GB GTX1660 Super- HDD 1 TB SSD 128 GB",
@@ -388,6 +406,7 @@ const allGoods = {
       warranty: "1 год",
     },
     {
+      id: '0022',
       name: "Gamer Pro +",
       mainDescription:
         "i7-8700 ОЗУ 16 GB Inno 3D – 6GB GeForce GTX1660Ti HDD 1 TB SSD 240 GB",
@@ -404,6 +423,7 @@ const allGoods = {
       warranty: "1 год",
     },
     {
+      id: '0023',
       name: "Office Lite+",
       mainDescription:
         "Intel:registered: Dual Core:tm: i3-2100 ОЗУ 4GB DDR3 SSD 128 GB",
@@ -419,6 +439,7 @@ const allGoods = {
       warranty: "1 год",
     },
     {
+      id: '0024',
       name: "Office Elite",
       mainDescription: "Intel-Core i3 9100 ОЗУ 4GB DDR4 SSD 128 GB",
       price: 2250,
@@ -435,6 +456,7 @@ const allGoods = {
   ],
   laptops: [
     {
+      id: '0031',
       name: "Gamer Perfect",
       mainDescription:
         "i5-9400F | 6GB GTX1660Ti | ОЗУ 16 GB | HDD 1 TB | SSD 128 M2",
@@ -452,6 +474,7 @@ const allGoods = {
       warranty: "1 год",
     },
     {
+      id: '0032',
       name: "Hyper Elite",
       mainDescription:
         "i5 – 10400F ОЗУ 16 GB 6GB GTX1660 Super- HDD 1 TB SSD 128 GB",
@@ -467,6 +490,7 @@ const allGoods = {
       warranty: "1 год",
     },
     {
+      id: '0033',
       name: "Gamer Pro +",
       mainDescription:
         "i7-8700 ОЗУ 16 GB Inno 3D – 6GB GeForce GTX1660Ti HDD 1 TB SSD 240 GB",
@@ -483,6 +507,7 @@ const allGoods = {
       warranty: "1 год",
     },
     {
+      id: '0034',
       name: "Office Lite+",
       mainDescription:
         "Intel:registered: Dual Core:tm: i3-2100 ОЗУ 4GB DDR3 SSD 128 GB",
@@ -499,6 +524,7 @@ const allGoods = {
       warranty: "1 год",
     },
     {
+      id: '0035',
       name: "Office Elite",
       mainDescription: "Intel-Core i3 9100 ОЗУ 4GB DDR4 SSD 128 GB",
       price: 2250,
@@ -516,6 +542,7 @@ const allGoods = {
   ],
   printers: [
     {
+      id: '0036',
       name: "HP Ink Tank 115 Printer",
       mainDescription: "HP Ink Tank 115 Printer",
       price: 500,
@@ -530,6 +557,7 @@ const allGoods = {
       warranty: "1 год",
     },
     {
+      id: '0037',
       name: "HP LASERJET PRO M15A",
       mainDescription: "HP LASERJET PRO M15A",
       price: 450,
@@ -543,6 +571,7 @@ const allGoods = {
       warranty: "1 год",
     },
     {
+      id: '0038',
       name: "Canon i-SENSYS LBP113W",
       mainDescription: "Canon i-SENSYS LBP113W",
       price: 650,
@@ -560,6 +589,7 @@ const allGoods = {
   ],
   monitors: [
     {
+      id: '0039',
       name: "AOC – 21,5″ E2270SWN LED Monitor",
       mainDescription: "AOC – 21,5″ E2270SWN LED Monitor",
       price: 1200,
@@ -574,6 +604,7 @@ const allGoods = {
       warranty: "1 год",
     },
     {
+      id: '0040',
       name: "Philips – 18,5″ 193V5L LED Monitor",
       mainDescription: "Philips – 18,5″ 193V5L LED Monitor",
       price: 1400,
@@ -588,6 +619,7 @@ const allGoods = {
       warranty: "1 год",
     },
     {
+      id: '0041',
       name: "Монитор LG 19.5″(LED) 20M38A",
       mainDescription: "Монитор LG 19.5″(LED) 20M38A",
       price: 1910,
@@ -604,6 +636,7 @@ const allGoods = {
   ],
   modules:[
     {
+      id: '0042',
       name: "SSD Foxline 120GB M.2 SATA 2280 3D TLC (Foxconn)",
       mainDescription: "SSD Foxline 120GB M.2 SATA 2280 3D TLC (Foxconn)",
       price: 400,
@@ -618,6 +651,7 @@ const allGoods = {
       warranty: "1 год",
     },
     {
+      id: '0043',
       name: "SSD Foxline 128GB M.2 PCIe Gen3x2 2280 3D TLC NVMe (Foxconn)",
       mainDescription: "SSD Foxline 128GB M.2 PCIe Gen3x2 2280 3D TLC NVMe (Foxconn)",
       price: 300,
@@ -632,6 +666,7 @@ const allGoods = {
       warranty: "1 год",
     },
     {
+      id: '0044',
       name: "Aerocool ECO 400, 400W, BOX",
       mainDescription: "Aerocool ECO 400, 400W, BOX",
       price: 400,
@@ -646,6 +681,7 @@ const allGoods = {
       warranty: "1 год",
     },
     {
+      id: '0045',
       name: "Inno 3D – 8GB GeForce RTX2080 Twin X2 OC GDDR6",
       mainDescription: "Inno 3D – 8GB GeForce RTX2080 Twin X2 OC GDDR6",
       price: 1100,
@@ -662,6 +698,7 @@ const allGoods = {
   ],
   periphery:[
     {
+      id: '0046',
       name: "Cougar Minos X2",
       mainDescription: "Cougar Minos X2",
       price: 199,
@@ -676,6 +713,7 @@ const allGoods = {
       warranty: "1 год",
     },
     {
+      id: '0047',
       name: "Gamdias GKC6011 (клавиатура + мышь)",
       mainDescription: "Gamdias GKC6011 (клавиатура + мышь)",
       price: 499,
@@ -692,6 +730,7 @@ const allGoods = {
   ],
   accessories:[
     {
+      id: '0048',
       name: "Gaming Chair Cougar Fusion Black/Игровое кресло",
       mainDescription: "Gaming Chair Cougar Fusion Black/Игровое кресло",
       price: 1000,
@@ -706,6 +745,7 @@ const allGoods = {
       warranty: "1 год",
     },
     {
+      id: '0049',
       name: "Kingston DataTraveler 106 16GB",
       mainDescription: "Kingston DataTraveler 106 16GB",
       price: 50,

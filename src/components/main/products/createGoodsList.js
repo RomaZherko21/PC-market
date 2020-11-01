@@ -3,7 +3,7 @@ import s from './Products.module.css';
 
 export default function createGoodsList(item) {
     return (
-      <div className={s.oneProduct} key={item.name}>
+      <div className={s.oneProduct} key={item.id}>
         <div className={s.productDesription}>
           <img src={item.img} alt="" />
           <p>{item.mainDescription}</p>

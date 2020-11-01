@@ -13,7 +13,7 @@ const SwitchComponents = (props) => {
       <section className={s.shoppingCart}>
         {props.shoppingCart.shoppingCartGoods.map(item => {
           return (
-            <div className={s.oneProduct} key={item.img}>
+            <div className={s.oneProduct} key={item.id}>
               <img src={item.img} alt="" />
               <h1>{item.name}</h1>
               <h2>{item.price} руб.</h2>
