@@ -2,7 +2,6 @@ import React from 'react'
 import s from './LogIn.module.css'
 
 const LogIn = (props) => {
-  console.log(props.state)
   return (
     <section className={s.regComponent}>
       <form action="">

@@ -1,32 +1,40 @@
 import React from 'react'
 import { Switch, Route } from "react-router-dom";
+import allGoods from '../../../data/allGoods'
 
 // import s from './Products.module.css';
+import PC from './pc/PC'
+import Laptop from './laptop/Laptop'
+import Printer from './printer/Printer'
+import Monitor from './monitor/Monitor'
+import Periphery from './periphery/Periphery'
+import Modules from './modules/Modules'
+import Accessories from './accessories/Accessories'
 
 const SwitchComponents = () => {
 
   return (
     <Switch>
       <Route path="/pc">
-        <div>im here fuck off</div>
+        <PC computers={allGoods.computers} />
       </Route>
       <Route path="/laptop">
-        <div>im here fuck off 2</div>
+        <Laptop laptops={allGoods.laptops} />
       </Route>
       <Route path="/printer">
-        <div>im here fuck off 3</div>
+        <Printer printers={allGoods.printers} />
       </Route>
       <Route path="/monitor">
-        <div>im here fuck off 4</div>
+        <Monitor monitors={allGoods.monitors} />
       </Route>
       <Route path="/periphery">
-        <div>im here fuck off 5</div>
+        <Periphery periphery={allGoods.periphery} />
       </Route>
       <Route path="/modules">
-        <div>im here fuck off 10</div>
+        <Modules modules={allGoods.modules} />
       </Route>
       <Route path="/accessories">
-        <div>im here fuck off 111</div>
+        <Accessories accessories={allGoods.accessories} />
       </Route>
     </Switch>
   )

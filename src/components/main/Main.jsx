@@ -17,8 +17,8 @@ const Main = () => {
     return (
         <section className={s.main}>
             <NavBarContainer />
-            <Route exact path='/'><MainPage/></Route>
-            <Route path='/products'><Products /></Route>
+            <Products />
+            <Route exact path='/'><MainPage /></Route>
             <Route path='/userCabinet'><RegistrationContainer /></Route>
             <Route path='/logIn'><LogInContainer /></Route>
             <Route path='/showUsers'><ShowUsersContainer /></Route>

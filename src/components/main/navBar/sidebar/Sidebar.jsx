@@ -1,4 +1,4 @@
-import React, {  } from 'react';
+import React, { } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import s from './Sidebar.module.css';
@@ -24,7 +24,7 @@ const Sidebar = (props) => {
     }
     return (
         <div className={`${s.sidebar} ${props.open ? s.sidebarShow : s.sidebarBlock}`}>
-         
+
             <i className="fas fa-times" onClick={props.onShowGoods}></i>
             <ul className={s.assortmentList}>
                 {showLi('Компьютеры', 'pcHover', pc, '/pc')}
