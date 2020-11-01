@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { Switch, Route } from "react-router-dom";
 import allGoods from '../../../data/allGoods'
 
@@ -11,11 +11,10 @@ import Periphery from './periphery/Periphery'
 import Modules from './modules/Modules'
 import Accessories from './accessories/Accessories'
 
-import Footer from '../../footer/Footer'
+
 
 const SwitchComponents = (props) => {
   return (
-    <Fragment>
       <Switch>
         <Route path="/pc">
           <PC computers={allGoods.computers} addShoppingCartGood={props.addShoppingCartGood} />
@@ -39,8 +38,6 @@ const SwitchComponents = (props) => {
           <Accessories accessories={allGoods.accessories} addShoppingCartGood={props.addShoppingCartGood} />
         </Route>
       </Switch>
-      <Footer />
-    </Fragment>
   )
 }
 

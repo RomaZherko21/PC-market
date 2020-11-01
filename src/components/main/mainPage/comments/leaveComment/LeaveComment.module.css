@@ -4,10 +4,11 @@
   flex-direction: column;
   width: 70%;
   text-align-last: left;
-  margin: 0 auto;
+  margin: 30px auto;
   margin-top: 30px;
   background-color: rgb(26, 25, 31);
   padding: 20px;
+
 }
 
 .commentForm label{
