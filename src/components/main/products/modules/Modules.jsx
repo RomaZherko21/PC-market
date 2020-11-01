@@ -7,7 +7,7 @@ const Modules = (props) => {
   return (
     <section className={s.allProducts}>
       {props.modules.map(item => {
-        return createGoodsList(item)
+        return createGoodsList(item, props.addShoppingCartGood)
       })}
     </section>
   )

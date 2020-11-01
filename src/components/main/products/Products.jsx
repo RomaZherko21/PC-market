@@ -11,30 +11,29 @@ import Periphery from './periphery/Periphery'
 import Modules from './modules/Modules'
 import Accessories from './accessories/Accessories'
 
-const SwitchComponents = () => {
-
+const SwitchComponents = (props) => {
   return (
     <Switch>
       <Route path="/pc">
-        <PC computers={allGoods.computers} />
+        <PC computers={allGoods.computers} addShoppingCartGood={props.addShoppingCartGood}/>
       </Route>
       <Route path="/laptop">
-        <Laptop laptops={allGoods.laptops} />
+        <Laptop laptops={allGoods.laptops} addShoppingCartGood={props.addShoppingCartGood} />
       </Route>
       <Route path="/printer">
-        <Printer printers={allGoods.printers} />
+        <Printer printers={allGoods.printers} addShoppingCartGood={props.addShoppingCartGood} />
       </Route>
       <Route path="/monitor">
-        <Monitor monitors={allGoods.monitors} />
+        <Monitor monitors={allGoods.monitors} addShoppingCartGood={props.addShoppingCartGood} />
       </Route>
       <Route path="/periphery">
-        <Periphery periphery={allGoods.periphery} />
+        <Periphery periphery={allGoods.periphery} addShoppingCartGood={props.addShoppingCartGood} />
       </Route>
       <Route path="/modules">
-        <Modules modules={allGoods.modules} />
+        <Modules modules={allGoods.modules} addShoppingCartGood={props.addShoppingCartGood} />
       </Route>
       <Route path="/accessories">
-        <Accessories accessories={allGoods.accessories} />
+        <Accessories accessories={allGoods.accessories} addShoppingCartGood={props.addShoppingCartGood} />
       </Route>
     </Switch>
   )

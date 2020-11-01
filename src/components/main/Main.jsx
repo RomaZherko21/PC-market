@@ -4,7 +4,7 @@ import { Route } from "react-router-dom";
 
 import NavBarContainer from './navBar/NavBarContainer'
 import MainPage from './mainPage/MainPage'
-import Products from './products/Products'
+import ProductsContainer from './products/ProductsContainer'
 import RegistrationContainer from './registration/RegistrationContainer'
 import LogInContainer from './logIn/LogInContainer'
 import ShowUsersContainer from './showUsers/ShowUsersContainer'
@@ -17,7 +17,7 @@ const Main = () => {
     return (
         <section className={s.main}>
             <NavBarContainer />
-            <Products />
+            <ProductsContainer />
             <Route exact path='/'><MainPage /></Route>
             <Route path='/userCabinet'><RegistrationContainer /></Route>
             <Route path='/logIn'><LogInContainer /></Route>

@@ -7,7 +7,7 @@ const Laptop = (props) => {
   return (
     <section className={s.allProducts}>
       {props.laptops.map(item => {
-        return createGoodsList(item)
+        return createGoodsList(item, props.addShoppingCartGood)
       })}
     </section>
   )
