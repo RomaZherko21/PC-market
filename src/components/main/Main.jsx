@@ -17,7 +17,6 @@ const Main = () => {
     return (
         <section className={s.main}>
             <NavBarContainer />
-            <ProductsContainer />
             <Route exact path='/'><MainPage /></Route>
             <Route path='/userCabinet'><RegistrationContainer /></Route>
             <Route path='/logIn'><LogInContainer /></Route>
@@ -25,6 +24,7 @@ const Main = () => {
             <Route path='/userProfile/:userID?'><UserProfileContainer /></Route>
             <Route path='/searchGoods'><SearchGoodsContainer /></Route>
             <Route path='/shoppingCart'><ShoppingCartContainer /></Route>
+            <ProductsContainer />
         </section>
     )
 }

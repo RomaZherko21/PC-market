@@ -1,87 +1,83 @@
-
-header{
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: rgb(24, 23, 28);
   color: white;
-padding: 15px 20px;
-font-size: 16px;
-position: relative;
-box-shadow: 0 0 20px rgba(0,0,0,0.5);
-width: 100%;
+  padding: 15px 20px;
+  font-size: 16px;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  z-index: 1;
 }
 
-header a{
+header a {
   text-decoration: none;
   color: inherit;
   display: block;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
 }
-header a:hover{
-  transition: all .3s ease;
+header a:hover {
+  transition: all 0.3s ease;
   color: rgb(159, 29, 35);
 }
 
-
-.logo img{
+.logo img {
   width: 120px;
   height: 25px;
 }
 
-.headerInfo{  
+.headerInfo {
   z-index: 2;
   display: flex;
   align-items: center;
 }
 
-.headerInfo div{
+.headerInfo div {
   margin-right: 15px;
 }
 
-.socialIcons a{
-display: inline-block;
-margin-right: 8px;
-font-size: 20px;
-
+.socialIcons a {
+  display: inline-block;
+  margin-right: 8px;
+  font-size: 20px;
 }
 
-.showInfo{
+.showInfo {
   display: none;
   cursor: pointer;
 }
-.showInfo:hover{
-  transition: all .3s ease;
+.showInfo:hover {
+  transition: all 0.3s ease;
   color: rgb(159, 29, 35);
 }
 
-
 @media (max-width: 700px) {
-  .headerInfo{
+  .headerInfo {
     position: absolute;
     display: none;
     background-color: rgb(26, 25, 25);
     top: 100%;
     width: 100%;
     right: 0;
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     padding: 8px;
   }
-  .showInfo{
+  .showInfo {
     display: block;
     color: orange;
   }
 }
 
-
 @media (max-width: 516px) {
-  .headerInfo{
+  .headerInfo {
     flex-direction: column;
   }
-  .headerInfo div{
+  .headerInfo div {
     margin-top: 10px;
   }
-  .showInfo{
+  .showInfo {
     display: block;
   }
 }
