@@ -9,8 +9,8 @@ import RegistrationContainer from './registration/RegistrationContainer'
 import LogInContainer from './logIn/LogInContainer'
 import ShowUsersContainer from './showUsers/ShowUsersContainer'
 import UserProfileContainer from './userProfile/UserProfileContainer'
-// import SearchGoodsContainer from "./searchGoods/SearchGoodsContainer";
 import ShoppingCartContainer from "./shoppingCart/ShoppingCartContainer";
+import CommentsContainer from "./comments/CommentsContainer";
 import Delivery from "./delivery/Delivery";
 
 import Footer from '../footer/Footer'
@@ -24,9 +24,9 @@ const Main = () => {
             <Route path='/logIn'><LogInContainer /></Route>
             <Route path='/showUsers'><ShowUsersContainer /></Route>
             <Route path='/userProfile/:userID?'><UserProfileContainer /></Route>
-            {/* <Route path='/searchGoods'><SearchGoodsContainer /></Route> */}
             <Route path='/shoppingCart'><ShoppingCartContainer /></Route>
             <Route path='/delivery'><Delivery /></Route>
+            <Route path='/comments'><CommentsContainer /></Route>
             <ProductsContainer />
             <Footer/>
         </section>

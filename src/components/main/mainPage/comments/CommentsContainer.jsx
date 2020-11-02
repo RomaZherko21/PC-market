@@ -8,7 +8,7 @@ import {connect} from 'react-redux'
 
 const mapStateToProps = (state)=>{
   return{
-    comments: state.mainPage.comments,
+    comments: state.comments.comments,
   }
 }
 const mapDispatchToProps = (dispatch)=>{
