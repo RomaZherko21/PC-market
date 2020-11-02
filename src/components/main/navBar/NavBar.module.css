@@ -47,6 +47,13 @@
 .navIcons i {
   font-size: 20px;
 }
+.navIcons .search{
+  margin-left: 14px;
+  cursor: pointer;
+}
+.navIcons .search:hover{
+  color: rgb(159, 29, 35);
+}
 
 .showList {
   display: none!important;

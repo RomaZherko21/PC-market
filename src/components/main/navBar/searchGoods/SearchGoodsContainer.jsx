@@ -1,7 +1,7 @@
 import SearchGoods from './SearchGoods'
 import { connect } from 'react-redux'
 
-import {onSearchGoods} from '../../../redux/reducers/searchGoods-reducer'
+import {onSearchGoods} from '../../../../redux/reducers/searchGoods-reducer'
 
 
 

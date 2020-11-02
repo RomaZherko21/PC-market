@@ -5,6 +5,8 @@ import s from './NavBar.module.css';
 
 import Sidebar from "./sidebar/Sidebar";
 
+import SearchGoodsContainer from './searchGoods/SearchGoodsContainer'
+
 const NavBar = (props) => {
 
   let [open, setOpen] = useState(false);
@@ -15,6 +17,11 @@ const NavBar = (props) => {
   let [showNav, setShowNav] = useState(false);
   function onShowNav() {
     setShowNav(!showNav);
+  }
+
+  let [showSearch, setShowSearch] = useState(false);
+  function onShowSearch() {
+    setShowSearch(!showSearch);
   }
 
   return (
@@ -36,8 +43,9 @@ const NavBar = (props) => {
           <NavLink to='/logIn' className={s.user}><i className="fas fa-door-open"></i></NavLink>
           <NavLink to='/userCabinet' className={s.user}><i className="far fa-user-circle"></i></NavLink>
           <NavLink to='/shoppingCart' className={s.danger}><i className="fas fa-shopping-cart"></i><span>{props.shoppingCartLength}</span></NavLink>
-          <NavLink to='/searchGoods'><i className="fas fa-search"></i></NavLink>
-        </div>
+          <i className={`fas fa-search ${s.search}`} onClick={onShowSearch}></i>
+        </div>   
+      {showSearch ? <SearchGoodsContainer onShowSearch={onShowSearch}/>: '' }
       </nav>
     </Fragment>
   )
