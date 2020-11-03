@@ -1,13 +1,14 @@
 const ON_LOG_IN_MAIL_TYPING = "ON-LOG-IN-MAIL-TYPING";
 const ON_LOG_IN_PASSWORD_TYPING = "ON-LOG-IN-PASSWORD-TYPING";
 const ON_LOG_IN = "ON-LOG-IN";
+const ON_LOG_OUT = "ON-LOG-OUT";
 
 let initialState = {
   currentLogInInfo: {
     mail: "",
     password: "",
   },
-  wrongData: '',
+  wrongData: "",
   currentUser: {},
 };
 
@@ -44,8 +45,8 @@ const registrationReducer = (state = initialState, action) => {
           break;
         }
       }
-let err = '';
-if(!user.mail || !user.password) err = 'Wrong data';
+      let err = "";
+      if (!user.mail || !user.password) err = "Wrong data";
       return {
         ...state,
         currentLogInInfo: {
@@ -56,31 +57,40 @@ if(!user.mail || !user.password) err = 'Wrong data';
         wrongData: err,
       };
     }
+    case ON_LOG_OUT: {
+      return {
+        ...state,
+        currentUser: {},
+      };
+    }
     default:
       return state;
   }
 };
 
-
 export function onLogIn(allUsers) {
   return {
     type: "ON-LOG-IN",
     allUsers: allUsers,
-  };  
+  };
 }
 
 export function onLogInMailTyping(text) {
   return {
     type: "ON-LOG-IN-MAIL-TYPING",
     text: text,
-  };  
+  };
 }
 export function onLogInPasswordTyping(text) {
   return {
     type: "ON-LOG-IN-PASSWORD-TYPING",
     text: text,
-  };  
+  };
 }
-
+export function onLogOut() {
+  return {
+    type: "ON-LOG-OUT",
+  };
+}
 
 export default registrationReducer;
