@@ -10,23 +10,24 @@ import ShowUsersContainer from './showUsers/ShowUsersContainer'
 import UserProfileContainer from './userProfile/UserProfileContainer'
 import ShoppingCartContainer from "./shoppingCart/ShoppingCartContainer";
 import CommentsContainer from "./comments/CommentsContainer";
+import ProfileContainer from './profile/ProfileContainer'
 import Delivery from "./delivery/Delivery";
 
 import Footer from '../footer/Footer'
 
-const Main = () => {
+const Main = (props) => {
     return (
         <section className={s.main}>
             <NavBarContainer />
             <Route exact path='/'><MainPage /></Route>
-            <Route path='/logInProfile'><LogInProfile /></Route>
+            <Route path={props.currentUser.name ? '/profile' : '/logInProfile'}>{props.currentUser.name ? <ProfileContainer /> : <LogInProfile />}</Route>
             <Route path='/showUsers'><ShowUsersContainer /></Route>
             <Route path='/userProfile/:userID?'><UserProfileContainer /></Route>
             <Route path='/shoppingCart'><ShoppingCartContainer /></Route>
             <Route path='/delivery'><Delivery /></Route>
             <Route path='/comments'><CommentsContainer /></Route>
             <ProductsContainer />
-            <Footer/>
+            <Footer />
         </section>
     )
 }

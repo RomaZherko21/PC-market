@@ -40,7 +40,7 @@ const NavBar = (props) => {
 
         <div className={s.navIcons} style={showNav ? { left: '0%' } : { left: '-100%' }}>
           {props.currentUser.name ? <NavLink to='/' className={s.user}  onClick={props.onLogOut}><i className="fas fa-door-open"></i></NavLink> : ''}
-          <NavLink to='/logInProfile/logIn' className={s.user}><i className="far fa-user-circle"></i></NavLink>
+          <NavLink to={props.currentUser.name ? '/profile' : '/logInProfile/logIn'} className={s.user}><i className="far fa-user-circle"></i></NavLink>
           <NavLink to='/shoppingCart' className={s.danger}><i className="fas fa-shopping-cart"></i><span>{props.shoppingCartLength}</span></NavLink>
           <i className={`fas fa-search ${s.search}`} onClick={onShowSearch}></i>
         </div>
