@@ -2,7 +2,7 @@ import LogIn from './LogIn'
 import { connect } from 'react-redux'
 
 
-import {onLogInMailTyping, onLogInPasswordTyping, onLogIn} from '../../../redux/reducers/logIn-reducer'
+import {onLogInMailTyping, onLogInPasswordTyping, onLogIn} from '../../../../redux/reducers/logIn-reducer'
 
 
 const mapStateToProps = (state) => {

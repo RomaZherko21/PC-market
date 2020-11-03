@@ -1,4 +1,5 @@
 import React from 'react'
+import {NavLink } from "react-router-dom";
 import s from './LogIn.module.css'
 
 const LogIn = (props) => {
@@ -12,6 +13,7 @@ const LogIn = (props) => {
           props.onLogIn(props.allUsers)
         }}>Login</button>
         <label>{props.state.wrongData}</label>
+        <NavLink className={s.ref} to='/logInProfile/registration'>Registration</NavLink>
       </form>
     </section>
   )

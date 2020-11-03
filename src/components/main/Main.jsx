@@ -5,8 +5,7 @@ import { Route } from "react-router-dom";
 import NavBarContainer from './navBar/NavBarContainer'
 import MainPage from './mainPage/MainPage'
 import ProductsContainer from './products/ProductsContainer'
-import RegistrationContainer from './registration/RegistrationContainer'
-import LogInContainer from './logIn/LogInContainer'
+import LogInProfile from './logInProfile/LogInProfile'
 import ShowUsersContainer from './showUsers/ShowUsersContainer'
 import UserProfileContainer from './userProfile/UserProfileContainer'
 import ShoppingCartContainer from "./shoppingCart/ShoppingCartContainer";
@@ -20,8 +19,7 @@ const Main = () => {
         <section className={s.main}>
             <NavBarContainer />
             <Route exact path='/'><MainPage /></Route>
-            <Route path='/userCabinet'><RegistrationContainer /></Route>
-            <Route path='/logIn'><LogInContainer /></Route>
+            <Route path='/logInProfile'><LogInProfile /></Route>
             <Route path='/showUsers'><ShowUsersContainer /></Route>
             <Route path='/userProfile/:userID?'><UserProfileContainer /></Route>
             <Route path='/shoppingCart'><ShoppingCartContainer /></Route>
