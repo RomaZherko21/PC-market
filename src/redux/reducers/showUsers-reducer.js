@@ -7,7 +7,7 @@ const LOADING = "LOADING";
 let initialState = {
   usersList: [],
   page: 1,
-  count: 5,
+  count: 7,
   isFetching: false,
 };
 

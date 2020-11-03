@@ -8,10 +8,15 @@ padding: 30px;
 
 .allUsers .oneUser{
 width: 80%;
-padding: 20px;
+padding: 10px;
 display: flex;
 align-items: center;
+border-bottom: 2px solid rgb(80, 79, 79);
+margin: 0 auto;
 }
+.allUsers .oneUser:hover{
+  background-color: rgb(153, 14, 12);
+  }
 .allUsers a{
   text-decoration: none;
   color: white;
@@ -19,7 +24,7 @@ align-items: center;
 
 
 .allUsers .oneUser img{
- width: 50px;
+ width: 30px;
  margin-right: 10px;
   }
 

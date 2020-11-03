@@ -8,22 +8,31 @@
   margin: 40px auto;
 }
 
-.currentUserProfile  img{
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    margin-right: 30px;
-    border: 4px solid rgb(153, 14, 12);
+.currentUserProfile img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-right: 30px;
+  border: 4px solid rgb(153, 14, 12);
 }
-.currentUserProfile ul{
-    list-style: none;
+.currentUserProfile ul {
+  list-style: none;
 }
-.currentUserProfile li{
-margin-top: 10px;
+.currentUserProfile li {
+  margin-top: 10px;
 }
-.currentUserProfile li span{
-    margin-right: 14px;
-    color: rgb(85, 85, 85);
-    font-size: 14px;
-    }
+.currentUserProfile li span {
+  margin-right: 14px;
+  color: rgb(85, 85, 85);
+  font-size: 14px;
+}
+
+@media (max-width: 700px) {
+  .currentUserProfile {
+    width: 95vw;
+    padding: 10px;
+    flex-direction: column;
+    margin: 20px auto;
+  }
+}
