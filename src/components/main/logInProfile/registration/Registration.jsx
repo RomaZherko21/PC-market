@@ -1,8 +1,9 @@
 import React from 'react'
-import { NavLink } from "react-router-dom";
+import { NavLink,useHistory } from "react-router-dom";
 import s from './Registration.module.css'
 
 const Registration = (props) => {
+  let history = useHistory();
   return (
     <section className={s.regComponent}>
       <form action="">
@@ -20,7 +21,7 @@ const Registration = (props) => {
         <label htmlFor='repeatPassword'>{props.state.errors.repeatPassword ? props.state.errors.repeatPassword : ''}</label>
         <button onClick={(e) => {
           e.preventDefault();
-          props.onSubmit()
+          props.onSubmit(()=>history.push("/logInProfile/logIn"))
         }}>Register</button>
         <NavLink className={s.ref} to='/logInProfile/logIn'>LogIn</NavLink>
       </form>

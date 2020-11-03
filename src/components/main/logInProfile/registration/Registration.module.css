@@ -57,6 +57,7 @@
     
 }
 .ref{
+  width: 0px;
   text-decoration: none;
   font-size: 1rem;
   margin-top: 16px;

@@ -42,6 +42,7 @@ const registrationReducer = (state = initialState, action) => {
           item.password === state.currentLogInInfo.password
         ) {
           user = item;
+          action.redirect();
           break;
         }
       }
@@ -68,10 +69,11 @@ const registrationReducer = (state = initialState, action) => {
   }
 };
 
-export function onLogIn(allUsers) {
+export function onLogIn(allUsers, redirect) {
   return {
     type: "ON-LOG-IN",
     allUsers: allUsers,
+    redirect,
   };
 }
 

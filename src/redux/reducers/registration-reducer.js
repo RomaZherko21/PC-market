@@ -155,6 +155,7 @@ const registrationReducer = (state = initialState, action) => {
       for (let key in state.errors) {
         if (state.errors[key] !== "") return { ...state };
       }
+      action.redirect();
       return {
         ...state,
         allUsers: [...state.allUsers, { ...state.currentRegistrationInfo, money:2000, }],
@@ -192,10 +193,11 @@ export function onNameTyping(text) {
     text: text,
   };
 }
-export function onSubmit(text) {
+export function onSubmit(redirect) {
   return {
     type: "ON-SUBMIT",
-    text: text,
+    redirect,
+
   };
 }
 export function onSurnameTyping(text) {
