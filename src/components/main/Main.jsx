@@ -12,6 +12,7 @@ import ShoppingCartContainer from "./shoppingCart/ShoppingCartContainer";
 import CommentsContainer from "./comments/CommentsContainer";
 import ProfileContainer from './profile/ProfileContainer'
 import Delivery from "./delivery/Delivery";
+import AboutUs from "./aboutUs/AboutUs";
 
 import Footer from '../footer/Footer'
 
@@ -26,6 +27,7 @@ const Main = (props) => {
             <Route path='/shoppingCart'><ShoppingCartContainer /></Route>
             <Route path='/delivery'><Delivery /></Route>
             <Route path='/comments'><CommentsContainer /></Route>
+            <Route path='/aboutUs'><AboutUs /></Route>
             <ProductsContainer />
             <Footer />
         </section>

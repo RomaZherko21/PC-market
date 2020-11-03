@@ -35,7 +35,7 @@ const NavBar = (props) => {
           <NavLink to='/delivery'>Доставка</NavLink>
           <NavLink to='/showUsers'>Пользователи</NavLink>
           <NavLink to='/comments'>Отзывы</NavLink>
-          <NavLink to='/contacts'>Контакты</NavLink>
+          <NavLink to='/aboutUs'>О нас</NavLink>
         </div>
 
         <div className={s.navIcons} style={showNav ? { left: '0%' } : { left: '-100%' }}>
