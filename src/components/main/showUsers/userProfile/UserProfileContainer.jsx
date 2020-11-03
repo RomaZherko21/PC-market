@@ -5,9 +5,9 @@ import { connect } from 'react-redux'
 import { compose } from 'redux'
 import { withRouter } from 'react-router-dom'
 
-import Loading from '../../common/Loading'
+import Loading from '../../../common/Loading'
 
-import { getProfileThunkCreator, loading } from '../../../redux/reducers/currentUser-reducer'
+import { getProfileThunkCreator, loading } from '../../../../redux/reducers/currentUser-reducer'
 
 
 class UserProfileContainer extends React.Component {

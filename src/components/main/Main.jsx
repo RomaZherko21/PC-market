@@ -7,7 +7,7 @@ import MainPage from './mainPage/MainPage'
 import ProductsContainer from './products/ProductsContainer'
 import LogInProfile from './logInProfile/LogInProfile'
 import ShowUsersContainer from './showUsers/ShowUsersContainer'
-import UserProfileContainer from './userProfile/UserProfileContainer'
+import UserProfileContainer from './showUsers/userProfile/UserProfileContainer'
 import ShoppingCartContainer from "./shoppingCart/ShoppingCartContainer";
 import CommentsContainer from "./comments/CommentsContainer";
 import ProfileContainer from './profile/ProfileContainer'
