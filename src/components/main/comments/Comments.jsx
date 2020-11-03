@@ -4,7 +4,6 @@ import s from './Comments.module.css'
 
 
 function ShowUsers(props) {
-  console.log(props.comments)
   return (
     <Fragment>
       <h1 className='mainTitle'>Отзывы</h1>
@@ -19,6 +18,10 @@ function ShowUsers(props) {
           )
         })}
       </section>
+      <div className={s.allUsersButtons}>
+        <button onClick={props.onPrevCommentPage}>Previous</button>
+        <button onClick={props.onNextCommentPage}>Next</button>
+      </div>
     </Fragment>
   );
 }
