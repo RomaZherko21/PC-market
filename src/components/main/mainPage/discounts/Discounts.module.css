@@ -12,6 +12,7 @@
   height: 150px;
   margin: 0 auto;
   background-color: none;
+  object-fit: cover;
 }
 
 .oneProduct {
