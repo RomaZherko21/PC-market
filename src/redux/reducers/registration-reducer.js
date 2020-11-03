@@ -15,6 +15,7 @@ let initialState = {
       adress: "Old Valey, 32",
       password: "admin",
       money: 2000,
+      photo: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80'
     },
     {
       name: "Roma",
@@ -23,6 +24,7 @@ let initialState = {
       adress: "Old Valey, 32",
       password: "1234",
       money: 2000,
+      photo: 'https://images.unsplash.com/photo-1480455624313-e29b44bbfde1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
     },
     {
       name: "Max",
@@ -31,6 +33,7 @@ let initialState = {
       adress: "Old Valey, 32",
       password: "1234",
       money: 2000,
+      photo: 'https://post.healthline.com/wp-content/uploads/2019/09/man-city-urban-walking-serious-732x549-thumbnail.jpg',
     },
     {
       name: "Ivan",
@@ -39,6 +42,7 @@ let initialState = {
       adress: "Old Valey, 32",
       password: "1234",
       money: 2000,
+      photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQqc4lAlScJUxiQ3Cw7rJmaO400GplM1mNHTw&usqp=CAU',
     },
   ],
   currentRegistrationInfo: {
