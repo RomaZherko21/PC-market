@@ -18,6 +18,7 @@ const Discounts = (props) => {
         slidesToScroll: 4,
         slidesToShow: 4,
         arrows: true,
+        draggable: false,
     };
     if (document.documentElement.clientWidth < 1230) { settings.slidesToScroll = 3; settings.slidesToShow = 3 }
     if (document.documentElement.clientWidth < 850) { settings.slidesToScroll = 2; settings.slidesToShow = 2 }

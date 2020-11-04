@@ -57,6 +57,9 @@
 .oneProduct .saleIcon:hover {
   text-decoration: underline;
 }
+.oneProduct a{
+  color: white;
+}
 
 .productDesription {
   display: none;

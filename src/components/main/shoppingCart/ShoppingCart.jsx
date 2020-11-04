@@ -7,7 +7,7 @@ const SwitchComponents = (props) => {
   return (
     <Fragment>
       <div className={s.shoppingCartInfo}>
-        {!props.currentUser.name ? <h1>Need To  <NavLink to='/logIn' className={s.user}>LogIn</NavLink></h1> : <h1> Balance: <span>{props.currentUser.money}</span> руб.</h1>}
+        {!props.currentUser.name ? <h1>Need To  <NavLink to='/logInProfile/logIn' className={s.user}>LogIn</NavLink></h1> : <h1> Balance: <span>{props.currentUser.money}</span> руб.</h1>}
         <h1>Full Price: <span>{props.shoppingCart.fullPrice}</span> руб.</h1>
       </div>
       <section className={s.shoppingCart}>
