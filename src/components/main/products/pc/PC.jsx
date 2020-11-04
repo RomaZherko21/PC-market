@@ -7,7 +7,7 @@ const PC = (props) => {
   return (
     <section className={s.allProducts}>
       {props.computers.map(item => {
-        return createGoodsList(item, props.addShoppingCartGood)
+        return createGoodsList(item, props.addShoppingCartGood, props.showCurrentProduct)
       })}
     </section>
   )

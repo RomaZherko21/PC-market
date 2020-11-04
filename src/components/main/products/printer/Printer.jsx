@@ -7,7 +7,7 @@ const Printer = (props) => {
   return (
     <section className={s.allProducts}>
       {props.printers.map(item => {
-        return createGoodsList(item, props.addShoppingCartGood)
+        return createGoodsList(item, props.addShoppingCartGood, props.showCurrentProduct)
       })}
     </section>
   )

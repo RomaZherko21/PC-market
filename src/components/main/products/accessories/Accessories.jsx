@@ -7,7 +7,7 @@ const Accessories = (props) => {
   return (
     <section className={s.allProducts}>
       {props.accessories.map(item => {
-        return createGoodsList(item, props.addShoppingCartGood)
+        return createGoodsList(item, props.addShoppingCartGood, props.showCurrentProduct)
       })}
     </section>
   )

@@ -23,6 +23,7 @@ const allGoods = {
           </ul>
         );
       },
+      warranty: "1 год",
     },
     {
       id: '0002',
@@ -46,6 +47,7 @@ const allGoods = {
           </ul>
         );
       },
+      warranty: "1 год",
     },
     {
       id: '0003',
@@ -69,6 +71,7 @@ const allGoods = {
           </ul>
         );
       },
+      warranty: "1 год",
     },
     {
       id: '0004',
@@ -92,6 +95,7 @@ const allGoods = {
           </ul>
         );
       },
+      warranty: "1 год",
     },
     {
       id: '0005',
@@ -114,6 +118,7 @@ const allGoods = {
           </ul>
         );
       },
+      warranty: "1 год",
     },
     {
       id: '0006',
@@ -137,6 +142,7 @@ const allGoods = {
           </ul>
         );
       },
+      warranty: "1 год",
     },
     {
       id: '0007',
@@ -160,6 +166,7 @@ const allGoods = {
           </ul>
         );
       },
+      warranty: "1 год",
     },
     {
       id: '0008',
@@ -183,6 +190,7 @@ const allGoods = {
           </ul>
         );
       },
+      warranty: "1 год",
     },
     {
       id: '0009',
@@ -206,6 +214,7 @@ const allGoods = {
           </ul>
         );
       },
+      warranty: "1 год",
     },
     {
       id: '0010',
@@ -229,6 +238,7 @@ const allGoods = {
           </ul>
         );
       },
+      warranty: "1 год",
     },
     {
       id: '0011',
@@ -252,6 +262,7 @@ const allGoods = {
           </ul>
         );
       },
+      warranty: "1 год",
     },
     {
       id: '0012',
@@ -275,6 +286,7 @@ const allGoods = {
           </ul>
         );
       },
+      warranty: "1 год",
     },
     {
       id: '0013',
@@ -298,6 +310,7 @@ const allGoods = {
           </ul>
         );
       },
+      warranty: "1 год",
     },
     {
       id: '0014',
@@ -321,6 +334,7 @@ const allGoods = {
           </ul>
         );
       },
+      warranty: "1 год",
     },
     {
       id: '0015',
@@ -344,6 +358,7 @@ const allGoods = {
           </ul>
         );
       },
+      warranty: "1 год",
     },
     {
       id: '0016',
@@ -367,6 +382,7 @@ const allGoods = {
           </ul>
         );
       },
+      warranty: "1 год",
     },
   ],
   computers: [

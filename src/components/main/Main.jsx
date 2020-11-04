@@ -11,6 +11,7 @@ import UserProfileContainer from './showUsers/userProfile/UserProfileContainer'
 import ShoppingCartContainer from "./shoppingCart/ShoppingCartContainer";
 import CommentsContainer from "./comments/CommentsContainer";
 import ProfileContainer from './profile/ProfileContainer'
+import CurrentProductContainer from './currentProduct/CurrentProductContainer'
 import Delivery from "./delivery/Delivery";
 import AboutUs from "./aboutUs/AboutUs";
 
@@ -25,6 +26,7 @@ const Main = (props) => {
             <Route path='/showUsers'><ShowUsersContainer /></Route>
             <Route path='/userProfile/:userID?'><UserProfileContainer /></Route>
             <Route path='/shoppingCart'><ShoppingCartContainer /></Route>
+            <Route path='/currentProduct'><CurrentProductContainer /></Route>
             <Route path='/delivery'><Delivery /></Route>
             <Route path='/comments'><CommentsContainer /></Route>
             <Route path='/aboutUs'><AboutUs /></Route>

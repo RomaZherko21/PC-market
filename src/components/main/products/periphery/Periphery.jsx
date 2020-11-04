@@ -7,7 +7,7 @@ const Periphery = (props) => {
   return (
     <section className={s.allProducts}>
       {props.periphery.map(item => {
-        return createGoodsList(item, props.addShoppingCartGood)
+        return createGoodsList(item, props.addShoppingCartGood, props.showCurrentProduct, props.showCurrentProduct)
       })}
     </section>
   )

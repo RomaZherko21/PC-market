@@ -7,7 +7,7 @@ const Monitor = (props) => {
   return (
     <section className={s.allProducts}>
       {props.monitors.map(item => {
-        return createGoodsList(item, props.addShoppingCartGood)
+        return createGoodsList(item, props.addShoppingCartGood, props.showCurrentProduct)
       })}
     </section>
   )
