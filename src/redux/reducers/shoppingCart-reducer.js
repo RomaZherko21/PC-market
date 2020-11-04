@@ -1,5 +1,6 @@
 
 const ADD_TO_SHOPPING_CART = "ADD-TO-SHOPPING-CART";
+const REMOVE_FROM_SHOPPING_CART = "REMOVE-FROM-SHOPPING-CART";
 const ON_SHOW_CURRENT_PRODUCT = "ON-SHOW-CURRENT-PRODUCT";
 
 let initialState = {
@@ -17,6 +18,14 @@ const shoppingCartReducer = (state = initialState, action) => {
         shoppingCartGoods: [...state.shoppingCartGoods, action.good],
       };
     }
+    case REMOVE_FROM_SHOPPING_CART: {
+      let newShoppingCart = state.shoppingCartGoods.filter(item=>item.name!==action.good.name)
+      return {
+        ...state,
+        fullPrice: state.fullPrice-action.good.price,
+        shoppingCartGoods: [...newShoppingCart],
+      };
+    }
     case ON_SHOW_CURRENT_PRODUCT: {
       return {
         ...state,
@@ -31,6 +40,12 @@ const shoppingCartReducer = (state = initialState, action) => {
 export function addShoppingCartGood(good) {
   return {
     type: "ADD-TO-SHOPPING-CART",
+    good: good,
+  };
+}
+export function removeShoppingCartGood(good) {
+  return {
+    type: "REMOVE-FROM-SHOPPING-CART",
     good: good,
   };
 }

@@ -17,6 +17,7 @@ const SwitchComponents = (props) => {
               <img src={item.img} alt="" />
               <h1>{item.name}</h1>
               <h2>{item.price} руб.</h2>
+              <div className={s.delete} onClick={() => { props.removeShoppingCartGood(item) }}>Удалить</div>
             </div>
           )
         })}
