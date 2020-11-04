@@ -7,6 +7,7 @@ const allGoods = {
       prevPrice: "2800 руб.",
       discountPrice: "2550 руб.",
       price: 2550,
+      amount:1,
       img: "http://pngimg.com/uploads/cpu/cpu_PNG39.png",
       description: () => {
         return (
@@ -31,6 +32,7 @@ const allGoods = {
       prevPrice: "4000 руб.",
       discountPrice: "3700 руб.",
       price: 3700,
+      amount:1,
       img: "http://pngimg.com/uploads/computer_pc/computer_pc_PNG17497.png",
       description: () => {
         return (
@@ -55,6 +57,7 @@ const allGoods = {
       prevPrice: "2500 руб.",
       discountPrice: "2234 руб.",
       price: 2234,
+      amount:1,
       img: "http://pngimg.com/uploads/computer_pc/computer_pc_PNG17495.png",
       description: () => {
         return (
@@ -79,6 +82,7 @@ const allGoods = {
       prevPrice: "319 руб.",
       discountPrice: "288 руб.",
       price: 288,
+      amount:1,
       img: "http://pngimg.com/uploads/computer_pc/computer_pc_PNG17486.png",
       description: () => {
         return (
@@ -98,10 +102,12 @@ const allGoods = {
       warranty: "1 год",
     },
     {
-      id: '0005',
+      id: '0001',
       name: "Процессор AMD Ryzen 3 3200G",
       prevPrice: "2800 руб.",
       discountPrice: "2550 руб.",
+      price: 2550,
+      amount:1,
       img: "http://pngimg.com/uploads/cpu/cpu_PNG39.png",
       description: () => {
         return (
@@ -121,11 +127,12 @@ const allGoods = {
       warranty: "1 год",
     },
     {
-      id: '0006',
+      id: '0002',
       name: "Ноутбук Apple MacBook (2017 год)",
       prevPrice: "4000 руб.",
       discountPrice: "3700 руб.",
       price: 3700,
+      amount:1,
       img: "http://pngimg.com/uploads/computer_pc/computer_pc_PNG17497.png",
       description: () => {
         return (
@@ -145,11 +152,12 @@ const allGoods = {
       warranty: "1 год",
     },
     {
-      id: '0007',
+      id: '0003',
       name: 'Ноутбук Apple MacBook Air 13" (2017 год)',
       prevPrice: "2500 руб.",
       discountPrice: "2234 руб.",
-      price: 3700,
+      price: 2234,
+      amount:1,
       img: "http://pngimg.com/uploads/computer_pc/computer_pc_PNG17495.png",
       description: () => {
         return (
@@ -169,11 +177,12 @@ const allGoods = {
       warranty: "1 год",
     },
     {
-      id: '0008',
+      id: '0004',
       name: "Процессор AMD Ryzen 3 3200G",
       prevPrice: "319 руб.",
       discountPrice: "288 руб.",
-      price: 3700,
+      price: 288,
+      amount:1,
       img: "http://pngimg.com/uploads/computer_pc/computer_pc_PNG17486.png",
       description: () => {
         return (
@@ -193,11 +202,12 @@ const allGoods = {
       warranty: "1 год",
     },
     {
-      id: '0009',
+      id: '0001',
       name: "Процессор AMD Ryzen 3 3200G",
       prevPrice: "2800 руб.",
       discountPrice: "2550 руб.",
-      price: 3700,
+      price: 2550,
+      amount:1,
       img: "http://pngimg.com/uploads/cpu/cpu_PNG39.png",
       description: () => {
         return (
@@ -217,11 +227,12 @@ const allGoods = {
       warranty: "1 год",
     },
     {
-      id: '0010',
+      id: '0002',
       name: "Ноутбук Apple MacBook (2017 год)",
       prevPrice: "4000 руб.",
       discountPrice: "3700 руб.",
       price: 3700,
+      amount:1,
       img: "http://pngimg.com/uploads/computer_pc/computer_pc_PNG17497.png",
       description: () => {
         return (
@@ -241,11 +252,12 @@ const allGoods = {
       warranty: "1 год",
     },
     {
-      id: '0011',
+      id: '0003',
       name: 'Ноутбук Apple MacBook Air 13" (2017 год)',
       prevPrice: "2500 руб.",
       discountPrice: "2234 руб.",
-      price: 3700,
+      price: 2234,
+      amount:1,
       img: "http://pngimg.com/uploads/computer_pc/computer_pc_PNG17495.png",
       description: () => {
         return (
@@ -265,107 +277,12 @@ const allGoods = {
       warranty: "1 год",
     },
     {
-      id: '0012',
+      id: '0004',
       name: "Процессор AMD Ryzen 3 3200G",
       prevPrice: "319 руб.",
       discountPrice: "288 руб.",
-      price: 3700,
-      img: "http://pngimg.com/uploads/computer_pc/computer_pc_PNG17486.png",
-      description: () => {
-        return (
-          <ul>
-            {" "}
-            <li> Цвет Черный</li>
-            <li> Для людей ростом от 160 до 180 см</li>
-            <li> Нагрузка до 120 кг</li>
-            <li> Класс газлифта 4-й класс</li>
-            <li> Вес кресла 23 кг</li>
-            <li>Материал каркаса сталь</li>
-            <li> Размер сиденья 57 х 52 см</li>
-            <li>Тип механизма Топ Ган</li>
-          </ul>
-        );
-      },
-      warranty: "1 год",
-    },
-    {
-      id: '0013',
-      name: "Процессор AMD Ryzen 3 3200G",
-      prevPrice: "2800 руб.",
-      discountPrice: "2550 руб.",
-      price: 3700,
-      img: "http://pngimg.com/uploads/cpu/cpu_PNG39.png",
-      description: () => {
-        return (
-          <ul>
-            {" "}
-            <li> Цвет Черный</li>
-            <li> Для людей ростом от 160 до 180 см</li>
-            <li> Нагрузка до 120 кг</li>
-            <li> Класс газлифта 4-й класс</li>
-            <li> Вес кресла 23 кг</li>
-            <li>Материал каркаса сталь</li>
-            <li> Размер сиденья 57 х 52 см</li>
-            <li>Тип механизма Топ Ган</li>
-          </ul>
-        );
-      },
-      warranty: "1 год",
-    },
-    {
-      id: '0014',
-      name: "Ноутбук Apple MacBook (2017 год)",
-      prevPrice: "4000 руб.",
-      discountPrice: "3700 руб.",
-      price: 3700,
-      img: "http://pngimg.com/uploads/computer_pc/computer_pc_PNG17497.png",
-      description: () => {
-        return (
-          <ul>
-            {" "}
-            <li> Цвет Черный</li>
-            <li> Для людей ростом от 160 до 180 см</li>
-            <li> Нагрузка до 120 кг</li>
-            <li> Класс газлифта 4-й класс</li>
-            <li> Вес кресла 23 кг</li>
-            <li>Материал каркаса сталь</li>
-            <li> Размер сиденья 57 х 52 см</li>
-            <li>Тип механизма Топ Ган</li>
-          </ul>
-        );
-      },
-      warranty: "1 год",
-    },
-    {
-      id: '0015',
-      name: 'Ноутбук Apple MacBook Air 13" (2017 год)',
-      prevPrice: "2500 руб.",
-      discountPrice: "2234 руб.",
-      price: 3700,
-      img: "http://pngimg.com/uploads/computer_pc/computer_pc_PNG17495.png",
-      description: () => {
-        return (
-          <ul>
-            {" "}
-            <li> Цвет Черный</li>
-            <li> Для людей ростом от 160 до 180 см</li>
-            <li> Нагрузка до 120 кг</li>
-            <li> Класс газлифта 4-й класс</li>
-            <li> Вес кресла 23 кг</li>
-            <li>Материал каркаса сталь</li>
-            <li> Размер сиденья 57 х 52 см</li>
-            <li>Тип механизма Топ Ган</li>
-          </ul>
-        );
-      },
-      warranty: "1 год",
-    },
-    {
-      id: '0016',
-      name: "Процессор AMD Ryzen 3 3200G",
-      prevPrice: "319 руб.",
-      discountPrice: "288 руб.",
-      price: 3700,
+      price: 288,
+      amount:1,
       img: "http://pngimg.com/uploads/computer_pc/computer_pc_PNG17486.png",
       description: () => {
         return (
@@ -391,8 +308,8 @@ const allGoods = {
       name: "Gamer Perfect",
       mainDescription:
         "i5-9400F | 6GB GTX1660Ti | ОЗУ 16 GB | HDD 1 TB | SSD 128 M2",
-
       price: 2550,
+      amount:1,
       img: "https://pcmarket.uz/wp-content/uploads/2020/08/66.png",
       description: {
         CPU:
@@ -410,6 +327,7 @@ const allGoods = {
       mainDescription:
         "i5 – 10400F ОЗУ 16 GB 6GB GTX1660 Super- HDD 1 TB SSD 128 GB",
       price: 3250,
+      amount:1,
       img:
         "https://pcmarket.uz/wp-content/uploads/2020/10/Playa-Product-Photo-Gallery-1042x589-04.png",
       description: {
@@ -427,6 +345,7 @@ const allGoods = {
       mainDescription:
         "i7-8700 ОЗУ 16 GB Inno 3D – 6GB GeForce GTX1660Ti HDD 1 TB SSD 240 GB",
       price: 4250,
+      amount:1,
       img:
         "https://pcmarket.uz/wp-content/uploads/2020/06/new-pcmarket-bolt.png",
       description: {
@@ -444,6 +363,7 @@ const allGoods = {
       mainDescription:
         "Intel:registered: Dual Core:tm: i3-2100 ОЗУ 4GB DDR3 SSD 128 GB",
       price: 2250,
+      amount:1,
       img: "https://pcmarket.uz/wp-content/uploads/2020/07/Office-PC-min.png",
       description: {
         CPU: "Процессор Intel-Core i5 – 10400F, 2.9 GHz, Turbo Boost",
@@ -459,6 +379,7 @@ const allGoods = {
       name: "Office Elite",
       mainDescription: "Intel-Core i3 9100 ОЗУ 4GB DDR4 SSD 128 GB",
       price: 2250,
+      amount:1,
       img: "https://pcmarket.uz/wp-content/uploads/2020/07/Office-PC-min.png",
       description: {
         CPU: "Процессор Intel-Core i5 – 10400F, 2.9 GHz, Turbo Boost",
@@ -478,6 +399,7 @@ const allGoods = {
         "i5-9400F | 6GB GTX1660Ti | ОЗУ 16 GB | HDD 1 TB | SSD 128 M2",
 
       price: 2550,
+      amount:1,
       img: "https://pcmarket.uz/wp-content/uploads/2020/05/9011.png",
       description: {
         CPU:
@@ -495,6 +417,7 @@ const allGoods = {
       mainDescription:
         "i5 – 10400F ОЗУ 16 GB 6GB GTX1660 Super- HDD 1 TB SSD 128 GB",
       price: 3250,
+      amount:1,
       img: "https://pcmarket.uz/wp-content/uploads/2020/05/201.png",
       description: {
         CPU: "Процессор Intel-Core i5 – 10400F, 2.9 GHz, Turbo Boost",
@@ -511,6 +434,7 @@ const allGoods = {
       mainDescription:
         "i7-8700 ОЗУ 16 GB Inno 3D – 6GB GeForce GTX1660Ti HDD 1 TB SSD 240 GB",
       price: 4250,
+      amount:1,
       img:
         "https://pcmarket.uz/wp-content/uploads/2020/09/22efef6dcfb07cca0b8b6a0b366bd7ad-kopiya.png",
       description: {
@@ -528,6 +452,7 @@ const allGoods = {
       mainDescription:
         "Intel:registered: Dual Core:tm: i3-2100 ОЗУ 4GB DDR3 SSD 128 GB",
       price: 2250,
+      amount:1,
       img:
         "https://pcmarket.uz/wp-content/uploads/2020/08/Acer-Aspire-3-A315-55-55K-main.png",
       description: {
@@ -544,6 +469,7 @@ const allGoods = {
       name: "Office Elite",
       mainDescription: "Intel-Core i3 9100 ОЗУ 4GB DDR4 SSD 128 GB",
       price: 2250,
+      amount:1,
       img:
         "https://pcmarket.uz/wp-content/uploads/2020/09/e02b2c1e70e1b36f6fc5c20ba12cf3fa-kopiya.png",
       description: {
@@ -562,6 +488,7 @@ const allGoods = {
       name: "HP Ink Tank 115 Printer",
       mainDescription: "HP Ink Tank 115 Printer",
       price: 500,
+      amount:1,
       img: "https://pcmarket.uz/wp-content/uploads/2020/07/c06103650.png",
       description: {
         printColor: "Цветность печати – цветная",
@@ -577,6 +504,7 @@ const allGoods = {
       name: "HP LASERJET PRO M15A",
       mainDescription: "HP LASERJET PRO M15A",
       price: 450,
+       amount:1,
       img: "https://pcmarket.uz/wp-content/uploads/2020/07/c06507640.png",
       description: {
         printColor: "Цветность печати – черно-белая",
@@ -591,6 +519,7 @@ const allGoods = {
       name: "Canon i-SENSYS LBP113W",
       mainDescription: "Canon i-SENSYS LBP113W",
       price: 650,
+       amount:1,
       img:
         "https://pcmarket.uz/wp-content/uploads/2020/07/SUhROjD07vFHwfdt7XeoLHHCx8muPRG9xNRR5fdj4R4OYrfMnN5tIUHNOKPg-kopiya-2.png",
       description: {
@@ -609,6 +538,7 @@ const allGoods = {
       name: "AOC – 21,5″ E2270SWN LED Monitor",
       mainDescription: "AOC – 21,5″ E2270SWN LED Monitor",
       price: 1200,
+       amount:1,
       img:
         "https://pcmarket.uz/wp-content/uploads/2020/07/scale-dec-294x294-1.png",
       description: {
@@ -624,6 +554,7 @@ const allGoods = {
       name: "Philips – 18,5″ 193V5L LED Monitor",
       mainDescription: "Philips – 18,5″ 193V5L LED Monitor",
       price: 1400,
+       amount:1,
       img:
         "https://pcmarket.uz/wp-content/uploads/2020/07/Monitor-philips-20-1.png",
       description: {
@@ -639,6 +570,7 @@ const allGoods = {
       name: "Монитор LG 19.5″(LED) 20M38A",
       mainDescription: "Монитор LG 19.5″(LED) 20M38A",
       price: 1910,
+       amount:1,
       img:
         "https://pcmarket.uz/wp-content/uploads/2020/10/ArtelM200024D-kopiya-1.png",
       description: {
@@ -656,6 +588,7 @@ const allGoods = {
       name: "SSD Foxline 120GB M.2 SATA 2280 3D TLC (Foxconn)",
       mainDescription: "SSD Foxline 120GB M.2 SATA 2280 3D TLC (Foxconn)",
       price: 400,
+       amount:1,
       img:
         "https://pcmarket.uz/wp-content/uploads/2020/09/f1afe3f142387d02921e8f9e56627fec-kopiya.png",
       description: {
@@ -671,6 +604,7 @@ const allGoods = {
       name: "SSD Foxline 128GB M.2 PCIe Gen3x2 2280 3D TLC NVMe (Foxconn)",
       mainDescription: "SSD Foxline 128GB M.2 PCIe Gen3x2 2280 3D TLC NVMe (Foxconn)",
       price: 300,
+       amount:1,
       img:
         "https://pcmarket.uz/wp-content/uploads/2020/09/f01c57f71a6f161130c3711fca0a1b8f-kopiya.png",
       description: {
@@ -686,6 +620,7 @@ const allGoods = {
       name: "Aerocool ECO 400, 400W, BOX",
       mainDescription: "Aerocool ECO 400, 400W, BOX",
       price: 400,
+       amount:1,
       img:
         "https://pcmarket.uz/wp-content/uploads/2020/08/400-info-kopiya.png",
       description: {
@@ -701,6 +636,7 @@ const allGoods = {
       name: "Inno 3D – 8GB GeForce RTX2080 Twin X2 OC GDDR6",
       mainDescription: "Inno 3D – 8GB GeForce RTX2080 Twin X2 OC GDDR6",
       price: 1100,
+       amount:1,
       img:
         "https://pcmarket.uz/wp-content/uploads/2020/07/6537943-1580725191-kopiya-1.png",
       description: {
@@ -718,6 +654,7 @@ const allGoods = {
       name: "Cougar Minos X2",
       mainDescription: "Cougar Minos X2",
       price: 199,
+       amount:1,
       img:
         "https://pcmarket.uz/wp-content/uploads/2020/08/01-23.png",
       description: {
@@ -733,6 +670,7 @@ const allGoods = {
       name: "Gamdias GKC6011 (клавиатура + мышь)",
       mainDescription: "Gamdias GKC6011 (клавиатура + мышь)",
       price: 499,
+       amount:1,
       img:
         "https://pcmarket.uz/wp-content/uploads/2020/08/5e15bcafdbd7e-1200x800-kopiya.png",
       description: {
@@ -750,6 +688,7 @@ const allGoods = {
       name: "Gaming Chair Cougar Fusion Black/Игровое кресло",
       mainDescription: "Gaming Chair Cougar Fusion Black/Игровое кресло",
       price: 1000,
+       amount:1,
       img:
         "https://pcmarket.uz/wp-content/uploads/2020/07/1-1.png",
       description: {
@@ -765,6 +704,7 @@ const allGoods = {
       name: "Kingston DataTraveler 106 16GB",
       mainDescription: "Kingston DataTraveler 106 16GB",
       price: 50,
+       amount:1,
       img:
         "https://pcmarket.uz/wp-content/uploads/2020/10/kingston-datatraveler-106-16gb-1-kopiya.png",
       description: {

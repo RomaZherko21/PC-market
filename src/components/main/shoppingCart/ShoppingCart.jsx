@@ -17,6 +17,12 @@ const SwitchComponents = (props) => {
               <img src={item.img} alt="" />
               <h1>{item.name}</h1>
               <h2>{item.price} руб.</h2>
+              <div className={s.amount}>Кол-во: {item.amount}
+                <div>
+                  <i className="fas fa-plus" onClick={()=>props.plusCurrentGoodAmount(item)}></i>
+                  <i className="fas fa-minus" onClick={()=>props.minusCurrentGoodAmount(item)}></i>
+                </div>
+              </div>
               <div className={s.delete} onClick={() => { props.removeShoppingCartGood(item) }}>Удалить</div>
             </div>
           )

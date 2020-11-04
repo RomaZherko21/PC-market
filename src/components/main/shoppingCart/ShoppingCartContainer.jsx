@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import ShoppingCart from './ShoppingCart'
 
-import {removeShoppingCartGood} from '../../../redux/reducers/shoppingCart-reducer'
+import {removeShoppingCartGood, plusCurrentGoodAmount, minusCurrentGoodAmount} from '../../../redux/reducers/shoppingCart-reducer'
 
 
 const mapStateToProps = (state) => {
@@ -12,7 +12,9 @@ const mapStateToProps = (state) => {
 }
 
 const DiscountsContainer = connect(mapStateToProps, {
-    removeShoppingCartGood
+    removeShoppingCartGood,
+    plusCurrentGoodAmount,
+    minusCurrentGoodAmount,
 })(ShoppingCart);
 
 export default DiscountsContainer;
