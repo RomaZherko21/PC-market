@@ -10,6 +10,7 @@ import Monitor from './monitor/Monitor'
 import Periphery from './periphery/Periphery'
 import Modules from './modules/Modules'
 import Accessories from './accessories/Accessories'
+import SearchedProducts from './searchedProducts/SearchedProducts'
 
 
 
@@ -36,6 +37,9 @@ const SwitchComponents = (props) => {
       </Route>
       <Route path="/accessories">
         <Accessories accessories={allGoods.accessories} addShoppingCartGood={props.addShoppingCartGood} showCurrentProduct={props.showCurrentProduct} />
+      </Route>
+      <Route path="/searchedProducts">
+        <SearchedProducts searchedProducts={props.searchedProducts} addShoppingCartGood={props.addShoppingCartGood} showCurrentProduct={props.showCurrentProduct} />
       </Route>
     </Switch>
   )

@@ -7,6 +7,7 @@ const mapStateToProps = (state) => {
     return {
         shoppingCart: state.shoppingCart,
         currentUser: state.logIn.currentUser,
+        searchedProducts: state.searchGoods.searchedGoods,
     }
 }
 

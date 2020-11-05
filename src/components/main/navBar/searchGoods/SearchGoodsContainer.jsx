@@ -1,7 +1,7 @@
 import SearchGoods from './SearchGoods'
 import { connect } from 'react-redux'
 
-import {onSearchGoods} from '../../../../redux/reducers/searchGoods-reducer'
+import {onSearchGoods, getSearchedProducts} from '../../../../redux/reducers/searchGoods-reducer';
 
 
 
@@ -13,6 +13,7 @@ const mapStateToProps = (state) => {
 
 const SearchGoodsContainer = connect(mapStateToProps, {
   onSearchGoods,
+  getSearchedProducts,
 })(SearchGoods);
 
 
