@@ -7,9 +7,9 @@ class ClientsController {
     res.send("<h1>GET CLIENTS<h1/>");
   }
 
-  async getClient(req, res) {
-    res.send("ID" + req.params["id"]);
-  }
+  // async getClient(req, res) {
+  //   res.send("ID" + req.params["id"]);
+  // }
 }
 
 module.exports = new ClientsController();

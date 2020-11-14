@@ -7,8 +7,8 @@ const clientSchema = new Schema(
       required: true,
       unique: false,
     },
-    age: {
-      type: Number,
+    surname: {
+      type: String,
       required: true,
       unique: false,
     },
@@ -17,7 +17,12 @@ const clientSchema = new Schema(
       required: true,
       unique: true,
     },
-    male: {
+    adress: {
+      type: String,
+      required: true,
+      unique: false,
+    },
+    password: {
       type: String,
       required: true,
       unique: false,
@@ -25,5 +30,5 @@ const clientSchema = new Schema(
   },
   { versionKey: false }
 );
-
-module.export = model("Client", clientSchema);
+const Client = model("Client", clientSchema);
+exports.module = Client;
