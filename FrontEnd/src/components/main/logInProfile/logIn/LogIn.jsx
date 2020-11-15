@@ -12,6 +12,7 @@ const LogIn = (props) => {
         <button onClick={(e) => {
           e.preventDefault();
           props.onLogIn(props.allUsers, ()=>history.push("/profile"));
+          props.getUserThunkCreator(props.state.currentLogInInfo);
         }}>Login</button>
         <label>{props.state.wrongData}</label>
         <NavLink className={s.ref} to='/logInProfile/registration'>Registration</NavLink>

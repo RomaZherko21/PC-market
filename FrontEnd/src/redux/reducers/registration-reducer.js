@@ -1,3 +1,5 @@
+import logInProfileAPI from "../../api/logInProfileAPI";
+
 const ON_NAME_TYPING = "ON-NAME-TYPING";
 const ON_SURNAME_TYPING = "ON-SURNAME-TYPING";
 const ON_MAIL_TYPING = "ON-MAIL-TYPING";
@@ -15,7 +17,8 @@ let initialState = {
       adress: "Old Valey, 32",
       password: "admin",
       money: 2000,
-      photo: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80'
+      photo:
+        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
     },
     {
       name: "Roma",
@@ -24,7 +27,8 @@ let initialState = {
       adress: "Old Valey, 32",
       password: "1234",
       money: 2000,
-      photo: 'https://images.unsplash.com/photo-1480455624313-e29b44bbfde1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80',
+      photo:
+        "https://images.unsplash.com/photo-1480455624313-e29b44bbfde1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
     },
     {
       name: "Max",
@@ -33,7 +37,8 @@ let initialState = {
       adress: "Old Valey, 32",
       password: "1234",
       money: 2000,
-      photo: 'https://post.healthline.com/wp-content/uploads/2019/09/man-city-urban-walking-serious-732x549-thumbnail.jpg',
+      photo:
+        "https://post.healthline.com/wp-content/uploads/2019/09/man-city-urban-walking-serious-732x549-thumbnail.jpg",
     },
     {
       name: "Ivan",
@@ -42,7 +47,8 @@ let initialState = {
       adress: "Old Valey, 32",
       password: "1234",
       money: 2000,
-      photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQqc4lAlScJUxiQ3Cw7rJmaO400GplM1mNHTw&usqp=CAU',
+      photo:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQqc4lAlScJUxiQ3Cw7rJmaO400GplM1mNHTw&usqp=CAU",
     },
   ],
   currentRegistrationInfo: {
@@ -162,7 +168,10 @@ const registrationReducer = (state = initialState, action) => {
       action.redirect();
       return {
         ...state,
-        allUsers: [...state.allUsers, { ...state.currentRegistrationInfo, money:2000, }],
+        allUsers: [
+          ...state.allUsers,
+          { ...state.currentRegistrationInfo, money: 2000 },
+        ],
         currentRegistrationInfo: {
           name: "",
           surname: "",
@@ -201,7 +210,6 @@ export function onSubmit(redirect) {
   return {
     type: "ON-SUBMIT",
     redirect,
-
   };
 }
 export function onSurnameTyping(text) {
@@ -222,5 +230,11 @@ export function onRepeatPasswordTyping(text) {
     text: text,
   };
 }
+
+export const postClientThunkCreator = (client) => {
+  return async (dispatch) => {
+    await logInProfileAPI.postNewClient(client);
+  };
+};
 
 export default registrationReducer;

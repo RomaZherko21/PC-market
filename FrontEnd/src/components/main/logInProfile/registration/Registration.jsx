@@ -22,6 +22,10 @@ const Registration = (props) => {
         <button onClick={(e) => {
           e.preventDefault();
           props.onSubmit(()=>history.push("/logInProfile/logIn"))
+          for (let key in props.state.errors) {
+            if (props.state.errors[key] !== "") return;
+          }
+          props.postClientThunkCreator(props.state.currentRegistrationInfo)
         }}>Register</button>
         <NavLink className={s.ref} to='/logInProfile/logIn'>LogIn</NavLink>
       </form>

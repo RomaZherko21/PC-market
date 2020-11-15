@@ -12,7 +12,7 @@ const clientSchema = new Schema(
       required: true,
       unique: false,
     },
-    email: {
+    mail: {
       type: String,
       required: true,
       unique: true,
@@ -27,6 +27,11 @@ const clientSchema = new Schema(
       required: true,
       unique: false,
     },
+    repeatPassword:{
+      type: String,
+      required: true,
+      unique: false,
+    }
   },
   { versionKey: false }
 );

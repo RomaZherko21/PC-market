@@ -1,3 +1,5 @@
+import logInProfileAPI from "../../api/logInProfileAPI";
+
 const ON_LOG_IN_MAIL_TYPING = "ON-LOG-IN-MAIL-TYPING";
 const ON_LOG_IN_PASSWORD_TYPING = "ON-LOG-IN-PASSWORD-TYPING";
 const ON_LOG_IN = "ON-LOG-IN";
@@ -94,5 +96,11 @@ export function onLogOut() {
     type: "ON-LOG-OUT",
   };
 }
+export const getUserThunkCreator = (logInInfo) => {
+  return async (dispatch) => {
+    await logInProfileAPI.getUser(logInInfo);
+  };
+};
+
 
 export default registrationReducer;

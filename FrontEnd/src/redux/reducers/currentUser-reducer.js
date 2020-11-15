@@ -1,4 +1,4 @@
-import usersAPI from "../../api/api";
+import usersAPI from "../../api/usersApi";
 
 const ON_CHANGE_CURRENT_USER = "ON-CHANGE-CURRENT-USER";
 

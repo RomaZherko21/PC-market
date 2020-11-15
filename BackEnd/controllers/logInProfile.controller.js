@@ -1,9 +1,12 @@
+const LogInProfileService = require('../services/logInProfile.service');
+
 class LogInProfileController {
-    getLog(req, res) {
-      res.send("<h1>GET LogInProfile<h1/>");
-    }
-  
+  postNewUser(req, res) {
+      LogInProfileService.registrateClient(req.body, res)
   }
-  
-  module.exports = new LogInProfileController();
-  
+  getUser(req,res){
+    LogInProfileService.logInProfile(req.query, res)
+  }
+}
+
+module.exports = new LogInProfileController();
