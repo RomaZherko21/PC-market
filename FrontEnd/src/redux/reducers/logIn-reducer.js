@@ -37,26 +37,21 @@ const registrationReducer = (state = initialState, action) => {
     }
 
     case ON_LOG_IN: {
-      let user = {};
-      for (let item of action.allUsers) {
-        if (
-          item.mail === state.currentLogInInfo.mail &&
-          item.password === state.currentLogInInfo.password
-        ) {
-          user = item;
-          action.redirect();
-          break;
-        }
+      let err;
+      let user;
+      if (action.user.message) {
+        err = action.user.message;
+        user = {};
+      } else {
+        user = { ...action.user, money: 2000, photo: 'http://pngimg.com/uploads/pacman/pacman_PNG19.png'};
       }
-      let err = "";
-      if (!user.mail || !user.password) err = "Wrong data";
       return {
         ...state,
         currentLogInInfo: {
           mail: "",
           password: "",
         },
-        currentUser: { ...user },
+        currentUser: user,
         wrongData: err,
       };
     }
@@ -71,11 +66,10 @@ const registrationReducer = (state = initialState, action) => {
   }
 };
 
-export function onLogIn(allUsers, redirect) {
+export function onLogIn(user) {
   return {
     type: "ON-LOG-IN",
-    allUsers: allUsers,
-    redirect,
+    user,
   };
 }
 
@@ -96,11 +90,12 @@ export function onLogOut() {
     type: "ON-LOG-OUT",
   };
 }
-export const getUserThunkCreator = (logInInfo) => {
+export const getUserThunkCreator = (currentLogInInfo) => {
   return async (dispatch) => {
-    await logInProfileAPI.getUser(logInInfo);
+    let response = await logInProfileAPI.getUser(currentLogInInfo);
+    dispatch(onLogIn(response));
+    return response;
   };
 };
-
 
 export default registrationReducer;

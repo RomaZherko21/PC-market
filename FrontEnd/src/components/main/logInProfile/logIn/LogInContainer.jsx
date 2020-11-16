@@ -2,8 +2,7 @@ import LogIn from './LogIn'
 import { connect } from 'react-redux'
 
 
-import {onLogInMailTyping, onLogInPasswordTyping, onLogIn, getUserThunkCreator} from '../../../../redux/reducers/logIn-reducer'
-
+import {onLogInMailTyping, onLogInPasswordTyping, getUserThunkCreator} from '../../../../redux/reducers/logIn-reducer'
 
 const mapStateToProps = (state) => {
   return {
@@ -12,11 +11,9 @@ const mapStateToProps = (state) => {
   }
 }
 
-
 const LogInContainer = connect(mapStateToProps, {
   onLogInMailTyping,
   onLogInPasswordTyping,
-  onLogIn,
   getUserThunkCreator
 })(LogIn);
 

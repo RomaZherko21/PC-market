@@ -6,51 +6,10 @@ const ON_MAIL_TYPING = "ON-MAIL-TYPING";
 const ON_ADRESS_TYPING = "ON-ADRESS-TYPING";
 const ON_PASSWORD_TYPING = "ON-PASSWORD-TYPING";
 const ON_REPEAT_PASSWORD_TYPING = "ON-REPEAT-PASSWORD-TYPING";
+const ON_REGISTRATION_SERVER_RESPONSE = "ON-REGISTRATION-SERVER-RESPONSE";
 const ON_SUBMIT = "ON-SUBMIT";
 
 let initialState = {
-  allUsers: [
-    {
-      name: "Admin",
-      surname: "Admin",
-      mail: "admin",
-      adress: "Old Valey, 32",
-      password: "admin",
-      money: 2000,
-      photo:
-        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
-    },
-    {
-      name: "Roma",
-      surname: "Zher",
-      mail: "RomaZher@inbox.ru",
-      adress: "Old Valey, 32",
-      password: "1234",
-      money: 2000,
-      photo:
-        "https://images.unsplash.com/photo-1480455624313-e29b44bbfde1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
-    },
-    {
-      name: "Max",
-      surname: "But",
-      mail: "MaxBut@inbox.ru",
-      adress: "Old Valey, 32",
-      password: "1234",
-      money: 2000,
-      photo:
-        "https://post.healthline.com/wp-content/uploads/2019/09/man-city-urban-walking-serious-732x549-thumbnail.jpg",
-    },
-    {
-      name: "Ivan",
-      surname: "Vas",
-      mail: "IvanVas@inbox.ru",
-      adress: "Old Valey, 32",
-      password: "1234",
-      money: 2000,
-      photo:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQqc4lAlScJUxiQ3Cw7rJmaO400GplM1mNHTw&usqp=CAU",
-    },
-  ],
   currentRegistrationInfo: {
     name: "",
     surname: "",
@@ -66,6 +25,10 @@ let initialState = {
     adress: " ",
     password: " ",
     repeatPassword: " ",
+  },
+  serverResponse: {
+    err: true,
+    message: "",
   },
 };
 
@@ -161,17 +124,18 @@ const registrationReducer = (state = initialState, action) => {
         errors: errors,
       };
     }
-    case ON_SUBMIT: {
-      for (let key in state.errors) {
-        if (state.errors[key] !== "") return { ...state };
-      }
-      action.redirect();
+    case ON_REGISTRATION_SERVER_RESPONSE: {
       return {
         ...state,
-        allUsers: [
-          ...state.allUsers,
-          { ...state.currentRegistrationInfo, money: 2000 },
-        ],
+        serverResponse: {
+          err: action.err,
+          message: action.message,
+        },
+      };
+    }
+    case ON_SUBMIT: {
+      return {
+        ...state,
         currentRegistrationInfo: {
           name: "",
           surname: "",
@@ -206,12 +170,6 @@ export function onNameTyping(text) {
     text: text,
   };
 }
-export function onSubmit(redirect) {
-  return {
-    type: "ON-SUBMIT",
-    redirect,
-  };
-}
 export function onSurnameTyping(text) {
   return {
     type: "ON-SURNAME-TYPING",
@@ -230,10 +188,25 @@ export function onRepeatPasswordTyping(text) {
     text: text,
   };
 }
+function onRegistrationServerResponse(err, message) {
+  return {
+    type: "ON-REGISTRATION-SERVER-RESPONSE",
+    err,
+    message,
+  };
+}
+export function onSubmit() {
+  return {
+    type: "ON-SUBMIT",
+  };
+}
 
 export const postClientThunkCreator = (client) => {
   return async (dispatch) => {
-    await logInProfileAPI.postNewClient(client);
+    let response = await logInProfileAPI.postNewClient(client);
+    dispatch(onRegistrationServerResponse(response.data.err, response.data.message));
+    if (!response.data.err) dispatch(onSubmit());
+    return response;
   };
 };
 
