@@ -38,7 +38,8 @@ export const getProfileThunkCreator = (userID) => {
   return (dispatch) => {
     dispatch(loading())
     usersAPI.getUserProfile(userID).then((response) => {
-      dispatch(onChangeCurrentUser(response.data));
+      console.log(response.data.clientProfile)
+      dispatch(onChangeCurrentUser(response.data.clientProfile));
       dispatch(loading())
     });
   };

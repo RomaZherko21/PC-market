@@ -60,7 +60,7 @@ export const getUsersThunkCreator = (count, page) => {
   return async (dispatch) => {
     dispatch(loading());
     let response = await usersAPI.getUsers(count, page);
-    dispatch(addUsers(response.data.items));
+    dispatch(addUsers(response.data.clients));
     dispatch(loading());
   };
 };
@@ -70,7 +70,7 @@ export const getNewUsersThunkCreator = (count, page, num) => {
     dispatch(loading());
     dispatch(onPageChange(num));
     let response = await usersAPI.getUsers(count, page + num);
-    dispatch(addUsers(response.data.items));
+    dispatch(addUsers(response.data.clients));
     dispatch(loading());
   };
 };
