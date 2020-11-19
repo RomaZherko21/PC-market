@@ -5,7 +5,7 @@ import Main from './Main'
 
 const mapStateToProps = (state) => {
   return {
-    currentUser: state.logIn.currentUser,
+    currentUser: state.logIn.currentUser
   }
 }
 

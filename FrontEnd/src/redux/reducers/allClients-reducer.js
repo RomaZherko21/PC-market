@@ -1,18 +1,26 @@
 import usersAPI from "../../api/usersApi";
 
+const ON_CHANGE_CURRENT_USER = "ON-CHANGE-CURRENT-USER";
 const ADD_USERS = "ADD-USERS";
 const ON_PAGE_CHANGE = "ON-PAGE-CHANGE";
 const LOADING = "LOADING";
 
 let initialState = {
+  user: {},
   usersList: [],
   page: 1,
   count: 7,
   isFetching: false,
 };
 
-const showUsersReducer = (state = initialState, action) => {
+const allClientsReducer = (state = initialState, action) => {
   switch (action.type) {
+    case ON_CHANGE_CURRENT_USER: {
+      return {
+        ...state,
+        user: action.user,
+      };
+    }
     case ADD_USERS: {
       return {
         ...state,
@@ -31,11 +39,17 @@ const showUsersReducer = (state = initialState, action) => {
         isFetching: !state.isFetching,
       };
     }
-
     default:
       return state;
   }
 };
+
+export function onChangeCurrentUser(user) {
+  return {
+    type: "ON-CHANGE-CURRENT-USER",
+    user: user,
+  };
+}
 
 export function loading() {
   return {
@@ -56,6 +70,17 @@ export function onPageChange(increment) {
   };
 }
 
+export const getProfileThunkCreator = (userID) => {
+  return (dispatch) => {
+    dispatch(loading());
+    usersAPI.getUserProfile(userID).then((response) => {
+      console.log(response.data.clientProfile);
+      dispatch(onChangeCurrentUser(response.data.clientProfile));
+      dispatch(loading());
+    });
+  };
+};
+
 export const getUsersThunkCreator = (count, page) => {
   return async (dispatch) => {
     dispatch(loading());
@@ -75,4 +100,4 @@ export const getNewUsersThunkCreator = (count, page, num) => {
   };
 };
 
-export default showUsersReducer;
+export default allClientsReducer;

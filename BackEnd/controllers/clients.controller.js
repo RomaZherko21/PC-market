@@ -23,10 +23,6 @@ class ClientsController {
     });
     res.json({ clientProfile: profile });
   }
-
-  // async getClient(req, res) {
-  //   res.send("ID" + req.params["id"]);
-  // }
 }
 
 module.exports = new ClientsController();

@@ -28,7 +28,7 @@ const NavBar = (props) => {
 
       <nav className={s.navBar}>
         <i className={`fas fa-list-ul ${s.showList}`} onClick={onShowNav}></i>
-        <Sidebar open={open} onShowGoods={onShowGoods} />
+        <Sidebar getNewGoodsThunkCreator={props.getNewGoodsThunkCreator} open={open} onShowGoods={onShowGoods} />
         <div className={s.navText} style={showNav ? { left: '0%' } : { left: '-100%' }}>
           <span className={s.goods} onClick={onShowGoods}><i className="fas fa-store"></i></span>
           <NavLink to='/'>Главная</NavLink>

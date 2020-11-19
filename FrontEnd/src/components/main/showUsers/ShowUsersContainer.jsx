@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import Loading from '../../common/Loading'
 
 import React, { Fragment } from 'react'
-import { getUsersThunkCreator, getNewUsersThunkCreator, onPageChange} from '../../../redux/reducers/showUsers-reducer'
+import { getUsersThunkCreator, getNewUsersThunkCreator, onPageChange} from '../../../redux/reducers/allClients-reducer'
 
 class ShowUsersContainer extends React.Component {
   constructor(props) {
@@ -31,7 +31,7 @@ class ShowUsersContainer extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    state: state.showUsers,
+    state: state.allClients,
   }
 }
 

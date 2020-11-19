@@ -10,10 +10,4 @@ class ClientsService {
     return allClients;
   }
 }
-
-// Client.module.deleteMany({},(err, result)=>{
-//     if(err) return console.log(err);
-//     console.log(result);
-// })
-// res.json({"message": `delete Data`})
 module.exports = new ClientsService();

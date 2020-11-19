@@ -1,12 +1,10 @@
+const ProductService = require("../services/products.service");
+
 class ProductsController {
-    getProducts(req, res) {
-      res.send("<h1>GET Products<h1/>");
-    }
-    getMAC(req, res) {
-      res.send("<h1>GET getMAC<h1/>");
-    }
-  
+  async getProducts(req, res) {
+    let goods = await ProductService.getProducts(req.query.type);
+    res.json(goods);
   }
-  
-  module.exports = new ProductsController();
-  
+}
+
+module.exports = new ProductsController();

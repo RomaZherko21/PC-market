@@ -7,7 +7,7 @@ import { withRouter } from 'react-router-dom'
 
 import Loading from '../../../common/Loading'
 
-import { getProfileThunkCreator, loading } from '../../../../redux/reducers/currentUser-reducer'
+import { getProfileThunkCreator, loading } from '../../../../redux/reducers/allClients-reducer'
 
 
 class UserProfileContainer extends React.Component {
@@ -26,8 +26,8 @@ class UserProfileContainer extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    currentUser: state.currentUser,
-    isFetching: state.showUsers.isFetching,
+    currentUser: state.allClients,
+    isFetching: state.allClients.isFetching,
   }
 }
 

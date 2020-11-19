@@ -3,6 +3,8 @@ import NavBar from './NavBar'
 import { connect } from 'react-redux'
 import {onLogOut} from '../../../redux/reducers/logIn-reducer'
 
+import { getNewGoodsThunkCreator } from '../../../redux/reducers/allGoods-reducer'
+
 const mapStateToProps = (state) => {
   return {
     shoppingCartLength: state.shoppingCart.shoppingCartGoods.length,
@@ -12,5 +14,10 @@ const mapStateToProps = (state) => {
 
 
 
-const NavBarContainer = connect(mapStateToProps, {onLogOut})(NavBar)
+const NavBarContainer = connect(mapStateToProps, {
+  onLogOut,
+  getNewGoodsThunkCreator,
+})(NavBar)
+
 export default NavBarContainer;
+

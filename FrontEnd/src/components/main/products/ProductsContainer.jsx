@@ -8,12 +8,13 @@ const mapStateToProps = (state) => {
         shoppingCart: state.shoppingCart,
         currentUser: state.logIn.currentUser,
         searchedProducts: state.searchGoods.searchedGoods,
+        allGoods: state.allGoods,
     }
 }
 
 const ProductsContainer = connect(mapStateToProps, {
     addShoppingCartGood,
-    showCurrentProduct,
+    showCurrentProduct
 })(Products);
 
 export default ProductsContainer;

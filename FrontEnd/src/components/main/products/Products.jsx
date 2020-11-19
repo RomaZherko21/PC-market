@@ -18,25 +18,25 @@ const SwitchComponents = (props) => {
   return (
     <Switch>
       <Route path="/pc">
-        <PC computers={allGoods.computers} addShoppingCartGood={props.addShoppingCartGood} showCurrentProduct={props.showCurrentProduct} />
+        <PC computers={props.allGoods.pc} addShoppingCartGood={props.addShoppingCartGood} showCurrentProduct={props.showCurrentProduct} />
       </Route>
       <Route path="/laptop">
-        <Laptop laptops={allGoods.laptops} addShoppingCartGood={props.addShoppingCartGood} showCurrentProduct={props.showCurrentProduct} />
+        <Laptop laptops={props.allGoods.laptop} addShoppingCartGood={props.addShoppingCartGood} showCurrentProduct={props.showCurrentProduct} />
       </Route>
       <Route path="/printer">
-        <Printer printers={allGoods.printers} addShoppingCartGood={props.addShoppingCartGood} showCurrentProduct={props.showCurrentProduct} />
+        <Printer printers={props.allGoods.printer} addShoppingCartGood={props.addShoppingCartGood} showCurrentProduct={props.showCurrentProduct} />
       </Route>
       <Route path="/monitor">
-        <Monitor monitors={allGoods.monitors} addShoppingCartGood={props.addShoppingCartGood} showCurrentProduct={props.showCurrentProduct} />
+        <Monitor monitors={props.allGoods.monitor} addShoppingCartGood={props.addShoppingCartGood} showCurrentProduct={props.showCurrentProduct} />
       </Route>
       <Route path="/periphery">
-        <Periphery periphery={allGoods.periphery} addShoppingCartGood={props.addShoppingCartGood} showCurrentProduct={props.showCurrentProduct} />
+        <Periphery periphery={props.allGoods.periphery} addShoppingCartGood={props.addShoppingCartGood} showCurrentProduct={props.showCurrentProduct} />
       </Route>
       <Route path="/modules">
-        <Modules modules={allGoods.modules} addShoppingCartGood={props.addShoppingCartGood} showCurrentProduct={props.showCurrentProduct} />
+        <Modules modules={props.allGoods.modules} addShoppingCartGood={props.addShoppingCartGood} showCurrentProduct={props.showCurrentProduct} />
       </Route>
       <Route path="/accessories">
-        <Accessories accessories={allGoods.accessories} addShoppingCartGood={props.addShoppingCartGood} showCurrentProduct={props.showCurrentProduct} />
+        <Accessories accessories={props.allGoods.accessories} addShoppingCartGood={props.addShoppingCartGood} showCurrentProduct={props.showCurrentProduct} />
       </Route>
       <Route path="/searchedProducts">
         <SearchedProducts searchedProducts={props.searchedProducts} addShoppingCartGood={props.addShoppingCartGood} showCurrentProduct={props.showCurrentProduct} />
