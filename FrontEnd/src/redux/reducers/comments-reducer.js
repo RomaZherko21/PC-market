@@ -1,5 +1,4 @@
 const ADD_COMMENT_HANDLE = "ADD-COMMENT-HANDLE";
-const ON_NAME_TYPING = "ON-NAME-TYPING";
 const ON_TEXT_TYPING = "ON-TEXT-TYPING";
 const ON_NEXT_COMMENT_PAGE = "ON-NEXT-COMMENT-PAGE";
 const ON_PREV_COMMENT_PAGE = "ON-PREV-COMMENT-PAGE";
@@ -83,7 +82,6 @@ let initialState = {
   ],
   currentCommentPage: 1,
   currentComment: {
-    name: "",
     text: "",
   },
 };
@@ -104,23 +102,14 @@ const commentsReducer = (state = initialState, action) => {
         comments: [
           ...state.comments,
           {
-            author: state.currentComment.name,
+            author: action.name,
             text: state.currentComment.text,
-            photo:
-              "https://pcmarket.uz/wp-content/uploads/2020/07/0MWUDu3IHxw.jpg",
+            photo: action.photo,
           },
         ],
         currentComment: {
           name: "",
           text: "",
-        },
-      };
-    case ON_NAME_TYPING:
-      return {
-        ...state,
-        currentComment: {
-          ...state.currentComment,
-          name: action.name,
         },
       };
     case ON_TEXT_TYPING:
@@ -158,15 +147,11 @@ const commentsReducer = (state = initialState, action) => {
   }
 };
 
-export function addComment() {
+export function addComment(name,photo) {
   return {
     type: "ADD-COMMENT-HANDLE",
-  };
-}
-export function onNameTyping(name) {
-  return {
-    type: "ON-NAME-TYPING",
-    name: name,
+    name,
+    photo
   };
 }
 export function onTextTyping(text) {
