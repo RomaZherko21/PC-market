@@ -10,6 +10,10 @@ import "slick-carousel/slick/slick-theme.css";
 
 const Discounts = (props) => {
 
+    if (props.discounts.length===0) {
+        props.getNewGoodsThunkCreator('/discounts');
+    }
+
     let settings = {
         dots: false,
         autoplay: true,
@@ -54,7 +58,7 @@ const Discounts = (props) => {
             <h1 className='mainTitle'>Товары по скидке</h1>
             <div className={s.container}>
                 <Slider {...settings}>
-                    {props.discountGoods.map((item) => {
+                    {props.discounts.map((item) => {
                         return OneProduct(item, props.showCurrentProduct)
                     })}
                 </Slider>
