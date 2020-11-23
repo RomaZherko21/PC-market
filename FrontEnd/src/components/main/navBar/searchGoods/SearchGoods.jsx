@@ -30,11 +30,10 @@ const SearchGoods = (props) => {
   let history = useHistory();
 
   let onSubmit = (formData) => {
-    props.onSearchGoods(formData);
+    props.getSearchedProductsThunkCreator(formData);
     formData.name = '';
     formData.price = '';
     props.onShowSearch();
-    props.getSearchedProducts();
     history.push("/searchedProducts");
   }
   return (

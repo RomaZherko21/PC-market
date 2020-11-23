@@ -8,6 +8,17 @@ const ProductService = {
     });
     return res;
   },
+  async getSearchedProducts(params) {
+    let res = [];
+    await Product.module.find({}, (err, allGoods) => {
+        for(let item of allGoods){
+          item.arr.map((good)=>{
+            if(good.price<=params.price && good.name.split(' ').includes(params.name)) res.push(good);
+          })
+        }
+    });
+    return res;
+  },
 };
 
 module.exports = ProductService;

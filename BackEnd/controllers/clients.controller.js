@@ -1,4 +1,3 @@
-//service служит для контакта с БД и отправки полученных данных в контроллер
 const ClientsService = require("../services/clients.service");
 
 let allClients;

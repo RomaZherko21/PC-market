@@ -13,7 +13,7 @@ function ShowUsers(props) {
   }
 
   return (
-    <section className={s.currentProduct}>
+    <section className={s.currentProduct} >
       <img src={props.currentProduct.img} alt="" />
       <div className={s.productDescription}>
         <h1>{props.currentProduct.name}</h1>

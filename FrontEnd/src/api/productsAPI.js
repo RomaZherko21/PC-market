@@ -6,6 +6,10 @@ const productsAPI = {
     let response = await axios.get(`${URL}/?type=${type}`);
     return response.data;
   },
+  async getSearchedProducts(filteredParams) {
+    let response = await axios.get(`${URL}/searchedProducts/?params=${JSON.stringify(filteredParams)}`);
+    return response.data;
+  },
 };
 
 export default productsAPI;
