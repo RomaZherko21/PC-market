@@ -1,9 +1,9 @@
 import usersAPI from "../../api/usersApi";
+import { loading } from "./common-reducer";
 
 const ON_CHANGE_CURRENT_USER = "ON-CHANGE-CURRENT-USER";
 const ADD_USERS = "ADD-USERS";
 const ON_PAGE_CHANGE = "ON-PAGE-CHANGE";
-const LOADING = "LOADING";
 
 let initialState = {
   user: {},
@@ -33,12 +33,6 @@ const allClientsReducer = (state = initialState, action) => {
         page: state.page + action.increment,
       };
     }
-    case LOADING: {
-      return {
-        ...state,
-        isFetching: !state.isFetching,
-      };
-    }
     default:
       return state;
   }
@@ -51,11 +45,6 @@ export function onChangeCurrentUser(user) {
   };
 }
 
-export function loading() {
-  return {
-    type: "LOADING",
-  };
-}
 export function addUsers(usersList) {
   return {
     type: "ADD-USERS",
@@ -74,7 +63,6 @@ export const getProfileThunkCreator = (userID) => {
   return (dispatch) => {
     dispatch(loading());
     usersAPI.getUserProfile(userID).then((response) => {
-      console.log(response.data.clientProfile);
       dispatch(onChangeCurrentUser(response.data.clientProfile));
       dispatch(loading());
     });

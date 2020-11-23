@@ -7,6 +7,7 @@ import shoppingCartReducer from './reducers/shoppingCart-reducer';
 import commentsReducer from './reducers/comments-reducer';
 import allClientsReducer from './reducers/allClients-reducer';
 import allGoodsReducer from './reducers/allGoods-reducer';
+import commonReducer from './reducers/common-reducer';
 import thunkMiddleware from 'redux-thunk';
 import {reducer as formReducer} from 'redux-form';
 
@@ -18,6 +19,7 @@ let reducers = combineReducers({
     shoppingCart: shoppingCartReducer,
     comments: commentsReducer,
     allGoods: allGoodsReducer,
+    common: commonReducer,
     form: formReducer,
 })
 

@@ -5,9 +5,9 @@ import { connect } from 'react-redux'
 import { compose } from 'redux'
 import { withRouter } from 'react-router-dom'
 
-import Loading from '../../../common/Loading'
+import Loading from '../../../common/Loading/Loading'
 
-import { getProfileThunkCreator, loading } from '../../../../redux/reducers/allClients-reducer'
+import { getProfileThunkCreator } from '../../../../redux/reducers/allClients-reducer'
 
 
 class UserProfileContainer extends React.Component {
@@ -27,7 +27,7 @@ class UserProfileContainer extends React.Component {
 const mapStateToProps = (state) => {
   return {
     currentUser: state.allClients,
-    isFetching: state.allClients.isFetching,
+    isFetching: state.common.isFetching,
   }
 }
 
@@ -35,7 +35,6 @@ const mapStateToProps = (state) => {
 
 export default compose(
   connect(mapStateToProps, {
-    loading,
     getProfileThunkCreator,
   }),
   withRouter,

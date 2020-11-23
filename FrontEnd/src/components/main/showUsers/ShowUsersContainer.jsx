@@ -1,8 +1,7 @@
 import ShowUsers from './ShowUsers'
 import { connect } from 'react-redux'
 
-
-import Loading from '../../common/Loading'
+import Loading from '../../common/Loading/Loading'
 
 import React, { Fragment } from 'react'
 import { getUsersThunkCreator, getNewUsersThunkCreator, onPageChange} from '../../../redux/reducers/allClients-reducer'
@@ -22,7 +21,7 @@ class ShowUsersContainer extends React.Component {
   render() {
     return (
       <Fragment>
-        {this.props.state.isFetching ? <Loading /> : <ShowUsers state={this.props.state}
+        {this.props.isFetching ? <Loading /> : <ShowUsers state={this.props.state}
           onPageChange={this.onPageChange} onCurrentUserInfo={this.props.onCurrentUserInfo} />}
       </Fragment>
     );
@@ -32,6 +31,7 @@ class ShowUsersContainer extends React.Component {
 const mapStateToProps = (state) => {
   return {
     state: state.allClients,
+    isFetching: state.common.isFetching,
   }
 }
 

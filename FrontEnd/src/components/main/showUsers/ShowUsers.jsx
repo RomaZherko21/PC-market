@@ -21,7 +21,7 @@ function ShowUsers(props) {
       })}
       <div className={s.allUsersButtons}>
         <button onClick={() => props.state.page !== 1 && props.onPageChange(props.state.page, -1)}>Previous</button>
-        <button onClick={() => props.onPageChange(props.state.page, 1)}>Next</button>
+        <button onClick={props.state.usersList.length===props.state.count ? () => props.onPageChange(props.state.page, 1):null}>Next</button>
       </div>
     </section>
   );
