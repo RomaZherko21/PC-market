@@ -1,4 +1,4 @@
-import allGoods from '../../data/allGoods'
+let allGoods = []
 
 const ON_SEARCH_GOODS = "ON-SEARCH-GOODS";
 const GET_SEARCHED_PRODUCTS = "GET-SEARCHED-PRODUCTS";

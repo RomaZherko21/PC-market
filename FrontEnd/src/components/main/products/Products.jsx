@@ -1,8 +1,6 @@
 import React from 'react'
 import { Switch, Route } from "react-router-dom";
-import allGoods from '../../../data/allGoods'
 
-// import s from './Products.module.css';
 import PC from './pc/PC'
 import Laptop from './laptop/Laptop'
 import Printer from './printer/Printer'

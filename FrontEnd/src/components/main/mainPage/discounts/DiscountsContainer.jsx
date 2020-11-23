@@ -6,8 +6,7 @@ import { addShoppingCartGood,showCurrentProduct } from '../../../../redux/reduce
 
 const mapStateToProps = (state) => {
     return {
-        discountGoods: state.mainPage.discountGoods,
-        state: state,
+        discountGoods: state.allGoods.discountGoods
     }
 }
 

@@ -24,31 +24,38 @@ const Discounts = (props) => {
     if (document.documentElement.clientWidth < 850) { settings.slidesToScroll = 2; settings.slidesToShow = 2 }
     if (document.documentElement.clientWidth < 500) { settings.slidesToScroll = 1; settings.slidesToShow = 1 }
 
-    function OneProduct(name, price, discountPrice, img, description, key, good,showCurrentProduct) {
+    function OneProduct(item, showCurrentProduct) {
         return (
-            <div className={s.oneProduct} key={key}>
+            <div className={s.oneProduct} key={item.id}>
                 <div className={s.saleIcon}>Распродажа!</div>
                 <NavLink to="/currentProduct">
-                    <div className={s.productDesription} onClick={()=>{showCurrentProduct && showCurrentProduct(good)}}>
-                        <img src={img} alt="" />
-                        {description}
+                    <div className={s.productDesription} onClick={() => { showCurrentProduct && showCurrentProduct(item) }}>
+                        <img src={item.img} alt="" />
+                        <ul>
+                            {Object.values(item.description).map((item, id) => {
+                                return (
+                                    <li key={id}>{item}</li>
+                                )
+                            })}
+                        </ul>
                     </div>
                 </NavLink>
-                <img src={img} alt="" />
-                <h1>{name}</h1>
-                <h2>{price}</h2>
-                <h1 className={s.discountPrice}>{discountPrice}</h1>
-                <div className={s.store} onClick={() => props.addShoppingCartGood(good)}>В корзину</div>
+                <img src={item.img} alt="" />
+                <h1>{item.name}</h1>
+                <h2>{item.prevPrice}</h2>
+                <h1 className={s.discountPrice}>{item.discountPrice}</h1>
+                <div className={s.store} onClick={() => props.addShoppingCartGood(item)}>В корзину</div>
             </div>
         )
     }
+
     return (
         <Fragment>
             <h1 className='mainTitle'>Товары по скидке</h1>
             <div className={s.container}>
                 <Slider {...settings}>
-                    {props.discountGoods.map((item, id) => {
-                        return OneProduct(item.name, item.prevPrice, item.discountPrice, item.img, item.description(), item.name, item, props.showCurrentProduct)
+                    {props.discountGoods.map((item) => {
+                        return OneProduct(item, props.showCurrentProduct)
                     })}
                 </Slider>
             </div>

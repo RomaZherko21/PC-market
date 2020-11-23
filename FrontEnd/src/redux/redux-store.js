@@ -1,6 +1,5 @@
 import {applyMiddleware, combineReducers, createStore} from 'redux';
 
-import mainPageReducer from "./reducers/mainPage-reducer";
 import registrationReducer from './reducers/registration-reducer';
 import logInReducer from './reducers/logIn-reducer';
 import searchGoodsReducer from './reducers/searchGoods-reducer';
@@ -12,7 +11,6 @@ import thunkMiddleware from 'redux-thunk';
 import {reducer as formReducer} from 'redux-form';
 
 let reducers = combineReducers({
-    mainPage: mainPageReducer,
     registration: registrationReducer,
     logIn:logInReducer,
     allClients: allClientsReducer,
