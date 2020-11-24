@@ -1,12 +1,10 @@
 import React, { Fragment } from 'react'
-
-import UserProfile from './UserProfile'
 import { connect } from 'react-redux'
 import { compose } from 'redux'
 import { withRouter } from 'react-router-dom'
 
+import UserProfile from './UserProfile'
 import Loading from '../../../common/Loading/Loading'
-
 import { getProfileThunkCreator } from '../../../../redux/reducers/allClients-reducer'
 
 
@@ -15,6 +13,7 @@ class UserProfileContainer extends React.Component {
   componentDidMount() {
     this.props.getProfileThunkCreator(this.props.match.params.userID)
   }
+
   render() {
     return (
       <Fragment>
@@ -30,8 +29,6 @@ const mapStateToProps = (state) => {
     isFetching: state.common.isFetching,
   }
 }
-
-
 
 export default compose(
   connect(mapStateToProps, {

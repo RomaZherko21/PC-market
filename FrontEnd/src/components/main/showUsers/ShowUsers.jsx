@@ -4,13 +4,12 @@ import { NavLink } from 'react-router-dom';
 import s from './ShowUsers.module.css'
 import user from '../../../images/user.svg'
 
-
 function ShowUsers(props) {
   return (
     <section className={s.allUsers}>
       {props.state.usersList.map(item => {
         return (
-          <NavLink to={`/userProfile/${item._id}`}  key={item._id}>
+          <NavLink to={`/userProfile/${item._id}`} key={item._id}>
             <div className={s.oneUser}>
               {/* <img src={item.photos.small != null ? item.photos.small : user} alt="" /> */}
               <img src={user} alt="" />
@@ -21,7 +20,7 @@ function ShowUsers(props) {
       })}
       <div className={s.allUsersButtons}>
         <button onClick={() => props.state.page !== 1 && props.onPageChange(props.state.page, -1)}>Previous</button>
-        <button onClick={props.state.usersList.length===props.state.count ? () => props.onPageChange(props.state.page, 1):null}>Next</button>
+        <button onClick={props.state.usersList.length === props.state.count ? () => props.onPageChange(props.state.page, 1) : null}>Next</button>
       </div>
     </section>
   );

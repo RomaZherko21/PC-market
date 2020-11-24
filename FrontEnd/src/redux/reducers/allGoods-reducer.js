@@ -30,13 +30,11 @@ const allGoodsReducer = (state = initialState, action) => {
   }
 };
 
-export function onGetNewProducts(products, name) {
-  return {
-    type: "ON-GET-NEW-PRODUCTS",
-    products,
-    name,
-  };
-}
+export const onGetNewProducts = (products, name) => ({
+  type: "ON-GET-NEW-PRODUCTS",
+  products,
+  name,
+});
 
 export const getNewGoodsThunkCreator = (type) => {
   return async (dispatch) => {

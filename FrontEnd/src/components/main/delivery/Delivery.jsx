@@ -1,7 +1,7 @@
 import React from 'react'
 import s from './Delivery.module.css'
 
-const Delivery = (props) => {
+const Delivery = () => {
   return (
     <section className={s.delivery}>
       <div className={s.info}>
@@ -11,8 +11,7 @@ const Delivery = (props) => {
       </div>
       <div className={s.sum}>
         <h1>0 <br /> руб</h1>
-        <h2>ДОСТАВИМ БЕСПЛАТНО
-ПО ТАШКЕНТУ</h2>
+        <h2>ДОСТАВИМ БЕСПЛАТНО ПО ТАШКЕНТУ</h2>
       </div>
     </section>
   )

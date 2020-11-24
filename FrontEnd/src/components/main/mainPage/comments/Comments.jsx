@@ -7,19 +7,16 @@ import "slick-carousel/slick/slick-theme.css";
 
 import s from './Comments.module.css';
 
-
-
-
 const Comments = (props) => {
-  
+
   let settings = {
     dots: false,
     arrow: true,
     autoplay: true,
     autoplaySpeed: 4000,
     pauseOnHover: true,
- 
   };
+
   function makeComment({ photo, author, text }) {
     return (
       <div className={s.oneComment} key={author}>
@@ -31,7 +28,7 @@ const Comments = (props) => {
       </div>
     )
   }
-  
+
   return (
     <Fragment>
       <h1 className='mainTitle'>Что говорят о нас</h1>
@@ -44,8 +41,6 @@ const Comments = (props) => {
       </div>
     </Fragment>
   )
-
-
 }
 
 export default Comments;

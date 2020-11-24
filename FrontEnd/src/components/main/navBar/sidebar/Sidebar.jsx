@@ -11,8 +11,6 @@ import laptop from '../../../../images/sidebar/laptop.svg'
 import keyboard from '../../../../images/sidebar/keyboard.svg'
 import accessories from '../../../../images/sidebar/accessories.svg'
 
-
-
 const Sidebar = (props) => {
 
     function showLi(text, hoverClass, img, toLink) {
@@ -22,9 +20,9 @@ const Sidebar = (props) => {
             </li>
         )
     }
+
     return (
         <div className={`${s.sidebar} ${props.open ? s.sidebarShow : s.sidebarBlock}`}>
-
             <i className="fas fa-times" onClick={props.onShowGoods}></i>
             <ul className={s.assortmentList}>
                 {showLi('Компьютеры', 'pcHover', pc, '/pc')}

@@ -38,26 +38,21 @@ const allClientsReducer = (state = initialState, action) => {
   }
 };
 
-export function onChangeCurrentUser(user) {
-  return {
-    type: "ON-CHANGE-CURRENT-USER",
-    user: user,
-  };
-}
 
-export function addUsers(usersList) {
-  return {
-    type: "ADD-USERS",
-    usersList: usersList,
-  };
-}
+export const onChangeCurrentUser = (user) => ({
+  type: "ON-CHANGE-CURRENT-USER",
+  user,
+});
 
-export function onPageChange(increment) {
-  return {
-    type: "ON-PAGE-CHANGE",
-    increment: increment,
-  };
-}
+export const addUsers = (usersList) => ({
+  type: "ADD-USERS",
+  usersList,
+});
+
+export const onPageChange = (increment) => ({
+  type: "ON-PAGE-CHANGE",
+  increment,
+});
 
 export const getProfileThunkCreator = (userID) => {
   return (dispatch) => {

@@ -3,7 +3,6 @@ import React from 'react'
 import s from './UserProfile.module.css'
 import user from '../../../../images/user.svg'
 
-
 function UserProfile(props) {
   return (
     <section className={s.currentUserProfile}>

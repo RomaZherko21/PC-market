@@ -59,35 +59,25 @@ const shoppingCartReducer = (state = initialState, action) => {
   }
 };
 
-export function addShoppingCartGood(good) {
-  return {
-    type: "ADD-TO-SHOPPING-CART",
-    good: good,
-  };
-}
-export function removeShoppingCartGood(good) {
-  return {
-    type: "REMOVE-FROM-SHOPPING-CART",
-    good: good,
-  };
-}
-export function showCurrentProduct(good) {
-  return {
-    type: "ON-SHOW-CURRENT-PRODUCT",
-    good: good,
-  };
-}
-export function plusCurrentGoodAmount(good) {
-  return {
-    type: "ON-PLUS-CURRENT-GOOD-AMOUNT",
-    good: good,
-  };
-}
-export function minusCurrentGoodAmount(good) {
-  return {
-    type: "ON-MINUS-CURRENT-GOOD-AMOUNT",
-    good: good,
-  };
-}
+export const addShoppingCartGood = (good) => ({
+  type: "ADD-TO-SHOPPING-CART",
+  good,
+});
+export const removeShoppingCartGood = (good) => ({
+  type: "REMOVE-FROM-SHOPPING-CART",
+  good,
+});
+export const showCurrentProduct = (good) => ({
+  type: "ON-SHOW-CURRENT-PRODUCT",
+  good,
+});
+export const plusCurrentGoodAmount = (good) => ({
+  type: "ON-PLUS-CURRENT-GOOD-AMOUNT",
+  good,
+});
+export const minusCurrentGoodAmount = (good) => ({
+  type: "ON-MINUS-CURRENT-GOOD-AMOUNT",
+  good,
+});
 
 export default shoppingCartReducer;

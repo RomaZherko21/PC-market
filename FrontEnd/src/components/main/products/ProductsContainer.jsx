@@ -1,6 +1,5 @@
 import { connect } from "react-redux";
 import Products from './Products'
-
 import { addShoppingCartGood, showCurrentProduct } from '../../../redux/reducers/shoppingCart-reducer'
 
 const mapStateToProps = (state) => {

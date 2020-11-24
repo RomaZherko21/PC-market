@@ -147,28 +147,16 @@ const commentsReducer = (state = initialState, action) => {
   }
 };
 
-export function addComment(name,photo) {
-  return {
-    type: "ADD-COMMENT-HANDLE",
-    name,
-    photo
-  };
-}
-export function onTextTyping(text) {
-  return {
-    type: "ON-TEXT-TYPING",
-    text: text,
-  };
-}
+export const addComment = (name, photo) => ({
+  type: "ADD-COMMENT-HANDLE",
+  name,
+  photo,
+});
+export const onTextTyping = (text) => ({
+  type: "ON-TEXT-TYPING",
+  text,
+});
+export const onNextCommentPage = () => ({type: "ON-NEXT-COMMENT-PAGE"});
+export const onPrevCommentPage = () => ({type: "ON-PREV-COMMENT-PAGE"});
 
-export function onNextCommentPage() {
-  return {
-    type: "ON-NEXT-COMMENT-PAGE",
-  };
-}
-export function onPrevCommentPage() {
-  return {
-    type: "ON-PREV-COMMENT-PAGE",
-  };
-}
 export default commentsReducer;

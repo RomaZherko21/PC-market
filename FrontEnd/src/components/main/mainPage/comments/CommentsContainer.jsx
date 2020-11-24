@@ -1,23 +1,12 @@
-
 import Comments from './Comments'
+import { connect } from 'react-redux'
 
-
-import {connect} from 'react-redux'
-
-
-
-const mapStateToProps = (state)=>{
-  return{
+const mapStateToProps = (state) => {
+  return {
     comments: state.comments.comments,
   }
 }
-const mapDispatchToProps = (dispatch)=>{
-  return{
 
-  }
-}
-
-
-const CommentsContainer = connect(mapStateToProps, mapDispatchToProps)(Comments);
+const CommentsContainer = connect(mapStateToProps, {})(Comments);
 
 export default CommentsContainer;

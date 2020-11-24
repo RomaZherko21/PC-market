@@ -2,7 +2,6 @@ import React, { Fragment } from 'react'
 
 import s from './Comments.module.css'
 
-
 function ShowUsers(props) {
   return (
     <Fragment>

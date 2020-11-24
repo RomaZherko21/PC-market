@@ -10,8 +10,6 @@ import Modules from './modules/Modules'
 import Accessories from './accessories/Accessories'
 import SearchedProducts from './searchedProducts/SearchedProducts'
 
-
-
 const SwitchComponents = (props) => {
   return (
     <Switch>

@@ -66,30 +66,23 @@ const registrationReducer = (state = initialState, action) => {
   }
 };
 
-export function onLogIn(user) {
-  return {
-    type: "ON-LOG-IN",
-    user,
-  };
-}
+export const onLogIn = (user) => ({
+  type: "ON-LOG-IN",
+  user,
+});
 
-export function onLogInMailTyping(text) {
-  return {
-    type: "ON-LOG-IN-MAIL-TYPING",
-    text: text,
-  };
-}
-export function onLogInPasswordTyping(text) {
-  return {
-    type: "ON-LOG-IN-PASSWORD-TYPING",
-    text: text,
-  };
-}
-export function onLogOut() {
-  return {
-    type: "ON-LOG-OUT",
-  };
-}
+export const onLogInMailTyping = (text) => ({
+  type: "ON-LOG-IN-MAIL-TYPING",
+  text,
+});
+
+export const onLogInPasswordTyping = (text) => ({
+  type: "ON-LOG-IN-PASSWORD-TYPING",
+  text,
+});
+
+export const onLogOut = () => ({type: "ON-LOG-OUT"});
+
 export const getUserThunkCreator = (currentLogInInfo) => {
   return async (dispatch) => {
     let response = await logInProfileAPI.getUser(currentLogInInfo);

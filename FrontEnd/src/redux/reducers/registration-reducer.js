@@ -151,55 +151,36 @@ const registrationReducer = (state = initialState, action) => {
   }
 };
 
-export function onAdressTyping(text) {
-  return {
-    type: "ON-ADRESS-TYPING",
-    text: text,
-  };
-}
-
-export function onMailTyping(text) {
-  return {
-    type: "ON-MAIL-TYPING",
-    text: text,
-  };
-}
-export function onNameTyping(text) {
-  return {
-    type: "ON-NAME-TYPING",
-    text: text,
-  };
-}
-export function onSurnameTyping(text) {
-  return {
-    type: "ON-SURNAME-TYPING",
-    text: text,
-  };
-}
-export function onPasswordTyping(text) {
-  return {
-    type: "ON-PASSWORD-TYPING",
-    text: text,
-  };
-}
-export function onRepeatPasswordTyping(text) {
-  return {
-    type: "ON-REPEAT-PASSWORD-TYPING",
-    text: text,
-  };
-}
-function onRegistrationServerResponse(err, message) {
-  return {
-    type: "ON-REGISTRATION-SERVER-RESPONSE",
-    err,
-    message,
-  };
-}
-export function onSubmit() {
-  return {
-    type: "ON-SUBMIT",
-  };
-}
+export const onAdressTyping = (text) => ({
+  type: "ON-ADRESS-TYPING",
+  text,
+});
+export const onMailTyping = (text) => ({
+  type: "ON-MAIL-TYPING",
+  text,
+});
+export const onNameTyping = (text) => ({
+  type: "ON-NAME-TYPING",
+  text,
+});
+export const onSurnameTyping = (text) => ({
+  type: "ON-SURNAME-TYPING",
+  text,
+});
+export const onPasswordTyping = (text) => ({
+  type: "ON-PASSWORD-TYPING",
+  text,
+});
+export const onRepeatPasswordTyping = (text) => ({
+  type: "ON-REPEAT-PASSWORD-TYPING",
+  text,
+});
+export const onRegistrationServerResponse = (err, message) => ({
+  type: "ON-REGISTRATION-SERVER-RESPONSE",
+  err,
+  message,
+});
+export const onSubmit = () => ({type: "ON-SUBMIT"});
 
 export const postClientThunkCreator = (client) => {
   return async (dispatch) => {

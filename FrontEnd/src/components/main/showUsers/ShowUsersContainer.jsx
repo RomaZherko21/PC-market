@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import Loading from '../../common/Loading/Loading'
 
 import React, { Fragment } from 'react'
-import { getUsersThunkCreator, getNewUsersThunkCreator, onPageChange} from '../../../redux/reducers/allClients-reducer'
+import { getUsersThunkCreator, getNewUsersThunkCreator, onPageChange } from '../../../redux/reducers/allClients-reducer'
 
 class ShowUsersContainer extends React.Component {
   constructor(props) {
@@ -16,8 +16,9 @@ class ShowUsersContainer extends React.Component {
     this.props.getUsersThunkCreator(this.props.state.count, this.props.state.page);
   }
   onPageChange(page, num) {
-      this.props.getNewUsersThunkCreator(this.props.state.count, page,num);
+    this.props.getNewUsersThunkCreator(this.props.state.count, page, num);
   }
+
   render() {
     return (
       <Fragment>
@@ -34,7 +35,6 @@ const mapStateToProps = (state) => {
     isFetching: state.common.isFetching,
   }
 }
-
 
 export default connect(mapStateToProps, {
   onPageChange,

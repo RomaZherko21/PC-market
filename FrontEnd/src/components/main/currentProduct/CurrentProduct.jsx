@@ -4,10 +4,11 @@ import s from './CurrentProduct.module.css'
 
 
 function ShowUsers(props) {
+
   function makeDescription(description) {
     let ul = [];
-    for (let item in description) {
-      ul.push(<li><span>{item}:</span> {description[item]}</li>);
+    for (let key in description) {
+      ul.push(<li key={key}><span>{key}:</span> {description[key]}</li>);
     }
     return ul;
   }
@@ -23,6 +24,9 @@ function ShowUsers(props) {
           {makeDescription(props.currentProduct.description)}
         </ul>
         <h3>Гарантия: <span>{props.currentProduct.warranty}</span></h3>
+        <div className={s.store} onClick={() => props.addShoppingCartGood(props.currentProduct)}>
+          В корзину
+        </div>
       </div>
     </section>
   );

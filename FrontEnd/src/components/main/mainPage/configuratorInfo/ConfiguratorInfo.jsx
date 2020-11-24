@@ -1,19 +1,10 @@
 import React, { } from 'react'
-
-
 import s from './ConfiguratorInfo.module.css';
-
-
 import configInfo from '../../../../images/configurator/configInfo.png';
-
-
 
 const ConfiguratorInfo = () => {
 
-
-
   return (
-
     <section className={s.configBlock}>
       <div className={s.info}>
         <h1>Собери компьютер на свой вкус!</h1>
@@ -34,10 +25,7 @@ const ConfiguratorInfo = () => {
         </div>
       </div>
     </section>
-
   )
-
-
 }
 
 export default ConfiguratorInfo;

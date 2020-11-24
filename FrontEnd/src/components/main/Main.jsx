@@ -14,7 +14,6 @@ import ProfileContainer from './profile/ProfileContainer'
 import CurrentProductContainer from './currentProduct/CurrentProductContainer'
 import Delivery from "./delivery/Delivery";
 import AboutUs from "./aboutUs/AboutUs";
-
 import Footer from '../footer/Footer'
 
 const Main = (props) => {

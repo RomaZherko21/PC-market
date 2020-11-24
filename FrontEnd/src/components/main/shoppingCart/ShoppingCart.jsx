@@ -2,12 +2,13 @@ import React, { Fragment } from 'react'
 import { NavLink } from 'react-router-dom';
 import s from './ShoppingCart.module.css'
 
-
-const SwitchComponents = (props) => {
+const ShoppingCart = (props) => {
   return (
     <Fragment>
       <div className={s.shoppingCartInfo}>
-        {!props.currentUser.name ? <h1>Need To  <NavLink to='/logInProfile/logIn' className={s.user}>LogIn</NavLink></h1> : <h1> Balance: <span>{props.currentUser.money}</span> руб.</h1>}
+        {!props.currentUser.name ?
+          <h1>Need To  <NavLink to='/logInProfile/logIn' className={s.user}>LogIn</NavLink></h1>
+          : <h1> Balance: <span>{props.currentUser.money}</span> руб.</h1>}
         <h1>Full Price: <span>{props.shoppingCart.fullPrice}</span> руб.</h1>
       </div>
       <section className={s.shoppingCart}>
@@ -19,8 +20,8 @@ const SwitchComponents = (props) => {
               <h2>{item.price} руб.</h2>
               <div className={s.amount}>Кол-во: {item.amount}
                 <div>
-                  <i className="fas fa-plus" onClick={()=>props.plusCurrentGoodAmount(item)}></i>
-                  <i className="fas fa-minus" onClick={()=>props.minusCurrentGoodAmount(item)}></i>
+                  <i className="fas fa-plus" onClick={() => props.plusCurrentGoodAmount(item)}></i>
+                  <i className="fas fa-minus" onClick={() => props.minusCurrentGoodAmount(item)}></i>
                 </div>
               </div>
               <div className={s.delete} onClick={() => { props.removeShoppingCartGood(item) }}>Удалить</div>
@@ -32,4 +33,4 @@ const SwitchComponents = (props) => {
   )
 }
 
-export default SwitchComponents;
+export default ShoppingCart;

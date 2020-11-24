@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import s from './AboutUs.module.css'
 
-const AboutUs = (props) => {
+const AboutUs = () => {
   return (
     <Fragment>
       <h1 className='mainTitle'>Наша команда</h1>

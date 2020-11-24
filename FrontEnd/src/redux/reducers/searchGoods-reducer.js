@@ -24,12 +24,10 @@ const searchGoodsReducer = (state = initialState, action) => {
   }
 };
 
-function getSearchedProducts(data = []) {
-  return {
-    type: "GET-SEARCHED-PRODUCTS",
-    data,
-  };
-}
+export const getSearchedProducts = (data = []) => ({
+  type: "GET-SEARCHED-PRODUCTS",
+  data,
+});
 
 export const getSearchedProductsThunkCreator = (filteredParams) => {
   return async (dispatch) => {

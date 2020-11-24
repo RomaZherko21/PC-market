@@ -12,12 +12,9 @@ const mapStateToProps = (state) => {
   }
 }
 
-
-
-const NavBarContainer = connect(mapStateToProps, {
+export default connect(mapStateToProps, {
   onLogOut,
   getNewGoodsThunkCreator,
 })(NavBar)
 
-export default NavBarContainer;
 

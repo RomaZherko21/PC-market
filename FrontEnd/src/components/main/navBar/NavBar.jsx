@@ -1,31 +1,22 @@
 import React, { Fragment, useState } from 'react'
 import { NavLink } from 'react-router-dom';
-
 import s from './NavBar.module.css';
-
 import Sidebar from "./sidebar/Sidebar";
-
 import SearchGoodsContainer from './searchGoods/SearchGoodsContainer'
 
 const NavBar = (props) => {
 
   let [open, setOpen] = useState(false);
-  function onShowGoods() {
-    setOpen(!open)
-  }
+  const onShowGoods = () => setOpen(!open);
 
   let [showNav, setShowNav] = useState(false);
-  function onShowNav() {
-    setShowNav(!showNav);
-  }
+  const onShowNav = () => setShowNav(!showNav);
 
   let [showSearch, setShowSearch] = useState(false);
-  function onShowSearch() {
-    setShowSearch(!showSearch);
-  }
+  const onShowSearch = () => setShowSearch(!showSearch);
+
   return (
     <Fragment>
-
       <nav className={s.navBar}>
         <i className={`fas fa-list-ul ${s.showList}`} onClick={onShowNav}></i>
         <Sidebar getNewGoodsThunkCreator={props.getNewGoodsThunkCreator} open={open} onShowGoods={onShowGoods} />
@@ -42,7 +33,7 @@ const NavBar = (props) => {
           <NavLink to={props.currentUser.name ? '/profile' : '/logInProfile/logIn'} className={s.user}><i className="far fa-user-circle"></i></NavLink>
           <NavLink to='/shoppingCart' className={s.danger}><i className="fas fa-shopping-cart"></i><span>{props.shoppingCartLength}</span></NavLink>
           <i className={`fas fa-search ${s.search}`} onClick={onShowSearch}></i>
-          {props.currentUser.name ? <NavLink to='/' className={s.user}  onClick={props.onLogOut}><i className="fas fa-door-open"></i></NavLink> : ''}
+          {props.currentUser.name ? <NavLink to='/' className={s.user} onClick={props.onLogOut}><i className="fas fa-door-open"></i></NavLink> : ''}
         </div>
         {showSearch ? <SearchGoodsContainer onShowSearch={onShowSearch} /> : ''}
       </nav>

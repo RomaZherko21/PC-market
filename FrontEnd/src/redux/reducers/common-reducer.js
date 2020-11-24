@@ -17,10 +17,6 @@ const commonReducer = (state = initialState, action) => {
   }
 };
 
-export function loading() {
-  return {
-    type: "LOADING",
-  };
-}
+export const loading = () => ({ type: "LOADING" });
 
 export default commonReducer;

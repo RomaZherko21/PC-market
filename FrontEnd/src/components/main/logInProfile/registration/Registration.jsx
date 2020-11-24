@@ -10,7 +10,7 @@ const Registration = (props) => {
     for (let key in props.state.errors) {
       if (props.state.errors[key] !== "") return;
     }
-    let response = await props.postClientThunkCreator(props.state.currentRegistrationInfo,);
+    let response = await props.postClientThunkCreator(props.state.currentRegistrationInfo);
     if (!response.data.err) {
       history.push("/logInProfile/logIn")
     }

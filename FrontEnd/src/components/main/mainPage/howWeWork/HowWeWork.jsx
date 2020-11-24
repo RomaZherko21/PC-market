@@ -2,9 +2,6 @@ import React, { Fragment } from 'react'
 
 
 const HowWeWork = () => {
-
-
-
   return (
     <Fragment>
       <h1 className='mainTitle'>Как мы работаем</h1>
@@ -27,8 +24,6 @@ const HowWeWork = () => {
       </section>
     </Fragment>
   )
-
-
 }
 
 export default HowWeWork;
