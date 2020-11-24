@@ -1,13 +1,23 @@
 .currentUserProfile {
+  position: relative;
   width: 60vw;
-  padding: 30px;
+  padding: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: rgb(26, 25, 31);
   margin: 40px auto;
 }
-
+.currentUserProfile i {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  font-size: 20px;
+}
+.currentUserProfile i:hover {
+color: orange;
+}
 .currentUserProfile img {
   border-radius: 50%;
   width: 150px;
@@ -18,9 +28,47 @@
 }
 .currentUserProfile ul {
   list-style: none;
+
+}
+.currentUserProfile button{
+  position: absolute;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: orange;
+  color: white;
+  right: 60px;
+  bottom: 10px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+.currentUserProfile button:hover{
+  background-color: rgb(153, 14, 12);
 }
 .currentUserProfile li {
   margin-top: 10px;
+  font-size: 14px;
+}
+
+.currentUserProfile li input:enabled {
+  background-color: none;
+  padding: 6px;
+  border: none;
+  background-color: inherit;
+  color: orange;
+  border-bottom: 2px solid gray;
+  outline: none;
+}
+.currentUserProfile li input:disabled {
+  background-color: none;
+  padding: 6px;
+  border: none;
+  background-color: inherit;
+  color: white;
+  border-bottom: 2px solid rgb(26, 25, 32);
+}
+.currentUserProfile li input:enabled:hover{
+  color: rgb(153, 14, 12);
 }
 .currentUserProfile li span {
   margin-right: 14px;

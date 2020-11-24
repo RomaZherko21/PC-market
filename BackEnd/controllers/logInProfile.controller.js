@@ -7,6 +7,9 @@ class LogInProfileController {
   getUser(req,res){
     LogInProfileService.logInProfile(req.query, res)
   }
+  putUser(req){
+    LogInProfileService.putNewProfile(req.body)
+  }
 }
 
 module.exports = new LogInProfileController();

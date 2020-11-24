@@ -5,5 +5,6 @@ const LogInProfileController = require("../controllers/logInProfile.controller")
 
 logInProfileRouter.post('/registration',jsonParser, LogInProfileController.postNewUser);
 logInProfileRouter.get('/logIn',jsonParser, LogInProfileController.getUser);
+logInProfileRouter.put('/',jsonParser, LogInProfileController.putUser);
 
 module.exports = logInProfileRouter;
