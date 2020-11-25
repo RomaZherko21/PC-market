@@ -1,7 +1,7 @@
 import Registration from './Registration'
 import { connect } from 'react-redux'
 
-import { onNameTyping, onSurnameTyping, onMailTyping, onAdressTyping, onPasswordTyping, onRepeatPasswordTyping, postClientThunkCreator } from '../../../../redux/reducers/registration-reducer'
+import { onNameTyping, onSurnameTyping, onMailTyping, onAdressTyping, onPhotoTyping, onPasswordTyping, onRepeatPasswordTyping, postClientThunkCreator } from '../../../../redux/reducers/registration-reducer'
 
 const mapStateToProps = (state) => {
   return {
@@ -14,6 +14,7 @@ const RegistrationContainer = connect(mapStateToProps, {
   onMailTyping,
   onAdressTyping,
   onPasswordTyping,
+  onPhotoTyping,
   onRepeatPasswordTyping,
   postClientThunkCreator,
 })(Registration);

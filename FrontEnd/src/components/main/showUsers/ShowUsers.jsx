@@ -11,8 +11,7 @@ function ShowUsers(props) {
         return (
           <NavLink to={`/userProfile/${item._id}`} key={item._id}>
             <div className={s.oneUser}>
-              {/* <img src={item.photos.small != null ? item.photos.small : user} alt="" /> */}
-              <img src={user} alt="" />
+              <img src={item.photo || user} alt="" />
               <h3>{item.name}</h3>
             </div>
           </NavLink>

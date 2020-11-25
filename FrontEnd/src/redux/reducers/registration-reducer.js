@@ -4,6 +4,7 @@ const ON_NAME_TYPING = "ON-NAME-TYPING";
 const ON_SURNAME_TYPING = "ON-SURNAME-TYPING";
 const ON_MAIL_TYPING = "ON-MAIL-TYPING";
 const ON_ADRESS_TYPING = "ON-ADRESS-TYPING";
+const ON_PHOTO_TYPING = "ON-PHOTO-TYPING";
 const ON_PASSWORD_TYPING = "ON-PASSWORD-TYPING";
 const ON_REPEAT_PASSWORD_TYPING = "ON-REPEAT-PASSWORD-TYPING";
 const ON_REGISTRATION_SERVER_RESPONSE = "ON-REGISTRATION-SERVER-RESPONSE";
@@ -15,6 +16,7 @@ let initialState = {
     surname: "",
     mail: "",
     adress: "",
+    photo: "",
     password: "",
     repeatPassword: "",
   },
@@ -23,6 +25,7 @@ let initialState = {
     surname: " ",
     mail: " ",
     adress: " ",
+    photo: " ",
     password: " ",
     repeatPassword: " ",
   },
@@ -94,6 +97,21 @@ const registrationReducer = (state = initialState, action) => {
         errors: errors,
       };
     }
+    case ON_PHOTO_TYPING: {
+      let errors = { ...state.errors };
+      action.text.length<7
+        ? (errors.photo = "Need correct photo URL!")
+        : (errors.photo = "");
+
+      return {
+        ...state,
+        currentRegistrationInfo: {
+          ...state.currentRegistrationInfo,
+          photo: action.text,
+        },
+        errors: errors,
+      };
+    }
     case ON_PASSWORD_TYPING: {
       let errors = { ...state.errors };
       !/^[a-z0-9.!&/#%*?()]{4,}$/gi.test(action.text)
@@ -141,6 +159,7 @@ const registrationReducer = (state = initialState, action) => {
           surname: "",
           mail: "",
           adress: "",
+          photo: "",
           password: "",
           repeatPassword: "",
         },
@@ -165,6 +184,10 @@ export const onNameTyping = (text) => ({
 });
 export const onSurnameTyping = (text) => ({
   type: "ON-SURNAME-TYPING",
+  text,
+});
+export const onPhotoTyping = (text) => ({
+  type: "ON-PHOTO-TYPING",
   text,
 });
 export const onPasswordTyping = (text) => ({

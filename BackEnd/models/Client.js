@@ -22,6 +22,11 @@ const clientSchema = new Schema(
       required: true,
       unique: false,
     },
+    photo: {
+      type: String,
+      required: true,
+      unique: false,
+    },
     password: {
       type: String,
       required: true,

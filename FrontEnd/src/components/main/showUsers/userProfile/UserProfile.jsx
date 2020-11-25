@@ -1,17 +1,16 @@
 import React from 'react'
 
 import s from './UserProfile.module.css'
-import user from '../../../../images/user.svg'
 
 function UserProfile(props) {
   return (
     <section className={s.currentUserProfile}>
-      <img src={user} alt="" />
+      <img src={props.currentUser.user.photo} alt="" />
       <ul>
-        <li> <span> Name:</span> {props.state.user.name}</li>
-        <li><span>Surname:</span> {props.state.user.surname}</li>
-        <li><span>@mail:</span> {props.state.user.mail}</li>
-        <li><span>Adress:</span> {props.state.user.adress}</li>
+        <li> <span> Name:</span> {props.currentUser.user.name}</li>
+        <li><span>Surname:</span> {props.currentUser.user.surname}</li>
+        <li><span>@mail:</span> {props.currentUser.user.mail}</li>
+        <li><span>Adress:</span> {props.currentUser.user.adress}</li>
       </ul>
     </section>
   );

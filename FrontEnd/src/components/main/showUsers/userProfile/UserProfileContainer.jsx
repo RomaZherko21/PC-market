@@ -17,7 +17,7 @@ class UserProfileContainer extends React.Component {
   render() {
     return (
       <Fragment>
-        {this.props.isFetching ? <Loading /> : <UserProfile state={this.props.currentUser} />}
+        {this.props.isFetching ? <Loading /> : <UserProfile currentUser={this.props.currentUser} />}
       </Fragment>
     );
   }

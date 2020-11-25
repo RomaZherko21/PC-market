@@ -71,7 +71,6 @@ const registrationReducer = (state = initialState, action) => {
         user = {
           ...action.user,
           money: 2000,
-          photo: "http://pngimg.com/uploads/pacman/pacman_PNG19.png",
         };
       }
       return {
