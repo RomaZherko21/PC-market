@@ -4,13 +4,25 @@ const ON_SHOW_CURRENT_PRODUCT = "ON-SHOW-CURRENT-PRODUCT";
 const ON_PLUS_CURRENT_GOOD_AMOUNT = "ON-PLUS-CURRENT-GOOD-AMOUNT";
 const ON_MINUS_CURRENT_GOOD_AMOUNT = "ON-MINUS-CURRENT-GOOD-AMOUNT";
 
-let initialState = {
-  shoppingCartGoods: [],
-  fullPrice: 0,
-  currentGood: {},
+type product = {
+  id: string;
+  name: string;
+  mainDescription: string;
+  price: number;
+  amount: number;
+  img: string;
+  description: {};
+  warranty: string;
 };
 
-const shoppingCartReducer = (state = initialState, action) => {
+let initialState = {
+  shoppingCartGoods: [] as Array<product>,
+  fullPrice: 0 as number,
+  currentGood: {} as product,
+};
+type initialStateType = typeof initialState;
+
+const shoppingCartReducer = (state = initialState, action:any):initialStateType => {
   switch (action.type) {
     case ADD_TO_SHOPPING_CART: {
       if (state.shoppingCartGoods.includes(action.good)) return state;
@@ -59,24 +71,45 @@ const shoppingCartReducer = (state = initialState, action) => {
   }
 };
 
-export const addShoppingCartGood = (good) => ({
-  type: "ADD-TO-SHOPPING-CART",
+type addShoppingCartGoodActionType = {
+  type: typeof ADD_TO_SHOPPING_CART,
+  good: product,
+}
+type removeShoppingCartGoodActionType = {
+  type: typeof REMOVE_FROM_SHOPPING_CART,
+  good: product,
+}
+type showCurrentProductActionType = {
+  type: typeof ON_SHOW_CURRENT_PRODUCT,
+  good: product,
+}
+type plusCurrentGoodAmountActionType = {
+  type: typeof ON_PLUS_CURRENT_GOOD_AMOUNT,
+  good: product,
+}
+type minusCurrentGoodAmountActionType = {
+  type: typeof ON_MINUS_CURRENT_GOOD_AMOUNT,
+  good: product,
+}
+
+export const addShoppingCartGood = (good:product):addShoppingCartGoodActionType => ({
+  type: ADD_TO_SHOPPING_CART,
   good,
 });
-export const removeShoppingCartGood = (good) => ({
-  type: "REMOVE-FROM-SHOPPING-CART",
+export const removeShoppingCartGood = (good:product):removeShoppingCartGoodActionType => ({
+  type: REMOVE_FROM_SHOPPING_CART,
   good,
 });
-export const showCurrentProduct = (good) => ({
-  type: "ON-SHOW-CURRENT-PRODUCT",
+export const showCurrentProduct = (good:product):showCurrentProductActionType => ({
+  type: ON_SHOW_CURRENT_PRODUCT,
   good,
 });
-export const plusCurrentGoodAmount = (good) => ({
-  type: "ON-PLUS-CURRENT-GOOD-AMOUNT",
+export const plusCurrentGoodAmount = (good:product):plusCurrentGoodAmountActionType => ({
+  type: ON_PLUS_CURRENT_GOOD_AMOUNT,
   good,
 });
-export const minusCurrentGoodAmount = (good) => ({
-  type: "ON-MINUS-CURRENT-GOOD-AMOUNT",
+export const minusCurrentGoodAmount = (good:product):minusCurrentGoodAmountActionType => ({
+  type: ON_MINUS_CURRENT_GOOD_AMOUNT,
   good,
 });
 

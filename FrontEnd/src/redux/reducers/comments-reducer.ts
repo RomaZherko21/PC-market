@@ -3,6 +3,12 @@ const ON_TEXT_TYPING = "ON-TEXT-TYPING";
 const ON_NEXT_COMMENT_PAGE = "ON-NEXT-COMMENT-PAGE";
 const ON_PREV_COMMENT_PAGE = "ON-PREV-COMMENT-PAGE";
 
+interface comment{
+  author: string;
+  photo: string;
+  text: string;
+}
+
 let initialState = {
   comments: [
     {
@@ -46,7 +52,7 @@ let initialState = {
       photo: "https://pcmarket.uz/wp-content/uploads/2020/05/i-2.jpg",
       text: `Здравствуйте! Хочу посоветовать всем кто ищет хороших поставщиков компьютерной техники именно этот интернет магазин. Я Сам приехал с Казахстана делать компьютерный игровой бизнес в Узбекистане и благодаря компании PCMARKET мы очень быстро собрали все необходимое оборудование, начиная от компьютеров, заканчивая игровыми креслами и столами. оплатить мне предложили двумя способами онлайн через сайт или после доставки курьеру, я выбрал оплату после доставки.Я долго не мог решиться на покупку ноутбука через интернет, я не знал как оплачивать, какой придет товар и т.п. Мне посоветовали обратиться именно к вам. Выбрав ноутбук на вашем сайте я заказал его по телефону, оплатить мне предложили двумя способами онлайн через сайт или после доставки курьеру, я выбрал оплату после доставки.Мы открывали клинику в районе Чиланзара. Нам необходимо было подобрать для нашей работы офисную технику. Специалисты компании PcMarket предложили свою помощь, они приехали к нам и бесплатно все просчитали, выслушали наши потребности и подобрали для нас всю офисную технику и самое главное по низкой цене и еще сделали нам хорошую скидку. По мимо этого всю […]`,
     },
-  ],
+  ] as Array<comment>,
   someComments: [
     {
       author: "Антон",
@@ -79,22 +85,30 @@ let initialState = {
       photo: "https://pcmarket.uz/wp-content/uploads/2020/07/i-1.jpg",
       text: `Я долго не мог решиться на покупку ноутбука через интернет, я не знал как оплачивать, какой придет товар и т.п. Мне посоветовали обратиться именно к вам. Выбрав ноутбук на вашем сайте я заказал его по телефону, оплатить мне предложили двумя способами онлайн через сайт или после доставки курьеру, я выбрал оплату после доставки.Я долго не мог решиться на покупку ноутбука через интернет, я не знал как оплачивать, какой придет товар и т.п. Мне посоветовали обратиться именно к вам. Выбрав ноутбук на вашем сайте я заказал его по телефону, оплатить мне предложили двумя способами онлайн через сайт или после доставки курьеру, я выбрал оплату после доставки.`,
     },
-  ],
-  currentCommentPage: 1,
+  ] as Array<comment>,
+  currentCommentPage: 1 as number,
   currentComment: {
     text: "",
-  },
+    name: "",
+  } as { text: string; name: string },
 };
+type initialStateType = typeof initialState;
 
-function getSomeComments(comments, page) {
-  let arr = [];
+function getSomeComments(
+  comments: Array<comment>,
+  page: number
+): Array<comment> {
+  let arr: Array<comment> = [];
   for (let i = (page - 1) * 6; i < page * 6; i++) {
     if (comments[i]) arr.push(comments[i]);
   }
   return arr;
 }
 
-const commentsReducer = (state = initialState, action) => {
+const commentsReducer = (
+  state = initialState,
+  action: any
+): initialStateType => {
   switch (action.type) {
     case ADD_COMMENT_HANDLE:
       return {
@@ -147,16 +161,39 @@ const commentsReducer = (state = initialState, action) => {
   }
 };
 
-export const addComment = (name, photo) => ({
-  type: "ADD-COMMENT-HANDLE",
+type addCommentActionType = {
+  type: typeof ADD_COMMENT_HANDLE;
+  name: string;
+  photo: string;
+};
+type onTextTypingActionType = {
+  type: typeof ON_TEXT_TYPING;
+  text: string;
+};
+type onNextCommentPageActionType = {
+  type: typeof ON_NEXT_COMMENT_PAGE;
+};
+type onPrevCommentPageActionType = {
+  type: typeof ON_PREV_COMMENT_PAGE;
+};
+
+export const addComment = (
+  name: string,
+  photo: string
+): addCommentActionType => ({
+  type: ADD_COMMENT_HANDLE,
   name,
   photo,
 });
-export const onTextTyping = (text) => ({
+export const onTextTyping = (text: string): onTextTypingActionType => ({
   type: "ON-TEXT-TYPING",
   text,
 });
-export const onNextCommentPage = () => ({type: "ON-NEXT-COMMENT-PAGE"});
-export const onPrevCommentPage = () => ({type: "ON-PREV-COMMENT-PAGE"});
+export const onNextCommentPage = (): onNextCommentPageActionType => ({
+  type: "ON-NEXT-COMMENT-PAGE",
+});
+export const onPrevCommentPage = (): onPrevCommentPageActionType => ({
+  type: "ON-PREV-COMMENT-PAGE",
+});
 
 export default commentsReducer;
