@@ -1,4 +1,5 @@
 import productsAPI from "../../api/productsAPI";
+import {Dispatch} from 'redux'
 
 const ON_GET_NEW_PRODUCTS = "ON-GET-NEW-PRODUCTS";
 
@@ -35,7 +36,16 @@ let initialState: initialStateType = {
   accessories: [],
 };
 
-const allGoodsReducer = (state:any = initialState, action: any):initialStateType => {
+
+//ACTION TYPES
+type onGetNewProductsActionType = {
+  type: typeof ON_GET_NEW_PRODUCTS,
+  products: Array<product>,
+  name:string,
+}
+type ActionType = onGetNewProductsActionType;
+
+const allGoodsReducer = (state:any = initialState, action: ActionType):initialStateType => {
   switch (action.type) {
     case ON_GET_NEW_PRODUCTS: {
       if (state[action.name].length === 0) {
@@ -52,11 +62,7 @@ const allGoodsReducer = (state:any = initialState, action: any):initialStateType
   }
 };
 
-type onGetNewProductsActionType = {
-  type: typeof ON_GET_NEW_PRODUCTS,
-  products: Array<product>,
-  name:string,
-}
+
 
 
 export const onGetNewProducts = (products:Array<product>, name:string):onGetNewProductsActionType => ({
@@ -65,12 +71,9 @@ export const onGetNewProducts = (products:Array<product>, name:string):onGetNewP
   name,
 });
 
-export const getNewGoodsThunkCreator = (type:any) => {
-  return async (dispatch:any) => {
-    let str = type.split("");
-    str.shift();
-    str = str.join("");
-
+export const getNewGoodsThunkCreator = (type:string) => {
+  return async (dispatch:Dispatch<ActionType>) => {
+    let str = type.split("/")[1];
     let products = await productsAPI.getProducts(str);
     dispatch(onGetNewProducts(products, str));
   };

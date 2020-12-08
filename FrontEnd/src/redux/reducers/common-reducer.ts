@@ -5,7 +5,14 @@ let initialState = {
 };
 type initialStateType = typeof initialState;
 
-const commonReducer = (state = initialState, action: any):initialStateType => {
+//ACTION TYPES
+export type loadingActionType = {
+  type: typeof LOADING;
+};
+
+type ActionType = loadingActionType;
+
+const commonReducer = (state = initialState, action: ActionType):initialStateType => {
   switch (action.type) {
     case LOADING: {
       return {
@@ -18,9 +25,6 @@ const commonReducer = (state = initialState, action: any):initialStateType => {
   }
 };
 
-type loadingActionType = {
-  type: typeof LOADING;
-};
 
 export const loading = ():loadingActionType => ({ type: LOADING });
 

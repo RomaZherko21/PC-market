@@ -9,6 +9,27 @@ interface comment{
   text: string;
 }
 
+
+//ACTION TYPES
+type addCommentActionType = {
+  type: typeof ADD_COMMENT_HANDLE;
+  name: string;
+  photo: string;
+};
+type onTextTypingActionType = {
+  type: typeof ON_TEXT_TYPING;
+  text: string;
+};
+type onNextCommentPageActionType = {
+  type: typeof ON_NEXT_COMMENT_PAGE;
+};
+type onPrevCommentPageActionType = {
+  type: typeof ON_PREV_COMMENT_PAGE;
+};
+type ActionType = addCommentActionType|onTextTypingActionType|onNextCommentPageActionType|onPrevCommentPageActionType;
+
+
+
 let initialState = {
   comments: [
     {
@@ -107,7 +128,7 @@ function getSomeComments(
 
 const commentsReducer = (
   state = initialState,
-  action: any
+  action: ActionType
 ): initialStateType => {
   switch (action.type) {
     case ADD_COMMENT_HANDLE:
@@ -161,21 +182,7 @@ const commentsReducer = (
   }
 };
 
-type addCommentActionType = {
-  type: typeof ADD_COMMENT_HANDLE;
-  name: string;
-  photo: string;
-};
-type onTextTypingActionType = {
-  type: typeof ON_TEXT_TYPING;
-  text: string;
-};
-type onNextCommentPageActionType = {
-  type: typeof ON_NEXT_COMMENT_PAGE;
-};
-type onPrevCommentPageActionType = {
-  type: typeof ON_PREV_COMMENT_PAGE;
-};
+
 
 export const addComment = (
   name: string,

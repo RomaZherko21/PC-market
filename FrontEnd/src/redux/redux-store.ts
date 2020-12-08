@@ -11,7 +11,7 @@ import commonReducer from './reducers/common-reducer';
 import thunkMiddleware from 'redux-thunk';
 import {reducer as formReducer} from 'redux-form';
 
-let reducers = combineReducers({
+let reducer = combineReducers({
     registration: registrationReducer,
     logIn:logInReducer,
     allClients: allClientsReducer,
@@ -23,7 +23,10 @@ let reducers = combineReducers({
     form: formReducer,
 })
 
-let store = createStore(reducers, applyMiddleware(thunkMiddleware))
+type ReducerType = typeof reducer;
+export type AppStateType = ReturnType<ReducerType>;
+
+let store = createStore(reducer, applyMiddleware(thunkMiddleware))
   
   
 export default store;

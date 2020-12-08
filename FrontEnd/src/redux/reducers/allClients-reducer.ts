@@ -1,5 +1,7 @@
 import usersAPI from "../../api/usersApi";
 import { loading } from "./common-reducer";
+import {Dispatch} from 'redux'
+import {loadingActionType} from './common-reducer'
 
 const ON_CHANGE_CURRENT_USER = "ON-CHANGE-CURRENT-USER";
 const ADD_USERS = "ADD-USERS";
@@ -40,7 +42,26 @@ let initialState: initialStateType = {
   isFetching: false,
 };
 
-const allClientsReducer = (state = initialState, action: any):initialStateType => {
+
+//ACTION TYPES
+type onChangeCurrentUserActionType = {
+  type: typeof ON_CHANGE_CURRENT_USER;
+  user: user;
+};
+type addUsersActionType = {
+  type: typeof ADD_USERS;
+  usersList: Array<user>
+};
+type onPageChangeActionType = {
+  type: typeof ON_PAGE_CHANGE;
+  increment: number;
+};
+type ActionType = onChangeCurrentUserActionType | addUsersActionType |  onPageChangeActionType | loadingActionType;
+
+
+
+
+const allClientsReducer = (state = initialState, action: ActionType):initialStateType => {
   switch (action.type) {
     case ON_CHANGE_CURRENT_USER: {
       return {
@@ -65,18 +86,8 @@ const allClientsReducer = (state = initialState, action: any):initialStateType =
   }
 };
 
-type onChangeCurrentUserActionType = {
-  type: typeof ON_CHANGE_CURRENT_USER;
-  user: user;
-};
-type addUsersActionType = {
-  type: typeof ADD_USERS;
-  usersList: Array<user>
-};
-type onPageChangeActionType = {
-  type: typeof ON_PAGE_CHANGE;
-  increment: number;
-};
+
+
 
 export const onChangeCurrentUser = (user: user):onChangeCurrentUserActionType => ({
   type: ON_CHANGE_CURRENT_USER,
@@ -94,8 +105,8 @@ export const onPageChange = (increment: number):onPageChangeActionType => ({
 });
 
 
-export const getProfileThunkCreator = (userID: any) => {
-  return (dispatch: any) => {
+export const getProfileThunkCreator = (userID: string) => {
+  return (dispatch: Dispatch<ActionType>) => {
     dispatch(loading());
     usersAPI.getUserProfile(userID).then((response: any) => {
       dispatch(onChangeCurrentUser(response.data.clientProfile));
@@ -105,7 +116,7 @@ export const getProfileThunkCreator = (userID: any) => {
 };
 
 export const getUsersThunkCreator = (count: number, page: number) => {
-  return async (dispatch: any) => {
+  return async (dispatch: Dispatch<ActionType>) => {
     dispatch(loading());
     let response = await usersAPI.getUsers(count, page);
     dispatch(addUsers(response.data.clients));
@@ -114,7 +125,7 @@ export const getUsersThunkCreator = (count: number, page: number) => {
 };
 
 export const getNewUsersThunkCreator = (count: number, page: number, num: number) => {
-  return async (dispatch: any) => {
+  return async (dispatch: Dispatch<ActionType>) => {
     dispatch(loading());
     dispatch(onPageChange(num));
     let response = await usersAPI.getUsers(count, page + num);

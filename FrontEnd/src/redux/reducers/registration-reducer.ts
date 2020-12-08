@@ -1,4 +1,6 @@
 import logInProfileAPI from "../../api/logInProfileAPI";
+import {user} from '../../types/userTypes'
+import {Dispatch} from 'redux'
 
 const ON_NAME_TYPING = "ON-NAME-TYPING";
 const ON_SURNAME_TYPING = "ON-SURNAME-TYPING";
@@ -35,11 +37,53 @@ let initialState = {
   },
 };
 
+
+//ACTION TYPES
+type onNameTypingActionType = {
+  type: typeof ON_NAME_TYPING;
+  text: string;
+};
+type onSurnameTypingActionType = {
+  type: typeof ON_SURNAME_TYPING;
+  text: string;
+};
+type onMailTypingActionType = {
+  type: typeof ON_MAIL_TYPING;
+  text: string;
+};
+type onAdressTypingActionType = {
+  type: typeof ON_ADRESS_TYPING;
+  text: string;
+};
+type onPhotoTypingActionType = {
+  type: typeof ON_PHOTO_TYPING;
+  text: string;
+};
+type onPasswordTypingActionType = {
+  type: typeof ON_PASSWORD_TYPING;
+  text: string;
+};
+type onRepeatPasswordTypingActionType = {
+  type: typeof ON_REPEAT_PASSWORD_TYPING;
+  text: string;
+};
+type onRegistrationServerResponseActionType = {
+  type: typeof ON_REGISTRATION_SERVER_RESPONSE;
+  err: boolean;
+  message: string;
+};
+type onSubmitActionType = {
+  type: typeof ON_SUBMIT;
+};
+
+type ActionType = onNameTypingActionType|onSurnameTypingActionType|onMailTypingActionType|
+onAdressTypingActionType|onPhotoTypingActionType|onPasswordTypingActionType|onRepeatPasswordTypingActionType|onRegistrationServerResponseActionType|onSubmitActionType;
+
 type initialStateType = typeof initialState;
 
 const registrationReducer = (
   state = initialState,
-  action: any
+  action: ActionType
 ): initialStateType => {
   switch (action.type) {
     case ON_NAME_TYPING: {
@@ -175,40 +219,6 @@ const registrationReducer = (
   }
 };
 
-type onNameTypingActionType = {
-  type: typeof ON_NAME_TYPING;
-  text: string;
-};
-type onSurnameTypingActionType = {
-  type: typeof ON_SURNAME_TYPING;
-  text: string;
-};
-type onMailTypingActionType = {
-  type: typeof ON_MAIL_TYPING;
-  text: string;
-};
-type onAdressTypingActionType = {
-  type: typeof ON_ADRESS_TYPING;
-  text: string;
-};
-type onPhotoTypingActionType = {
-  type: typeof ON_PHOTO_TYPING;
-  text: string;
-};
-type onPasswordTypingActionType = {
-  type: typeof ON_PASSWORD_TYPING;
-  text: string;
-};
-type onRepeatPasswordTypingActionType = {
-  type: typeof ON_REPEAT_PASSWORD_TYPING;
-  text: string;
-};
-type onRegistrationServerResponseActionType = {
-  type: typeof ON_REGISTRATION_SERVER_RESPONSE;
-  err: string;
-  message: string;
-};
-
 export const onNameTyping = (text: string): onNameTypingActionType => ({
   type: ON_NAME_TYPING,
   text,
@@ -237,15 +247,16 @@ export const onRepeatPasswordTyping = (text: string):onRepeatPasswordTypingActio
   type: ON_REPEAT_PASSWORD_TYPING,
   text,
 });
-export const onRegistrationServerResponse = (err: string, message: string):onRegistrationServerResponseActionType => ({
+export const onRegistrationServerResponse = (err: boolean, message: string):onRegistrationServerResponseActionType => ({
   type: ON_REGISTRATION_SERVER_RESPONSE,
   err,
   message,
 });
-export const onSubmit = () => ({ type: ON_SUBMIT });
+export const onSubmit = ():onSubmitActionType => ({ type: ON_SUBMIT });
 
-export const postClientThunkCreator = (client: any) => {
-  return async (dispatch: any) => {
+
+export const postClientThunkCreator = (client: user) => {
+  return async (dispatch: Dispatch<ActionType>) => {
     let response = await logInProfileAPI.postNewClient(client);
     dispatch(
       onRegistrationServerResponse(response.data.err, response.data.message)

@@ -1,4 +1,6 @@
 import logInProfileAPI from "../../api/logInProfileAPI";
+import {Dispatch} from 'redux'
+import {user} from '../../types/userTypes'
 
 const ON_LOG_IN_MAIL_TYPING = "ON-LOG-IN-MAIL-TYPING";
 const ON_LOG_IN_PASSWORD_TYPING = "ON-LOG-IN-PASSWORD-TYPING";
@@ -18,7 +20,42 @@ let initialState = {
   currentUser: {} as {},
 };
 
-const registrationReducer = (state = initialState, action:any) => {
+//ACTION TYPES
+type onLogInActionType = {
+  type: typeof ON_LOG_IN;
+  user: {message:string};
+};
+type onLogInMailTypingActionType = {
+  type: typeof ON_LOG_IN_MAIL_TYPING;
+  text: string;
+};
+type onLogInPasswordTypingActionType = {
+  type: typeof ON_LOG_IN_PASSWORD_TYPING;
+  text: string;
+};
+type onProfileNameChangeActionType = {
+  type: typeof ON_PROFILE_NAME_CHANGE;
+  text: string;
+};
+type onProfileAdressChangeActionType = {
+  type: typeof ON_PROFILE_ADRESS_CHANGE;
+  text: string;
+};
+type onProfileMoneyChangeActionType = {
+  type: typeof ON_PROFILE_MONEY_CHANGE;
+  text: string;
+};
+type onLogOutActionType = {
+  type: typeof ON_LOG_OUT;
+};
+type onChangeProfileInfoActionType = {
+  type: typeof ON_CHANGE_PROFILE_INFO;
+};
+
+type ActionType = onLogInActionType|onLogInMailTypingActionType|onLogInPasswordTypingActionType|onProfileNameChangeActionType
+|onProfileAdressChangeActionType|onProfileMoneyChangeActionType|onLogOutActionType|onChangeProfileInfoActionType;
+
+const registrationReducer = (state = initialState, action:ActionType) => {
   switch (action.type) {
     case ON_LOG_IN_MAIL_TYPING: {
       return {
@@ -100,39 +137,7 @@ const registrationReducer = (state = initialState, action:any) => {
   }
 };
 
-type onLogInActionType = {
-  type: typeof ON_LOG_IN;
-  user: {};
-};
-type onLogInMailTypingActionType = {
-  type: typeof ON_LOG_IN_MAIL_TYPING;
-  text: string;
-};
-type onLogInPasswordTypingActionType = {
-  type: typeof ON_LOG_IN_PASSWORD_TYPING;
-  text: string;
-};
-type onProfileNameChangeActionType = {
-  type: typeof ON_PROFILE_NAME_CHANGE;
-  text: string;
-};
-type onProfileAdressChangeActionType = {
-  type: typeof ON_PROFILE_ADRESS_CHANGE;
-  text: string;
-};
-type onProfileMoneyChangeActionType = {
-  type: typeof ON_PROFILE_MONEY_CHANGE;
-  text: string;
-};
-type onLogOutActionType = {
-  type: typeof ON_LOG_OUT;
-};
-type onChangeProfileInfoActionType = {
-  type: typeof ON_CHANGE_PROFILE_INFO;
-};
-
-
-export const onLogIn = (user:{}):onLogInActionType => ({
+export const onLogIn = (user:{message:string}):onLogInActionType => ({
   type: ON_LOG_IN,
   user,
 });
@@ -163,15 +168,15 @@ export const onProfileMoneyChange = (text:string):onProfileMoneyChangeActionType
 export const onLogOut = ():onLogOutActionType => ({ type: ON_LOG_OUT });
 export const onChangeProfileInfo = ():onChangeProfileInfoActionType => ({ type: ON_CHANGE_PROFILE_INFO });
 
-export const getUserThunkCreator = (currentLogInInfo:any) => {
-  return async (dispatch:any) => {
+export const getUserThunkCreator = (currentLogInInfo:{mail:string,password:string}) => {
+  return async (dispatch:Dispatch<ActionType>) => {
     let response:any = await logInProfileAPI.getUser(currentLogInInfo);
     dispatch(onLogIn(response));
     return response;
   };
 };
 
-export const putNewUserProfileInfoThunkCreator = (currentLogInInfo:any) => {
+export const putNewUserProfileInfoThunkCreator = (currentLogInInfo:user) => {
   return () => {
     logInProfileAPI.putUser(currentLogInInfo);
     console.log("postNewUserProfileInfoThunkCreator");

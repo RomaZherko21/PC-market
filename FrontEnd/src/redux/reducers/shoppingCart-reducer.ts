@@ -22,7 +22,32 @@ let initialState = {
 };
 type initialStateType = typeof initialState;
 
-const shoppingCartReducer = (state = initialState, action:any):initialStateType => {
+//ACTION TYPES
+type addShoppingCartGoodActionType = {
+  type: typeof ADD_TO_SHOPPING_CART,
+  good: product,
+}
+type removeShoppingCartGoodActionType = {
+  type: typeof REMOVE_FROM_SHOPPING_CART,
+  good: product,
+}
+type showCurrentProductActionType = {
+  type: typeof ON_SHOW_CURRENT_PRODUCT,
+  good: product,
+}
+type plusCurrentGoodAmountActionType = {
+  type: typeof ON_PLUS_CURRENT_GOOD_AMOUNT,
+  good: product,
+}
+type minusCurrentGoodAmountActionType = {
+  type: typeof ON_MINUS_CURRENT_GOOD_AMOUNT,
+  good: product,
+}
+
+type ActionType = addShoppingCartGoodActionType |removeShoppingCartGoodActionType|showCurrentProductActionType|
+plusCurrentGoodAmountActionType|minusCurrentGoodAmountActionType;
+
+const shoppingCartReducer = (state = initialState, action:ActionType):initialStateType => {
   switch (action.type) {
     case ADD_TO_SHOPPING_CART: {
       if (state.shoppingCartGoods.includes(action.good)) return state;
@@ -71,26 +96,7 @@ const shoppingCartReducer = (state = initialState, action:any):initialStateType 
   }
 };
 
-type addShoppingCartGoodActionType = {
-  type: typeof ADD_TO_SHOPPING_CART,
-  good: product,
-}
-type removeShoppingCartGoodActionType = {
-  type: typeof REMOVE_FROM_SHOPPING_CART,
-  good: product,
-}
-type showCurrentProductActionType = {
-  type: typeof ON_SHOW_CURRENT_PRODUCT,
-  good: product,
-}
-type plusCurrentGoodAmountActionType = {
-  type: typeof ON_PLUS_CURRENT_GOOD_AMOUNT,
-  good: product,
-}
-type minusCurrentGoodAmountActionType = {
-  type: typeof ON_MINUS_CURRENT_GOOD_AMOUNT,
-  good: product,
-}
+
 
 export const addShoppingCartGood = (good:product):addShoppingCartGoodActionType => ({
   type: ADD_TO_SHOPPING_CART,
