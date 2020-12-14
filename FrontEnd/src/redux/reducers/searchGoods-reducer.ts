@@ -1,5 +1,6 @@
 import { Dispatch } from "redux";
 import productsAPI from "../../api/productsAPI";
+import {product} from "../../types/productTypes"
 
 const GET_SEARCHED_PRODUCTS = "GET-SEARCHED-PRODUCTS";
 
@@ -8,7 +9,7 @@ interface initialStateType {
     name: string;
     price: string;
   };
-  searchedProducts: Array<{}>;
+  searchedProducts: Array<product>;
 }
 
 let initialState: initialStateType = {
@@ -22,7 +23,7 @@ let initialState: initialStateType = {
 //ACTION TYPES
 type getSearchedProductsActionType = {
   type: typeof GET_SEARCHED_PRODUCTS,
-  data: Array<{}>,
+  data: Array<product>,
 }
 type ActionType = getSearchedProductsActionType;
 
@@ -47,7 +48,7 @@ export const getSearchedProducts = (data = []):getSearchedProductsActionType => 
 
 export const getSearchedProductsThunkCreator = (filteredParams:{name:string, price:string}) => {
   return async (dispatch:Dispatch<ActionType>) => {
-    let response = await productsAPI.getSearchedProducts(filteredParams);
+    let response:any = await productsAPI.getSearchedProducts(filteredParams);
     dispatch(getSearchedProducts(response));
   };
 };

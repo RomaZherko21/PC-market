@@ -1,22 +1,13 @@
-import usersAPI from "../../api/usersApi";
+import usersAPI from "../../api/usersAPI";
 import { loading } from "./common-reducer";
 import {Dispatch} from 'redux'
 import {loadingActionType} from './common-reducer'
+import {user} from '../../types/userTypes'
 
 const ON_CHANGE_CURRENT_USER = "ON-CHANGE-CURRENT-USER";
 const ADD_USERS = "ADD-USERS";
 const ON_PAGE_CHANGE = "ON-PAGE-CHANGE";
 
-interface user {
-  _id: string;
-  name: string;
-  surname: string;
-  mail: string;
-  adress: string;
-  photo: string;
-  password: string;
-  repeatPassword: string;
-}
 type initialStateType = {
   user: user;
   usersList: Array<user>;
@@ -119,6 +110,7 @@ export const getUsersThunkCreator = (count: number, page: number) => {
   return async (dispatch: Dispatch<ActionType>) => {
     dispatch(loading());
     let response = await usersAPI.getUsers(count, page);
+    console.log(response.data)
     dispatch(addUsers(response.data.clients));
     dispatch(loading());
   };

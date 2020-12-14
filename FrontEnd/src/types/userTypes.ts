@@ -6,4 +6,6 @@ export type user = {
   photo: string;
   repeatPassword: string;
   surname: string;
+  _id?: String;
 };
+

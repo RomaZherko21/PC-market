@@ -1,14 +1,21 @@
-import * as axios from "axios";
+import axios from "axios";
+import {user} from '../types/userTypes'
 const URL = "http://127.0.0.1:5000";
 
+
+type postNewClientType = {
+  message:string,
+  err: boolean
+}
+
 const logInProfileAPI = {
-  postNewClient(client) {
-    return axios.post(`${URL}/logInProfile/registration`, client);
+  postNewClient(client:user) {
+    return axios.post<postNewClientType>(`${URL}/logInProfile/registration`, client);
   },
-  async getUser(logInInfo) {
+  async getUser(logInInfo:{mail:string,password:string }) {
     let response;
     await axios
-      .get(
+      .get<user>(
         `${URL}/logInProfile/logIn/?mail=${logInInfo.mail}&password=${logInInfo.password}`
       )
       .then((res) => {
@@ -16,8 +23,7 @@ const logInProfileAPI = {
       });
     return response;
   },
-  async putUser(info) {
-    console.log(info)
+  async putUser(info:user) {
      axios.put(`${URL}/logInProfile/`, info);
   },
 };
