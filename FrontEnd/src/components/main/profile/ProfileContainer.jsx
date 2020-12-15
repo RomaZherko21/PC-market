@@ -1,7 +1,7 @@
 import Profile from './Profile'
 import { connect } from 'react-redux'
 
-import { putNewUserProfileInfoThunkCreator, onProfileNameChange, onProfileAdressChange, onProfileMoneyChange  } from '../../../redux/reducers/logIn-reducer'
+import { actions, putNewUserProfileInfoThunkCreator } from '../../../redux/reducers/logIn-reducer'
 
 const mapStateToProps = (state) => {
   return {
@@ -11,7 +11,7 @@ const mapStateToProps = (state) => {
 
 export default connect(mapStateToProps, {
   putNewUserProfileInfoThunkCreator,
-  onProfileNameChange,
-  onProfileAdressChange,
-  onProfileMoneyChange
+  onProfileNameChange: actions.onProfileNameChange,
+  onProfileAdressChange: actions.onProfileAdressChange,
+  onProfileMoneyChange: actions.onProfileMoneyChange
 })(Profile);

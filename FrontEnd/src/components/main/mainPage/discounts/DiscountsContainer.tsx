@@ -2,8 +2,7 @@ import { connect } from "react-redux";
 import Discounts from "./Discounts";
 
 import {
-  addShoppingCartGood,
-  showCurrentProduct,
+  actions
 } from "../../../../redux/reducers/shoppingCart-reducer";
 import { getNewGoodsThunkCreator } from "../../../../redux/reducers/allGoods-reducer";
 import { AppStateType } from "../../../../redux/redux-store";
@@ -21,8 +20,8 @@ const mapStateToProps = (state: AppStateType): mapStatePropsType => {
 
 export default compose<AppStateType>(
   connect(mapStateToProps, {
-    addShoppingCartGood,
-    showCurrentProduct,
+    addShoppingCartGood: actions.addShoppingCartGood,
+    showCurrentProduct: actions.showCurrentProduct,
     getNewGoodsThunkCreator,
   })
 )(Discounts);

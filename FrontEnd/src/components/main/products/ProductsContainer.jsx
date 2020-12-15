@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import Products from './Products'
-import { addShoppingCartGood, showCurrentProduct } from '../../../redux/reducers/shoppingCart-reducer'
+import { actions } from '../../../redux/reducers/shoppingCart-reducer'
 
 const mapStateToProps = (state) => {
     return {
@@ -12,8 +12,8 @@ const mapStateToProps = (state) => {
 }
 
 const ProductsContainer = connect(mapStateToProps, {
-    addShoppingCartGood,
-    showCurrentProduct
+    addShoppingCartGood: actions.addShoppingCartGood,
+    showCurrentProduct: actions.showCurrentProduct
 })(Products);
 
 export default ProductsContainer;

@@ -1,8 +1,7 @@
 import { Dispatch } from "redux";
 import productsAPI from "../../api/productsAPI";
-import {product} from "../../types/productTypes"
-
-const GET_SEARCHED_PRODUCTS = "GET-SEARCHED-PRODUCTS";
+import { product } from "../../types/productTypes";
+import { InferActionTypes } from "../redux-store";
 
 interface initialStateType {
   searchItem: {
@@ -20,16 +19,14 @@ let initialState: initialStateType = {
   searchedProducts: [],
 };
 
-//ACTION TYPES
-type getSearchedProductsActionType = {
-  type: typeof GET_SEARCHED_PRODUCTS,
-  data: Array<product>,
-}
-type ActionType = getSearchedProductsActionType;
+type ActionType = InferActionTypes<typeof actions>;
 
-const searchGoodsReducer = (state = initialState, action:ActionType):initialStateType => {
+const searchGoodsReducer = (
+  state = initialState,
+  action: ActionType
+): initialStateType => {
   switch (action.type) {
-    case GET_SEARCHED_PRODUCTS: {
+    case "GET_SEARCHED_PRODUCTS": {
       console.log(action.data);
       return {
         ...state,
@@ -41,15 +38,20 @@ const searchGoodsReducer = (state = initialState, action:ActionType):initialStat
   }
 };
 
-export const getSearchedProducts = (data = []):getSearchedProductsActionType => ({
-  type: GET_SEARCHED_PRODUCTS,
-  data,
-});
+const actions = {
+  getSearchedProducts: (data = []) => ({
+    type: "GET_SEARCHED_PRODUCTS",
+    data,
+  }),
+};
 
-export const getSearchedProductsThunkCreator = (filteredParams:{name:string, price:string}) => {
-  return async (dispatch:Dispatch<ActionType>) => {
-    let response:any = await productsAPI.getSearchedProducts(filteredParams);
-    dispatch(getSearchedProducts(response));
+export const getSearchedProductsThunkCreator = (filteredParams: {
+  name: string;
+  price: string;
+}) => {
+  return async (dispatch: Dispatch<ActionType>) => {
+    let response: any = await productsAPI.getSearchedProducts(filteredParams);
+    dispatch(actions.getSearchedProducts(response));
   };
 };
 

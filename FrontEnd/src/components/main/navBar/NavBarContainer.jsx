@@ -1,7 +1,7 @@
 import NavBar from './NavBar'
 
 import { connect } from 'react-redux'
-import {onLogOut} from '../../../redux/reducers/logIn-reducer'
+import {actions} from '../../../redux/reducers/logIn-reducer'
 
 import { getNewGoodsThunkCreator } from '../../../redux/reducers/allGoods-reducer'
 
@@ -13,7 +13,7 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps, {
-  onLogOut,
+  onLogOut: actions.onLogOut,
   getNewGoodsThunkCreator,
 })(NavBar)
 
