@@ -16,7 +16,7 @@ const Sidebar = (props) => {
     function showLi(text, hoverClass, img, toLink) {
         return (
             <li className={s[hoverClass]} >
-                <NavLink to={toLink} activeClassName={s.active} onClick={()=>props.getNewGoodsThunkCreator(toLink)}><img src={img} alt="" />{text}</NavLink>
+                <NavLink to={toLink} activeClassName={s.active} onClick={() => props.getNewGoodsThunkCreator(toLink)}><img src={img} alt="" />{text}</NavLink>
             </li>
         )
     }

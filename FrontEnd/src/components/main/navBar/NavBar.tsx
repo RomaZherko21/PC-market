@@ -3,8 +3,17 @@ import { NavLink } from 'react-router-dom';
 import s from './NavBar.module.css';
 import Sidebar from "./sidebar/Sidebar";
 import SearchGoodsContainer from './searchGoods/SearchGoodsContainer'
+import {user} from '../../../types/userTypes'
 
-const NavBar = (props) => {
+type PropsType = {
+  shoppingCartLength:number,
+  currentUser:user,
+
+  onLogOut: () => void;
+  getNewGoodsThunkCreator: (type:string) => void;
+};
+
+const NavBar: React.FC<PropsType> = ({shoppingCartLength, currentUser, getNewGoodsThunkCreator, onLogOut}) => {
 
   let [open, setOpen] = useState(false);
   const onShowGoods = () => setOpen(!open);
@@ -19,7 +28,7 @@ const NavBar = (props) => {
     <Fragment>
       <nav className={s.navBar}>
         <i className={`fas fa-list-ul ${s.showList}`} onClick={onShowNav}></i>
-        <Sidebar getNewGoodsThunkCreator={props.getNewGoodsThunkCreator} open={open} onShowGoods={onShowGoods} />
+        <Sidebar getNewGoodsThunkCreator={getNewGoodsThunkCreator} open={open} onShowGoods={onShowGoods} />
         <div className={s.navText} style={showNav ? { left: '0%' } : { left: '-100%' }}>
           <span className={s.goods} onClick={onShowGoods}><i className="fas fa-store"></i></span>
           <NavLink to='/'>Главная</NavLink>
@@ -30,10 +39,10 @@ const NavBar = (props) => {
         </div>
 
         <div className={s.navIcons} style={showNav ? { left: '0%' } : { left: '-100%' }}>
-          <NavLink to={props.currentUser.name ? '/profile' : '/logInProfile/logIn'} className={s.user}><i className="far fa-user-circle"></i></NavLink>
-          <NavLink to='/shoppingCart' className={s.danger}><i className="fas fa-shopping-cart"></i><span>{props.shoppingCartLength}</span></NavLink>
+          <NavLink to={currentUser.name ? '/profile' : '/logInProfile/logIn'} className={s.user}><i className="far fa-user-circle"></i></NavLink>
+          <NavLink to='/shoppingCart' className={s.danger}><i className="fas fa-shopping-cart"></i><span>{shoppingCartLength}</span></NavLink>
           <i className={`fas fa-search ${s.search}`} onClick={onShowSearch}></i>
-          {props.currentUser.name ? <NavLink to='/' className={s.user} onClick={props.onLogOut}><i className="fas fa-door-open"></i></NavLink> : ''}
+          {currentUser.name ? <NavLink to='/' className={s.user} onClick={()=>onLogOut()}><i className="fas fa-door-open"></i></NavLink> : ''}
         </div>
         {showSearch ? <SearchGoodsContainer onShowSearch={onShowSearch} /> : ''}
       </nav>
