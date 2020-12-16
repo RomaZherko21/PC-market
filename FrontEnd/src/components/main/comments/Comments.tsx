@@ -2,12 +2,23 @@ import React, { Fragment } from 'react'
 
 import s from './Comments.module.css'
 
-function ShowUsers(props) {
+type CommentType = {
+  photo: string;
+  author: string;
+  text: string;
+};
+type PropsType = {
+  comments: Array<CommentType>;
+  onPrevCommentPage: ()=>void;
+  onNextCommentPage: ()=>void;
+};
+
+const ShowUsers: React.FC<PropsType> = ({comments,onPrevCommentPage,onNextCommentPage})=> {
   return (
     <Fragment>
       <h1 className='mainTitle'>Отзывы</h1>
       <section className={s.comments}>
-        {props.comments.map(item => {
+        {comments.map(item => {
           return (
             <div className={s.oneComment} key={item.photo}>
               <img src={item.photo} alt="" />
@@ -18,8 +29,8 @@ function ShowUsers(props) {
         })}
       </section>
       <div className={s.allUsersButtons}>
-        <button onClick={props.onPrevCommentPage}>Previous</button>
-        <button onClick={props.onNextCommentPage}>Next</button>
+        <button onClick={onPrevCommentPage}>Previous</button>
+        <button onClick={onNextCommentPage}>Next</button>
       </div>
     </Fragment>
   );

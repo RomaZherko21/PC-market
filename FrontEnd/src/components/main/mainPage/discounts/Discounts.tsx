@@ -2,12 +2,13 @@ import React, { Fragment } from "react";
 import Slider from "react-slick";
 import s from "./Discounts.module.css";
 import { NavLink } from "react-router-dom";
+import {product} from '../../../../types/productTypes'
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 type PropsType = {
-  discounts: [];
+  discounts: Array<product>;
   getNewGoodsThunkCreator: (productsType: string) => () => void;
   showCurrentProduct: (item: {}) => void;
   addShoppingCartGood: (item: {}) => void;
@@ -19,6 +20,8 @@ type Good = {
   name: string;
   prevPrice: string;
   discountPrice: string;
+  price?:number;
+  mainDescription?: string;
 };
 
 const Discounts: React.FC<PropsType> = ({
@@ -89,7 +92,7 @@ const Discounts: React.FC<PropsType> = ({
       <h1 className="mainTitle">Товары по скидке</h1>
       <div className={s.container}>
         <Slider {...settings}>
-          {discounts.map((item) => {
+          {discounts.map((item:any) => {
             return OneProduct(item, showCurrentProduct);
           })}
         </Slider>
