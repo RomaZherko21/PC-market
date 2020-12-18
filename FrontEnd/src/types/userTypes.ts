@@ -7,5 +7,6 @@ export type user = {
   repeatPassword: string;
   surname: string;
   _id?: String;
+  money?:string;
 };
 
