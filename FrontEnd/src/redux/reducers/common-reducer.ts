@@ -3,7 +3,7 @@ const LOADING = "LOADING";
 let initialState = {
   isFetching: false as boolean,
 };
-type initialStateType = typeof initialState;
+type InitialStateType = typeof initialState;
 
 //ACTION TYPES
 export type loadingActionType = {
@@ -12,7 +12,10 @@ export type loadingActionType = {
 
 type ActionType = loadingActionType;
 
-const commonReducer = (state = initialState, action: ActionType):initialStateType => {
+const commonReducer = (
+  state = initialState,
+  action: ActionType
+): InitialStateType => {
   switch (action.type) {
     case LOADING: {
       return {
@@ -25,7 +28,6 @@ const commonReducer = (state = initialState, action: ActionType):initialStateTyp
   }
 };
 
-
-export const loading = ():loadingActionType => ({ type: LOADING });
+export const loading = (): loadingActionType => ({ type: LOADING });
 
 export default commonReducer;

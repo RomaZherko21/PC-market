@@ -1,17 +1,17 @@
 import { Dispatch } from "redux";
 import productsAPI from "../../api/productsAPI";
-import { product } from "../../types/productTypes";
+import { Product } from "../../types/productTypes";
 import { InferActionTypes } from "../redux-store";
 
-interface initialStateType {
+interface InitialStateType {
   searchItem: {
     name: string;
     price: string;
   };
-  searchedProducts: Array<product>;
+  searchedProducts: Array<Product>;
 }
 
-let initialState: initialStateType = {
+let initialState: InitialStateType = {
   searchItem: {
     name: "",
     price: "",
@@ -24,7 +24,7 @@ type ActionType = InferActionTypes<typeof actions>;
 const searchGoodsReducer = (
   state = initialState,
   action: ActionType
-): initialStateType => {
+): InitialStateType => {
   switch (action.type) {
     case "GET_SEARCHED_PRODUCTS": {
       console.log(action.data);

@@ -1,12 +1,12 @@
 import axios from "axios";
-import {user} from '../types/userTypes'
+import {User} from '../types/userTypes'
 const URL = "http://127.0.0.1:5000/clients";
 
 type getUserProfileType = {
-  clientProfile: user;
+  clientProfile: User;
 };
 type getUsersType = {
-  clients: Array<user>;
+  clients: Array<User>;
 };
 
 const usersAPI = {

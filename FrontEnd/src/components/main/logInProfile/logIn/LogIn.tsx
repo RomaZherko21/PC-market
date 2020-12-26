@@ -1,11 +1,11 @@
 import React from "react";
 import { NavLink, useHistory } from "react-router-dom";
 import s from "./LogIn.module.css";
-import { user } from "../../../../types/userTypes";
+import { User } from "../../../../types/userTypes";
 
 type PropsType = {
   currentLogInInfo:{mail:string,password:string},
-  currentUser:user,
+  currentUser:User,
   wrongData: string | undefined,
 
   onLogInMailTyping: (str: string) => void;

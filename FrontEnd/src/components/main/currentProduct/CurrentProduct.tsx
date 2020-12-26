@@ -1,10 +1,10 @@
 import React from 'react'
-import {product} from '../../../types/productTypes'
+import {Product} from '../../../types/productTypes'
 import s from './CurrentProduct.module.css'
 
 type PropsType = {
-  currentProduct: product;
-  addShoppingCartGood: (currentProduct:product)=>void;
+  currentProduct: Product;
+  addShoppingCartGood: (currentProduct:Product)=>void;
 };
 
 const CurrentProduct: React.FC<PropsType> = ({currentProduct, addShoppingCartGood}) => {

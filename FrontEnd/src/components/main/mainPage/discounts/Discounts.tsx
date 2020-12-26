@@ -2,13 +2,13 @@ import React, { Fragment } from "react";
 import Slider from "react-slick";
 import s from "./Discounts.module.css";
 import { NavLink } from "react-router-dom";
-import {product} from '../../../../types/productTypes'
+import {Product} from '../../../../types/productTypes'
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 type PropsType = {
-  discounts: Array<product>;
+  discounts: Array<Product>;
   getNewGoodsThunkCreator: (productsType: string) => () => void;
   showCurrentProduct: (item: {}) => void;
   addShoppingCartGood: (item: {}) => void;

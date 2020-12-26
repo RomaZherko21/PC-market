@@ -3,11 +3,11 @@ import { NavLink } from 'react-router-dom';
 import s from './NavBar.module.css';
 import Sidebar from "./sidebar/Sidebar";
 import SearchGoodsContainer from './searchGoods/SearchGoodsContainer'
-import {user} from '../../../types/userTypes'
+import {User} from '../../../types/userTypes'
 
 type PropsType = {
   shoppingCartLength:number,
-  currentUser:user,
+  currentUser:User,
 
   onLogOut: () => void;
   getNewGoodsThunkCreator: (type:string) => void;

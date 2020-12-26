@@ -1,21 +1,23 @@
 import logInProfileAPI from "../../api/logInProfileAPI";
 import { Dispatch } from "redux";
-import { user } from "../../types/userTypes";
+import { User } from "../../types/userTypes";
 import { InferActionTypes } from "../redux-store";
-
 
 let initialState = {
   currentLogInInfo: {
     mail: "",
     password: "",
-  } as {mail:string, password:string},
+  } as { mail: string; password: string },
   wrongData: "" as string | undefined,
   currentUser: {} as {},
 };
-type initialStateType = typeof initialState;
+type InitialStateType = typeof initialState;
 type ActionType = InferActionTypes<typeof actions>;
 
-const logInReducer = (state = initialState, action: ActionType):initialStateType => {
+const logInReducer = (
+  state = initialState,
+  action: ActionType
+): InitialStateType => {
   switch (action.type) {
     case "ON_LOG_IN_MAIL_TYPING": {
       return {
@@ -147,7 +149,7 @@ export const getUserThunkCreator = (currentLogInInfo: {
   };
 };
 
-export const putNewUserProfileInfoThunkCreator = (currentLogInInfo: user) => {
+export const putNewUserProfileInfoThunkCreator = (currentLogInInfo: User) => {
   return () => {
     logInProfileAPI.putUser(currentLogInInfo);
   };

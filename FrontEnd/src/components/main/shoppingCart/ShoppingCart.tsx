@@ -1,20 +1,20 @@
 import React, { Fragment } from "react";
 import { NavLink } from "react-router-dom";
 import s from "./ShoppingCart.module.css";
-import { product } from "../../../types/productTypes";
-import { user } from "../../../types/userTypes";
+import { Product } from "../../../types/productTypes";
+import { User } from "../../../types/userTypes";
 
 type PropsType = {
   shoppingCart: {
-    currentGood: product;
+    currentGood: Product;
     fullPrice: number;
-    shoppingCartGoods: Array<product>;
+    shoppingCartGoods: Array<Product>;
   };
-  currentUser: user;
+  currentUser: User;
 
-  removeShoppingCartGood: (item: product) => void;
-  plusCurrentGoodAmount: (item: product) => void;
-  minusCurrentGoodAmount: (item: product) => void;
+  removeShoppingCartGood: (item: Product) => void;
+  plusCurrentGoodAmount: (item: Product) => void;
+  minusCurrentGoodAmount: (item: Product) => void;
 };
 
 const ShoppingCart: React.FC<PropsType> = ({
@@ -45,7 +45,7 @@ const ShoppingCart: React.FC<PropsType> = ({
         </h1>
       </div>
       <section className={s.shoppingCart}>
-        {shoppingCart.shoppingCartGoods.map((item: product) => {
+        {shoppingCart.shoppingCartGoods.map((item: Product) => {
           return (
             <div className={s.oneProduct} key={item.id}>
               <img src={item.img} alt="" />

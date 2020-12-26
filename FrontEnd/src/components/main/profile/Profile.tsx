@@ -1,14 +1,14 @@
 import React, { Fragment, useRef, useState } from "react";
 import s from "./Profile.module.css";
-import { user } from "../../../types/userTypes";
+import { User } from "../../../types/userTypes";
 
 type PropsType = {
-  currentUser: user;
+  currentUser: User;
 
   onProfileNameChange: (str: string) => void;
   onProfileAdressChange: (str: string) => void;
   onProfileMoneyChange: (str: string) => void;
-  putNewUserProfileInfoThunkCreator: (user: user) => void;
+  putNewUserProfileInfoThunkCreator: (user: User) => void;
 };
 
 const Profile: React.FC<PropsType> = ({

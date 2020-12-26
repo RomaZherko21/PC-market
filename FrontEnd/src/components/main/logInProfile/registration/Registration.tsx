@@ -1,10 +1,10 @@
 import React from "react";
 import { NavLink, useHistory } from "react-router-dom";
 import s from "./Registration.module.css";
-import { user } from "../../../../types/userTypes";
+import { User } from "../../../../types/userTypes";
 
 type PropsType = {
-  currentRegistrationInfo: user;
+  currentRegistrationInfo: User;
   errors: any;
   serverResponse: { err: boolean; message: string };
 
@@ -15,7 +15,7 @@ type PropsType = {
   onPasswordTyping: (str: string) => void;
   onPhotoTyping: (str: string) => void;
   onRepeatPasswordTyping: (str: string) => void;
-  postClientThunkCreator: (user: user) => any;
+  postClientThunkCreator: (user: User) => any;
 };
 
 const Registration: React.FC<PropsType> = ({

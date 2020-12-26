@@ -2,21 +2,21 @@ import usersAPI from "../../api/usersAPI";
 import { loading } from "./common-reducer";
 import {Dispatch} from 'redux'
 import {loadingActionType} from './common-reducer'
-import {user} from '../../types/userTypes'
+import {User} from '../../types/userTypes'
 
 const ON_CHANGE_CURRENT_USER = "ON-CHANGE-CURRENT-USER";
 const ADD_USERS = "ADD-USERS";
 const ON_PAGE_CHANGE = "ON-PAGE-CHANGE";
 
-type initialStateType = {
-  user: user;
-  usersList: Array<user>;
+type InitialStateType = {
+  user: User;
+  usersList: Array<User>;
   page: number;
   count: number;
   isFetching: boolean;
 };
 
-let initialState: initialStateType = {
+let initialState: InitialStateType = {
   user: {
     _id: "",
     name: "",
@@ -37,11 +37,11 @@ let initialState: initialStateType = {
 //ACTION TYPES
 type onChangeCurrentUserActionType = {
   type: typeof ON_CHANGE_CURRENT_USER;
-  user: user;
+  user: User;
 };
 type addUsersActionType = {
   type: typeof ADD_USERS;
-  usersList: Array<user>
+  usersList: Array<User>
 };
 type onPageChangeActionType = {
   type: typeof ON_PAGE_CHANGE;
@@ -52,7 +52,7 @@ type ActionType = onChangeCurrentUserActionType | addUsersActionType |  onPageCh
 
 
 
-const allClientsReducer = (state = initialState, action: ActionType):initialStateType => {
+const allClientsReducer = (state = initialState, action: ActionType):InitialStateType => {
   switch (action.type) {
     case ON_CHANGE_CURRENT_USER: {
       return {
@@ -80,12 +80,12 @@ const allClientsReducer = (state = initialState, action: ActionType):initialStat
 
 
 
-export const onChangeCurrentUser = (user: user):onChangeCurrentUserActionType => ({
+export const onChangeCurrentUser = (user: User):onChangeCurrentUserActionType => ({
   type: ON_CHANGE_CURRENT_USER,
   user,
 });
 
-export const addUsers = (usersList: Array<user>):addUsersActionType => ({
+export const addUsers = (usersList: Array<User>):addUsersActionType => ({
   type: ADD_USERS,
   usersList,
 });

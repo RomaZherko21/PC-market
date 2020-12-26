@@ -3,12 +3,11 @@ const ON_TEXT_TYPING = "ON-TEXT-TYPING";
 const ON_NEXT_COMMENT_PAGE = "ON-NEXT-COMMENT-PAGE";
 const ON_PREV_COMMENT_PAGE = "ON-PREV-COMMENT-PAGE";
 
-interface comment{
+interface Comment {
   author: string;
   photo: string;
   text: string;
 }
-
 
 //ACTION TYPES
 type addCommentActionType = {
@@ -26,9 +25,11 @@ type onNextCommentPageActionType = {
 type onPrevCommentPageActionType = {
   type: typeof ON_PREV_COMMENT_PAGE;
 };
-type ActionType = addCommentActionType|onTextTypingActionType|onNextCommentPageActionType|onPrevCommentPageActionType;
-
-
+type ActionType =
+  | addCommentActionType
+  | onTextTypingActionType
+  | onNextCommentPageActionType
+  | onPrevCommentPageActionType;
 
 let initialState = {
   comments: [
@@ -73,7 +74,7 @@ let initialState = {
       photo: "https://pcmarket.uz/wp-content/uploads/2020/05/i-2.jpg",
       text: `Здравствуйте! Хочу посоветовать всем кто ищет хороших поставщиков компьютерной техники именно этот интернет магазин. Я Сам приехал с Казахстана делать компьютерный игровой бизнес в Узбекистане и благодаря компании PCMARKET мы очень быстро собрали все необходимое оборудование, начиная от компьютеров, заканчивая игровыми креслами и столами. оплатить мне предложили двумя способами онлайн через сайт или после доставки курьеру, я выбрал оплату после доставки.Я долго не мог решиться на покупку ноутбука через интернет, я не знал как оплачивать, какой придет товар и т.п. Мне посоветовали обратиться именно к вам. Выбрав ноутбук на вашем сайте я заказал его по телефону, оплатить мне предложили двумя способами онлайн через сайт или после доставки курьеру, я выбрал оплату после доставки.Мы открывали клинику в районе Чиланзара. Нам необходимо было подобрать для нашей работы офисную технику. Специалисты компании PcMarket предложили свою помощь, они приехали к нам и бесплатно все просчитали, выслушали наши потребности и подобрали для нас всю офисную технику и самое главное по низкой цене и еще сделали нам хорошую скидку. По мимо этого всю […]`,
     },
-  ] as Array<comment>,
+  ] as Array<Comment>,
   someComments: [
     {
       author: "Антон",
@@ -106,20 +107,20 @@ let initialState = {
       photo: "https://pcmarket.uz/wp-content/uploads/2020/07/i-1.jpg",
       text: `Я долго не мог решиться на покупку ноутбука через интернет, я не знал как оплачивать, какой придет товар и т.п. Мне посоветовали обратиться именно к вам. Выбрав ноутбук на вашем сайте я заказал его по телефону, оплатить мне предложили двумя способами онлайн через сайт или после доставки курьеру, я выбрал оплату после доставки.Я долго не мог решиться на покупку ноутбука через интернет, я не знал как оплачивать, какой придет товар и т.п. Мне посоветовали обратиться именно к вам. Выбрав ноутбук на вашем сайте я заказал его по телефону, оплатить мне предложили двумя способами онлайн через сайт или после доставки курьеру, я выбрал оплату после доставки.`,
     },
-  ] as Array<comment>,
+  ] as Array<Comment>,
   currentCommentPage: 1 as number,
   currentComment: {
     text: "",
     name: "",
   } as { text: string; name: string },
 };
-type initialStateType = typeof initialState;
+type InitialStateType = typeof initialState;
 
 function getSomeComments(
-  comments: Array<comment>,
+  comments: Array<Comment>,
   page: number
-): Array<comment> {
-  let arr: Array<comment> = [];
+): Array<Comment> {
+  let arr: Array<Comment> = [];
   for (let i = (page - 1) * 6; i < page * 6; i++) {
     if (comments[i]) arr.push(comments[i]);
   }
@@ -129,7 +130,7 @@ function getSomeComments(
 const commentsReducer = (
   state = initialState,
   action: ActionType
-): initialStateType => {
+): InitialStateType => {
   switch (action.type) {
     case ADD_COMMENT_HANDLE:
       return {
@@ -181,8 +182,6 @@ const commentsReducer = (
       return state;
   }
 };
-
-
 
 export const addComment = (
   name: string,

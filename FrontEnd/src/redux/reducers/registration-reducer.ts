@@ -1,5 +1,5 @@
 import logInProfileAPI from "../../api/logInProfileAPI";
-import { user } from "../../types/userTypes";
+import { User } from "../../types/userTypes";
 import { Dispatch } from "redux";
 import { InferActionTypes } from "../redux-store";
 
@@ -30,12 +30,12 @@ let initialState = {
 
 type ActionType = InferActionTypes<typeof actions>;
 
-type initialStateType = typeof initialState;
+type InitialStateType = typeof initialState;
 
 const registrationReducer = (
   state = initialState,
   action: ActionType
-): initialStateType => {
+): InitialStateType => {
   switch (action.type) {
     case "ON_NAME_TYPING": {
       let errors = { ...state.errors };
@@ -215,7 +215,7 @@ export const actions = {
   onSubmit: () => ({ type: "ON_SUBMIT" } as const),
 };
 
-export const postClientThunkCreator = (client: user) => {
+export const postClientThunkCreator = (client: User) => {
   return async (dispatch: Dispatch<ActionType>) => {
     let response = await logInProfileAPI.postNewClient(client);
     dispatch(
